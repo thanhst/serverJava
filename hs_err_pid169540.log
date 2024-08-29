@@ -1,0 +1,930 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 954288 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (arena.cpp:189), pid=169540, tid=77592
+#
+# JRE version: Java(TM) SE Runtime Environment (17.0.6+9) (build 17.0.6+9-LTS-190)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (17.0.6+9-LTS-190, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# Core dump will be written. Default location: C:\Users\Administrator\Desktop\Heroes Z Main\hs_err_pid169540.mdmp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF-8 com.girlkun.server.ServerManager
+
+Host: Intel Xeon E3-12xx v2 (Ivy Bridge), 2 cores, 1G,  Windows Server 2012 R2 , 64 bit Build 9600 (6.3.9600.20237)
+Time: Fri May 19 12:07:56 2023 SE Asia Standard Time elapsed time: 18.501708 seconds (0d 0h 0m 18s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000005307b11c30):  JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=77592, stack(0x0000005322be0000,0x0000005322ce0000)]
+
+
+Current CompileTask:
+C2:  18503 1956       4       java.util.regex.Pattern::compile (500 bytes)
+
+Stack: [0x0000005322be0000,0x0000005322ce0000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6734ea]
+V  [jvm.dll+0x7d18f4]
+V  [jvm.dll+0x7d309e]
+V  [jvm.dll+0x7d3703]
+V  [jvm.dll+0x2433c5]
+V  [jvm.dll+0xaa46b]
+V  [jvm.dll+0xaaa0c]
+V  [jvm.dll+0x35eb2e]
+V  [jvm.dll+0x329401]
+V  [jvm.dll+0x32889a]
+V  [jvm.dll+0x215ddf]
+V  [jvm.dll+0x215211]
+V  [jvm.dll+0x1a1730]
+V  [jvm.dll+0x224b6e]
+V  [jvm.dll+0x222f15]
+V  [jvm.dll+0x78753c]
+V  [jvm.dll+0x781a7a]
+V  [jvm.dll+0x672375]
+C  [ucrtbase.DLL+0x214c2]
+C  [KERNEL32.DLL+0x13f2]
+C  [ntdll.dll+0x154f4]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00000053236ed350, length=249, elements={
+0x0000005307af9570, 0x0000005307afb3f0, 0x0000005307b0a480, 0x0000005307b0c0b0,
+0x0000005307b0d820, 0x0000005307b102e0, 0x0000005307b11c30, 0x0000005307b17350,
+0x0000005307b17d40, 0x0000005322f20f60, 0x0000005322f368e0, 0x000000532305acf0,
+0x00000053232ddee0, 0x00000053246baa20, 0x0000005323a380b0, 0x0000005323a38580,
+0x0000005323a38a50, 0x0000005324e66010, 0x0000005324e664e0, 0x0000005323c54230,
+0x0000005323c52080, 0x0000005323c54bd0, 0x0000005323c54700, 0x0000005323c55570,
+0x0000005323c52550, 0x0000005323c52a20, 0x0000005323c53d60, 0x0000005323c52ef0,
+0x0000005323c53890, 0x0000005323c533c0, 0x0000005323c55a40, 0x0000005323c550a0,
+0x0000005323ce46a0, 0x0000005323ce4b70, 0x0000005323ce5040, 0x0000005323ce5510,
+0x0000005323ce5eb0, 0x0000005323ce6d20, 0x0000005323ce71f0, 0x0000005323ce76c0,
+0x0000005323ce6380, 0x0000005323ce7b90, 0x0000005323ce59e0, 0x0000005323ce41d0,
+0x0000005323ce8060, 0x0000005323ce6850, 0x0000005323ce8a00, 0x0000005323cea6e0,
+0x0000005323ce9870, 0x0000005323ce93a0, 0x0000005323ce8ed0, 0x0000005323ce9d40,
+0x0000005323ce8530, 0x0000005323ceabb0, 0x0000005323cea210, 0x0000005323ceb080,
+0x0000005323ceb550, 0x0000005323ceba20, 0x0000005323aecfb0, 0x0000005323aed480,
+0x0000005323aee2f0, 0x0000005323aebc70, 0x0000005323aec140, 0x0000005323aecae0,
+0x0000005323aef160, 0x0000005323aee7c0, 0x0000005323aeffd0, 0x0000005323aef630,
+0x0000005323aefb00, 0x0000005323aed950, 0x0000005323aec610, 0x0000005323aede20,
+0x0000005323af2180, 0x0000005323af17e0, 0x0000005323af04a0, 0x0000005323af0970,
+0x0000005323af0e40, 0x0000005323af1310, 0x0000005323af1cb0, 0x0000005323af2650,
+0x0000005323aeec90, 0x0000005323af2b20, 0x0000005323af2ff0, 0x0000005323af34c0,
+0x000000532396ada0, 0x0000005323969590, 0x000000532396d420, 0x000000532396b740,
+0x000000532396c0e0, 0x0000005323969f30, 0x000000532396cf50, 0x000000532396b270,
+0x000000532396bc10, 0x000000532396c5b0, 0x000000532396ca80, 0x0000005323969a60,
+0x000000532396d8f0, 0x000000532396ddc0, 0x000000532396a8d0, 0x000000532396a400,
+0x000000532396ec30, 0x000000532396faa0, 0x0000005323970910, 0x000000532396ff70,
+0x0000005323970440, 0x0000005323970de0, 0x000000532396e760, 0x000000532396e290,
+0x000000532396f100, 0x000000532396f5d0, 0x0000005323d29670, 0x0000005323d29b40,
+0x0000005323d291a0, 0x0000005323d2a010, 0x0000005323d26650, 0x0000005323d2a4e0,
+0x0000005323d26b20, 0x0000005323d26ff0, 0x0000005323d28cd0, 0x0000005323d28330,
+0x0000005323d2a9b0, 0x0000005323d2ae80, 0x0000005323d27e60, 0x0000005323d274c0,
+0x0000005323d2b350, 0x0000005323d27990, 0x0000005323d2b820, 0x0000005323d2bcf0,
+0x0000005323d2c1c0, 0x0000005323d28800, 0x0000005323d2c690, 0x0000005323d2dea0,
+0x0000005323d2cb60, 0x0000005323d2d030, 0x0000005323d2d500, 0x0000005323d2d9d0,
+0x00000053239aa270, 0x00000053239a9400, 0x00000053239a8590, 0x00000053239a8a60,
+0x00000053239a8f30, 0x00000053239a98d0, 0x00000053239a9da0, 0x00000053239aa740,
+0x00000053239aac10, 0x00000053239ab0e0, 0x00000053239a7720, 0x00000053239ab5b0,
+0x00000053239a7bf0, 0x00000053239aba80, 0x00000053239ad290, 0x00000053239a80c0,
+0x00000053239aef70, 0x00000053239aeaa0, 0x00000053239abf50, 0x00000053239adc30,
+0x00000053239ae100, 0x00000053239ae5d0, 0x00000053239ac420, 0x00000053239ac8f0,
+0x00000053239acdc0, 0x00000053239ad760, 0x0000005323298560, 0x0000005323298f00,
+0x000000532329ba50, 0x000000532329a240, 0x000000532329b0b0, 0x000000532329abe0,
+0x00000053232993d0, 0x0000005323298a30, 0x00000053232998a0, 0x000000532329b580,
+0x0000005323299d70, 0x000000532329a710, 0x0000005323298090, 0x000000532329c3f0,
+0x000000532329cd90, 0x000000532329c8c0, 0x000000532329ea70, 0x000000532329ef40,
+0x000000532329d260, 0x000000532329bf20, 0x000000532329dc00, 0x000000532329f410,
+0x000000532329d730, 0x000000532329f8e0, 0x000000532329e0d0, 0x000000532329e5a0,
+0x0000005323b01ad0, 0x0000005323aff450, 0x0000005323b01600, 0x0000005323b002c0,
+0x0000005323b00790, 0x0000005323b02470, 0x0000005323b00c60, 0x0000005323b01130,
+0x0000005323b01fa0, 0x0000005323b02940, 0x0000005323afef80, 0x0000005323b02e10,
+0x0000005323b032e0, 0x0000005323aff920, 0x0000005323b037b0, 0x0000005323affdf0,
+0x0000005323b04af0, 0x0000005323b05960, 0x0000005323b06300, 0x0000005323b04fc0,
+0x0000005323b05490, 0x0000005323b067d0, 0x0000005323b03c80, 0x0000005323b04620,
+0x0000005323b04150, 0x0000005323b05e30, 0x0000005323833fd0, 0x00000053238374c0,
+0x0000005323836b20, 0x0000005323834970, 0x0000005323836ff0, 0x0000005323836650,
+0x0000005323834e40, 0x0000005323836180, 0x0000005323837990, 0x00000053238344a0,
+0x0000005323838cd0, 0x0000005323837e60, 0x0000005323838330, 0x0000005323838800,
+0x0000005323835310, 0x00000053238391a0, 0x00000053238357e0, 0x0000005323839670,
+0x0000005323835cb0, 0x0000005323839b40, 0x000000532383a9b0, 0x000000532383a010,
+0x000000532383a4e0, 0x000000532383ae80, 0x000000532383b350, 0x000000532383b820,
+0x0000005323b863c0, 0x0000005323b83d40, 0x0000005323b84210, 0x0000005323b87230,
+0x0000005323b846e0, 0x0000005323b85550, 0x0000005323b84bb0, 0x0000005323b86d60,
+0x0000005323b83870
+}
+
+Java Threads: ( => current thread )
+  0x0000005307af9570 JavaThread "Reference Handler" daemon [_thread_blocked, id=167220, stack(0x0000005322500000,0x0000005322600000)]
+  0x0000005307afb3f0 JavaThread "Finalizer" daemon [_thread_blocked, id=168880, stack(0x0000005322600000,0x0000005322700000)]
+  0x0000005307b0a480 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=9480, stack(0x00000053227e0000,0x00000053228e0000)]
+  0x0000005307b0c0b0 JavaThread "Attach Listener" daemon [_thread_blocked, id=168012, stack(0x00000053228e0000,0x00000053229e0000)]
+  0x0000005307b0d820 JavaThread "Service Thread" daemon [_thread_blocked, id=170424, stack(0x00000053229e0000,0x0000005322ae0000)]
+  0x0000005307b102e0 JavaThread "Monitor Deflation Thread" daemon [_thread_blocked, id=170000, stack(0x0000005322ae0000,0x0000005322be0000)]
+=>0x0000005307b11c30 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=77592, stack(0x0000005322be0000,0x0000005322ce0000)]
+  0x0000005307b17350 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=7560, stack(0x0000005322ce0000,0x0000005322de0000)]
+  0x0000005307b17d40 JavaThread "Sweeper thread" daemon [_thread_blocked, id=169284, stack(0x0000005322de0000,0x0000005322ee0000)]
+  0x0000005322f20f60 JavaThread "Notification Thread" daemon [_thread_blocked, id=170412, stack(0x00000053232e0000,0x00000053233e0000)]
+  0x0000005322f368e0 JavaThread "Common-Cleaner" daemon [_thread_blocked, id=168284, stack(0x00000053234e0000,0x00000053235e0000)]
+  0x000000532305acf0 JavaThread "Abandoned connection cleanup thread" daemon [_thread_blocked, id=77092, stack(0x00000053235e0000,0x00000053236e0000)]
+  0x00000053232ddee0 JavaThread "HikariPool-1 housekeeper" daemon [_thread_blocked, id=168240, stack(0x00000053240e0000,0x00000053241e0000)]
+  0x00000053246baa20 JavaThread "Update map Làng Aru" [_thread_blocked, id=169448, stack(0x00000053241e0000,0x00000053242e0000)]
+  0x0000005323a380b0 JavaThread "Update map Đồi hoa cúc" [_thread_blocked, id=169592, stack(0x00000053242e0000,0x00000053243e0000)]
+  0x0000005323a38580 JavaThread "Update map Thung lũng tre" [_thread_blocked, id=170432, stack(0x0000005325420000,0x0000005325520000)]
+  0x0000005323a38a50 JavaThread "Update map Rừng nấm" [_thread_blocked, id=169488, stack(0x0000005325520000,0x0000005325620000)]
+  0x0000005324e66010 JavaThread "Update map Rừng xương" [_thread_blocked, id=170072, stack(0x0000005325620000,0x0000005325720000)]
+  0x0000005324e664e0 JavaThread "Update map Đảo Kamê" [_thread_blocked, id=165308, stack(0x0000005325820000,0x0000005325920000)]
+  0x0000005323c54230 JavaThread "Update map Đông Karin" [_thread_blocked, id=169644, stack(0x0000005325920000,0x0000005325a20000)]
+  0x0000005323c52080 JavaThread "Update map Làng Mori" [_thread_blocked, id=168616, stack(0x0000005325a20000,0x0000005325b20000)]
+  0x0000005323c54bd0 JavaThread "Update map Đồi nấm tím" [_thread_blocked, id=170648, stack(0x0000005325b20000,0x0000005325c20000)]
+  0x0000005323c54700 JavaThread "Update map Thị trấn Moori" [_thread_blocked, id=169244, stack(0x0000005325c20000,0x0000005325d20000)]
+  0x0000005323c55570 JavaThread "Update map Thung lũng Namếc" [_thread_blocked, id=169868, stack(0x0000005325d20000,0x0000005325e20000)]
+  0x0000005323c52550 JavaThread "Update map Thung lũng Maima" [_thread_blocked, id=169616, stack(0x0000005325e20000,0x0000005325f20000)]
+  0x0000005323c52a20 JavaThread "Update map Vực maima" [_thread_blocked, id=164260, stack(0x0000005325f20000,0x0000005326020000)]
+  0x0000005323c53d60 JavaThread "Update map Đảo Guru" [_thread_blocked, id=168528, stack(0x0000005326020000,0x0000005326120000)]
+  0x0000005323c52ef0 JavaThread "Update map Làng Kakarot" [_thread_blocked, id=169452, stack(0x0000005326120000,0x0000005326220000)]
+  0x0000005323c53890 JavaThread "Update map Đồi hoang" [_thread_blocked, id=170136, stack(0x0000005326220000,0x0000005326320000)]
+  0x0000005323c533c0 JavaThread "Update map Làng Plant" [_thread_blocked, id=169468, stack(0x0000005326320000,0x0000005326420000)]
+  0x0000005323c55a40 JavaThread "Update map Rừng nguyên sinh" [_thread_blocked, id=170544, stack(0x0000005326420000,0x0000005326520000)]
+  0x0000005323c550a0 JavaThread "Update map Rừng thông Xayda" [_thread_blocked, id=169676, stack(0x0000005326520000,0x0000005326620000)]
+  0x0000005323ce46a0 JavaThread "Update map Thành phố Vegeta" [_thread_blocked, id=170792, stack(0x0000005326620000,0x0000005326720000)]
+  0x0000005323ce4b70 JavaThread "Update map Vách núi đen" [_thread_blocked, id=169432, stack(0x0000005326720000,0x0000005326820000)]
+  0x0000005323ce5040 JavaThread "Update map Nhà Gôhan" [_thread_blocked, id=169092, stack(0x0000005326820000,0x0000005326920000)]
+  0x0000005323ce5510 JavaThread "Update map Nhà Moori" [_thread_blocked, id=170616, stack(0x0000005326920000,0x0000005326a20000)]
+  0x0000005323ce5eb0 JavaThread "Update map Nhà Broly" [_thread_blocked, id=168992, stack(0x0000005326a20000,0x0000005326b20000)]
+  0x0000005323ce6d20 JavaThread "Update map Trạm tàu vũ trụ" [_thread_blocked, id=170556, stack(0x0000005326b20000,0x0000005326c20000)]
+  0x0000005323ce71f0 JavaThread "Update map Trạm tàu vũ trụ" [_thread_blocked, id=168780, stack(0x0000005326c20000,0x0000005326d20000)]
+  0x0000005323ce76c0 JavaThread "Update map Trạm tàu vũ trụ" [_thread_blocked, id=170176, stack(0x0000005326d20000,0x0000005326e20000)]
+  0x0000005323ce6380 JavaThread "Update map Rừng Bamboo" [_thread_blocked, id=169196, stack(0x0000005326e20000,0x0000005326f20000)]
+  0x0000005323ce7b90 JavaThread "Update map Rừng dương xỉ" [_thread_blocked, id=170764, stack(0x0000005326f20000,0x0000005327020000)]
+  0x0000005323ce59e0 JavaThread "Update map Nam Kamê" [_thread_blocked, id=82772, stack(0x0000005327020000,0x0000005327120000)]
+  0x0000005323ce41d0 JavaThread "Update map Đảo Bulông" [_thread_blocked, id=169648, stack(0x0000005327120000,0x0000005327220000)]
+  0x0000005323ce8060 JavaThread "Update map Núi hoa vàng" [_thread_blocked, id=169308, stack(0x0000005327220000,0x0000005327320000)]
+  0x0000005323ce6850 JavaThread "Update map Núi hoa tím" [_thread_blocked, id=169156, stack(0x0000005327320000,0x0000005327420000)]
+  0x0000005323ce8a00 JavaThread "Update map Nam Guru" [_thread_blocked, id=167196, stack(0x0000005327420000,0x0000005327520000)]
+  0x0000005323cea6e0 JavaThread "Update map Đông Nam Guru" [_thread_blocked, id=169996, stack(0x0000005327520000,0x0000005327620000)]
+  0x0000005323ce9870 JavaThread "Update map Rừng cọ" [_thread_blocked, id=170380, stack(0x0000005327620000,0x0000005327720000)]
+  0x0000005323ce93a0 JavaThread "Update map Rừng đá" [_thread_blocked, id=167216, stack(0x0000005327720000,0x0000005327820000)]
+  0x0000005323ce8ed0 JavaThread "Update map Thung lũng đen" [_thread_blocked, id=166088, stack(0x0000005327820000,0x0000005327920000)]
+  0x0000005323ce9d40 JavaThread "Update map Bờ vực đen" [_thread_blocked, id=170160, stack(0x0000005327920000,0x0000005327a20000)]
+  0x0000005323ce8530 JavaThread "Update map Vách núi Aru" [_thread_blocked, id=170264, stack(0x0000005327b10000,0x0000005327c10000)]
+  0x0000005323ceabb0 JavaThread "Update map Vách núi Moori" [_thread_blocked, id=170052, stack(0x0000005327c10000,0x0000005327d10000)]
+  0x0000005323cea210 JavaThread "Update map Vực Plant" [_thread_blocked, id=169892, stack(0x0000005327d10000,0x0000005327e10000)]
+  0x0000005323ceb080 JavaThread "Update map Vách núi Aru" [_thread_blocked, id=170912, stack(0x0000005327e10000,0x0000005327f10000)]
+  0x0000005323ceb550 JavaThread "Update map Vách núi Moori" [_thread_blocked, id=170876, stack(0x0000005327f10000,0x0000005328010000)]
+  0x0000005323ceba20 JavaThread "Update map Vách núi Kakarot" [_thread_blocked, id=169376, stack(0x0000005328010000,0x0000005328110000)]
+  0x0000005323aecfb0 JavaThread "Update map Thần điện" [_thread_blocked, id=78232, stack(0x0000005328110000,0x0000005328210000)]
+  0x0000005323aed480 JavaThread "Update map Tháp Karin" [_thread_blocked, id=169368, stack(0x0000005328210000,0x0000005328310000)]
+  0x0000005323aee2f0 JavaThread "Update map Rừng Karin" [_thread_blocked, id=170532, stack(0x0000005328310000,0x0000005328410000)]
+  0x0000005323aebc70 JavaThread "Update map Hành tinh Kaio" [_thread_blocked, id=2348, stack(0x0000005328410000,0x0000005328510000)]
+  0x0000005323aec140 JavaThread "Update map Phòng tập thời gian" [_thread_blocked, id=166984, stack(0x0000005328510000,0x0000005328610000)]
+  0x0000005323aecae0 JavaThread "Update map Thánh địa Kaio" [_thread_blocked, id=39524, stack(0x0000005328610000,0x0000005328710000)]
+  0x0000005323aef160 JavaThread "Update map Đấu trường" [_thread_blocked, id=170140, stack(0x0000005328710000,0x0000005328810000)]
+  0x0000005323aee7c0 JavaThread "Update map Đại hội võ thuật" [_thread_blocked, id=170200, stack(0x0000005328810000,0x0000005328910000)]
+  0x0000005323aeffd0 JavaThread "Update map Tường thành 1" [_thread_blocked, id=170776, stack(0x0000005328910000,0x0000005328a10000)]
+  0x0000005323aef630 JavaThread "Update map Tầng 3" [_thread_blocked, id=169024, stack(0x0000005328a10000,0x0000005328b10000)]
+  0x0000005323aefb00 JavaThread "Update map Tầng 1" [_thread_blocked, id=169884, stack(0x0000005328b10000,0x0000005328c10000)]
+  0x0000005323aed950 JavaThread "Update map Tầng 2" [_thread_blocked, id=10188, stack(0x0000005328c10000,0x0000005328d10000)]
+  0x0000005323aec610 JavaThread "Update map Tầng 4" [_thread_blocked, id=170584, stack(0x0000005328d10000,0x0000005328e10000)]
+  0x0000005323aede20 JavaThread "Update map Tường thành 2" [_thread_blocked, id=169208, stack(0x0000005328e10000,0x0000005328f10000)]
+  0x0000005323af2180 JavaThread "Update map Tường thành 3" [_thread_blocked, id=169424, stack(0x0000005328f10000,0x0000005329010000)]
+  0x0000005323af17e0 JavaThread "Update map Trại độc nhãn 1" [_thread_blocked, id=170828, stack(0x0000005329010000,0x0000005329110000)]
+  0x0000005323af04a0 JavaThread "Update map Trại độc nhãn 2" [_thread_blocked, id=170976, stack(0x0000005329110000,0x0000005329210000)]
+  0x0000005323af0970 JavaThread "Update map Trại độc nhãn 3" [_thread_blocked, id=168560, stack(0x0000005329210000,0x0000005329310000)]
+  0x0000005323af0e40 JavaThread "Update map Trại lính Fide" [_thread_blocked, id=163956, stack(0x0000005329310000,0x0000005329410000)]
+  0x0000005323af1310 JavaThread "Update map Núi dây leo" [_thread_blocked, id=167080, stack(0x0000005329410000,0x0000005329510000)]
+  0x0000005323af1cb0 JavaThread "Update map Núi cây quỷ" [_thread_blocked, id=88332, stack(0x0000005329510000,0x0000005329610000)]
+  0x0000005323af2650 JavaThread "Update map Trại qủy già" [_thread_blocked, id=166916, stack(0x0000005329610000,0x0000005329710000)]
+  0x0000005323aeec90 JavaThread "Update map Mê Cung Chết Chóc" [_thread_blocked, id=149016, stack(0x0000005329710000,0x0000005329810000)]
+  0x0000005323af2b20 JavaThread "Update map Thung lũng Nappa" [_thread_blocked, id=168000, stack(0x0000005329810000,0x0000005329910000)]
+  0x0000005323af2ff0 JavaThread "Update map Vực cấm" [_thread_blocked, id=168736, stack(0x0000005329910000,0x0000005329a10000)]
+  0x0000005323af34c0 JavaThread "Update map Núi Appule" [_thread_blocked, id=170480, stack(0x0000005329a10000,0x0000005329b10000)]
+  0x000000532396ada0 JavaThread "Update map Căn cứ Raspberry" [_thread_blocked, id=170024, stack(0x0000005329b10000,0x0000005329c10000)]
+  0x0000005323969590 JavaThread "Update map Thung lũng Raspberry" [_thread_blocked, id=170640, stack(0x0000005329c10000,0x0000005329d10000)]
+  0x000000532396d420 JavaThread "Update map Thung lũng chết" [_thread_blocked, id=163920, stack(0x0000005329d10000,0x0000005329e10000)]
+  0x000000532396b740 JavaThread "Update map Đồi cây Fide" [_thread_blocked, id=169596, stack(0x0000005329e10000,0x0000005329f10000)]
+  0x000000532396c0e0 JavaThread "Update map Khe núi tử thần" [_thread_blocked, id=169292, stack(0x0000005329f10000,0x000000532a010000)]
+  0x0000005323969f30 JavaThread "Update map Núi đá" [_thread_blocked, id=170372, stack(0x000000532a010000,0x000000532a110000)]
+  0x000000532396cf50 JavaThread "Update map Rừng đá" [_thread_blocked, id=170608, stack(0x000000532a110000,0x000000532a210000)]
+  0x000000532396b270 JavaThread "Update map Núi khỉ đỏ" [_thread_blocked, id=167948, stack(0x000000532a210000,0x000000532a310000)]
+  0x000000532396bc10 JavaThread "Update map Núi khỉ vàng" [_thread_blocked, id=169372, stack(0x000000532a310000,0x000000532a410000)]
+  0x000000532396c5b0 JavaThread "Update map Hang quỷ chim" [_thread_blocked, id=168792, stack(0x000000532a410000,0x000000532a510000)]
+  0x000000532396ca80 JavaThread "Update map Núi khỉ đen" [_thread_blocked, id=169992, stack(0x000000532a510000,0x000000532a610000)]
+  0x0000005323969a60 JavaThread "Update map Hang khỉ đen" [_thread_blocked, id=170588, stack(0x000000532a610000,0x000000532a710000)]
+  0x000000532396d8f0 JavaThread "Update map Siêu Thị" [_thread_blocked, id=171000, stack(0x000000532a710000,0x000000532a810000)]
+  0x000000532396ddc0 JavaThread "Update map Hành Tinh 1 Sao Đen" [_thread_blocked, id=168784, stack(0x000000532a810000,0x000000532a910000)]
+  0x000000532396a8d0 JavaThread "Update map Hành Tinh 2 Sao Đen" [_thread_blocked, id=167996, stack(0x000000532a910000,0x000000532aa10000)]
+  0x000000532396a400 JavaThread "Update map Hành Tinh 3 Sao Đen" [_thread_blocked, id=168532, stack(0x000000532aa10000,0x000000532ab10000)]
+  0x000000532396ec30 JavaThread "Update map Hành Tinh 4 Sao Đen" [_thread_blocked, id=169604, stack(0x000000532ab10000,0x000000532ac10000)]
+  0x000000532396faa0 JavaThread "Update map Hành Tinh 5 Sao Đen" [_thread_blocked, id=163360, stack(0x000000532ac10000,0x000000532ad10000)]
+  0x0000005323970910 JavaThread "Update map Hành Tinh 6 Sao Đen" [_thread_blocked, id=168836, stack(0x000000532ad10000,0x000000532ae10000)]
+  0x000000532396ff70 JavaThread "Update map Hành Tinh 7 Sao Đen" [_thread_blocked, id=166340, stack(0x000000532ae10000,0x000000532af10000)]
+  0x0000005323970440 JavaThread "Update map Thành phố phía đông" [_thread_blocked, id=170304, stack(0x000000532af10000,0x000000532b010000)]
+  0x0000005323970de0 JavaThread "Update map Thành phố phía nam" [_thread_blocked, id=170576, stack(0x000000532b010000,0x000000532b110000)]
+  0x000000532396e760 JavaThread "Update map Đảo Balê" [_thread_blocked, id=170232, stack(0x000000532b110000,0x000000532b210000)]
+  0x000000532396e290 JavaThread "Update map Cao nguyên" [_thread_blocked, id=170932, stack(0x000000532b210000,0x000000532b310000)]
+  0x000000532396f100 JavaThread "Update map Thành phố phía bắc" [_thread_blocked, id=169932, stack(0x000000532b310000,0x000000532b410000)]
+  0x000000532396f5d0 JavaThread "Update map Ngọn núi phía bắc" [_thread_blocked, id=169500, stack(0x000000532b410000,0x000000532b510000)]
+  0x0000005323d29670 JavaThread "Update map Thung lũng phía bắc" [_thread_blocked, id=167264, stack(0x000000532b510000,0x000000532b610000)]
+  0x0000005323d29b40 JavaThread "Update map Thị trấn Ginder" [_thread_blocked, id=168744, stack(0x000000532b610000,0x000000532b710000)]
+  0x0000005323d291a0 JavaThread "Update map Nhà Bunma" [_thread_blocked, id=167160, stack(0x000000532b710000,0x000000532b810000)]
+  0x0000005323d2a010 JavaThread "Update map Võ đài Xên bọ hung" [_thread_blocked, id=168644, stack(0x000000532b810000,0x000000532b910000)]
+  0x0000005323d26650 JavaThread "Update map Sân sau siêu thị" [_thread_blocked, id=170656, stack(0x000000532b910000,0x000000532ba10000)]
+  0x0000005323d2a4e0 JavaThread "Update map Cánh đồng tuyết" [_thread_blocked, id=57928, stack(0x000000532ba10000,0x000000532bb10000)]
+  0x0000005323d26b20 JavaThread "Update map Rừng tuyết" [_thread_blocked, id=169492, stack(0x000000532bb10000,0x000000532bc10000)]
+  0x0000005323d26ff0 JavaThread "Update map Núi tuyết" [_thread_blocked, id=169132, stack(0x000000532bc10000,0x000000532bd10000)]
+  0x0000005323d28cd0 JavaThread "Update map Dòng sông băng" [_thread_blocked, id=168456, stack(0x000000532bd10000,0x000000532be10000)]
+  0x0000005323d28330 JavaThread "Update map Rừng băng" [_thread_blocked, id=169348, stack(0x000000532be10000,0x000000532bf10000)]
+  0x0000005323d2a9b0 JavaThread "Update map Hang băng" [_thread_blocked, id=166444, stack(0x000000532bf10000,0x000000532c010000)]
+  0x0000005323d2ae80 JavaThread "Update map Đông Nam Karin" [_thread_blocked, id=167380, stack(0x000000532c010000,0x000000532c110000)]
+  0x0000005323d27e60 JavaThread "Update map Võ đài Hạt Mít" [_thread_blocked, id=166264, stack(0x000000532c110000,0x000000532c210000)]
+  0x0000005323d274c0 JavaThread "Update map Đại hội võ thuật" [_thread_blocked, id=170012, stack(0x000000532c210000,0x000000532c310000)]
+  0x0000005323d2b350 JavaThread "Update map Cổng phi thuyền" [_thread_blocked, id=169784, stack(0x000000532c310000,0x000000532c410000)]
+  0x0000005323d27990 JavaThread "Update map Phòng chờ" [_thread_blocked, id=170404, stack(0x000000532c410000,0x000000532c510000)]
+  0x0000005323d2b820 JavaThread "Update map Cửa Ải 1" [_thread_blocked, id=170968, stack(0x000000532c510000,0x000000532c610000)]
+  0x0000005323d2bcf0 JavaThread "Update map Cửa Ải 2" [_thread_blocked, id=168520, stack(0x000000532c610000,0x000000532c710000)]
+  0x0000005323d2c1c0 JavaThread "Update map Cửa Ải 3" [_thread_blocked, id=170164, stack(0x000000532c710000,0x000000532c810000)]
+  0x0000005323d28800 JavaThread "Update map Phòng chỉ huy" [_thread_blocked, id=168108, stack(0x000000532c810000,0x000000532c910000)]
+  0x0000005323d2c690 JavaThread "Update map Ngũ hành sơn 1" [_thread_blocked, id=98536, stack(0x000000532c910000,0x000000532ca10000)]
+  0x0000005323d2dea0 JavaThread "Update map Ngũ hành sơn 2" [_thread_blocked, id=169164, stack(0x000000532ca10000,0x000000532cb10000)]
+  0x0000005323d2cb60 JavaThread "Update map Ngũ hành sơn 3" [_thread_blocked, id=166064, stack(0x000000532cb10000,0x000000532cc10000)]
+  0x0000005323d2d030 JavaThread "Update map Thành phố Santa" [_thread_blocked, id=49060, stack(0x000000532cc10000,0x000000532cd10000)]
+  0x0000005323d2d500 JavaThread "Update map Cổng phi thuyền" [_thread_blocked, id=170284, stack(0x000000532cd10000,0x000000532ce10000)]
+  0x0000005323d2d9d0 JavaThread "Update map Bụng Mabư" [_thread_blocked, id=170172, stack(0x000000532ce10000,0x000000532cf10000)]
+  0x00000053239aa270 JavaThread "Update map Đại hội võ thuật" [_thread_blocked, id=170880, stack(0x000000532cf10000,0x000000532d010000)]
+  0x00000053239a9400 JavaThread "Update map Hành Tinh Yardart" [_thread_blocked, id=167548, stack(0x000000532d010000,0x000000532d110000)]
+  0x00000053239a8590 JavaThread "Update map Hành Tinh Yardart 2" [_thread_blocked, id=77020, stack(0x000000532d110000,0x000000532d210000)]
+  0x00000053239a8a60 JavaThread "Update map Hành Tinh Yardart 3" [_thread_blocked, id=15940, stack(0x000000532d210000,0x000000532d310000)]
+  0x00000053239a8f30 JavaThread "Thread-0" [_thread_blocked, id=170684, stack(0x000000532d310000,0x000000532d410000)]
+  0x00000053239a98d0 JavaThread "Thread-1" [_thread_blocked, id=170612, stack(0x000000532d410000,0x000000532d510000)]
+  0x00000053239a9da0 JavaThread "Thread-2" [_thread_blocked, id=169344, stack(0x000000532d510000,0x000000532d610000)]
+  0x00000053239aa740 JavaThread "Thread-3" [_thread_blocked, id=167956, stack(0x000000532d610000,0x000000532d710000)]
+  0x00000053239aac10 JavaThread "Thread-4" [_thread_blocked, id=169712, stack(0x000000532d710000,0x000000532d810000)]
+  0x00000053239ab0e0 JavaThread "Thread-5" [_thread_blocked, id=168024, stack(0x000000532d810000,0x000000532d910000)]
+  0x00000053239a7720 JavaThread "Thread-6" [_thread_blocked, id=10420, stack(0x000000532d910000,0x000000532da10000)]
+  0x00000053239ab5b0 JavaThread "Thread-7" [_thread_blocked, id=170872, stack(0x000000532da10000,0x000000532db10000)]
+  0x00000053239a7bf0 JavaThread "Thread-8" [_thread_blocked, id=169848, stack(0x000000532db10000,0x000000532dc10000)]
+  0x00000053239aba80 JavaThread "Thread-9" [_thread_blocked, id=164992, stack(0x000000532dc10000,0x000000532dd10000)]
+  0x00000053239ad290 JavaThread "Thread-10" [_thread_blocked, id=166172, stack(0x000000532dd10000,0x000000532de10000)]
+  0x00000053239a80c0 JavaThread "Thread-11" [_thread_blocked, id=169064, stack(0x000000532de10000,0x000000532df10000)]
+  0x00000053239aef70 JavaThread "Thread-12" [_thread_blocked, id=170952, stack(0x000000532df10000,0x000000532e010000)]
+  0x00000053239aeaa0 JavaThread "Thread-13" [_thread_blocked, id=170868, stack(0x000000532e010000,0x000000532e110000)]
+  0x00000053239abf50 JavaThread "Thread-14" [_thread_blocked, id=167900, stack(0x000000532e110000,0x000000532e210000)]
+  0x00000053239adc30 JavaThread "Thread-15" [_thread_blocked, id=168352, stack(0x000000532e210000,0x000000532e310000)]
+  0x00000053239ae100 JavaThread "Thread-16" [_thread_blocked, id=165432, stack(0x000000532e310000,0x000000532e410000)]
+  0x00000053239ae5d0 JavaThread "Thread-17" [_thread_blocked, id=170420, stack(0x000000532e410000,0x000000532e510000)]
+  0x00000053239ac420 JavaThread "Thread-18" [_thread_blocked, id=169916, stack(0x000000532e510000,0x000000532e610000)]
+  0x00000053239ac8f0 JavaThread "Thread-19" [_thread_blocked, id=169076, stack(0x000000532e610000,0x000000532e710000)]
+  0x00000053239acdc0 JavaThread "Thread-20" [_thread_blocked, id=169528, stack(0x000000532e710000,0x000000532e810000)]
+  0x00000053239ad760 JavaThread "Thread-21" [_thread_blocked, id=160412, stack(0x000000532e810000,0x000000532e910000)]
+  0x0000005323298560 JavaThread "Thread-22" [_thread_blocked, id=60176, stack(0x000000532e910000,0x000000532ea10000)]
+  0x0000005323298f00 JavaThread "Thread-23" [_thread_blocked, id=170428, stack(0x000000532ea10000,0x000000532eb10000)]
+  0x000000532329ba50 JavaThread "Thread-24" [_thread_blocked, id=74724, stack(0x000000532eb10000,0x000000532ec10000)]
+  0x000000532329a240 JavaThread "Thread-25" [_thread_blocked, id=168088, stack(0x000000532ec10000,0x000000532ed10000)]
+  0x000000532329b0b0 JavaThread "Thread-26" [_thread_blocked, id=168660, stack(0x000000532ed10000,0x000000532ee10000)]
+  0x000000532329abe0 JavaThread "Thread-27" [_thread_blocked, id=169728, stack(0x000000532ee10000,0x000000532ef10000)]
+  0x00000053232993d0 JavaThread "Thread-28" [_thread_blocked, id=168916, stack(0x000000532ef10000,0x000000532f010000)]
+  0x0000005323298a30 JavaThread "Thread-29" [_thread_blocked, id=62844, stack(0x000000532f010000,0x000000532f110000)]
+  0x00000053232998a0 JavaThread "Thread-30" [_thread_blocked, id=165700, stack(0x000000532f110000,0x000000532f210000)]
+  0x000000532329b580 JavaThread "Thread-31" [_thread_blocked, id=169920, stack(0x000000532f210000,0x000000532f310000)]
+  0x0000005323299d70 JavaThread "Thread-32" [_thread_blocked, id=168996, stack(0x000000532f310000,0x000000532f410000)]
+  0x000000532329a710 JavaThread "Thread-33" [_thread_blocked, id=168160, stack(0x000000532f410000,0x000000532f510000)]
+  0x0000005323298090 JavaThread "Thread-34" [_thread_blocked, id=163720, stack(0x000000532f510000,0x000000532f610000)]
+  0x000000532329c3f0 JavaThread "Thread-35" [_thread_blocked, id=168816, stack(0x000000532f610000,0x000000532f710000)]
+  0x000000532329cd90 JavaThread "Thread-36" [_thread_blocked, id=170448, stack(0x000000532f710000,0x000000532f810000)]
+  0x000000532329c8c0 JavaThread "Thread-37" [_thread_blocked, id=169600, stack(0x000000532f810000,0x000000532f910000)]
+  0x000000532329ea70 JavaThread "Thread-38" [_thread_blocked, id=73688, stack(0x000000532f910000,0x000000532fa10000)]
+  0x000000532329ef40 JavaThread "Thread-39" [_thread_blocked, id=169740, stack(0x000000532fa10000,0x000000532fb10000)]
+  0x000000532329d260 JavaThread "Thread-40" [_thread_blocked, id=167892, stack(0x000000532fb10000,0x000000532fc10000)]
+  0x000000532329bf20 JavaThread "Thread-41" [_thread_blocked, id=168940, stack(0x000000532fc10000,0x000000532fd10000)]
+  0x000000532329dc00 JavaThread "Thread-42" [_thread_blocked, id=170484, stack(0x000000532fd10000,0x000000532fe10000)]
+  0x000000532329f410 JavaThread "Thread-43" [_thread_blocked, id=168700, stack(0x000000532fe10000,0x000000532ff10000)]
+  0x000000532329d730 JavaThread "Thread-44" [_thread_blocked, id=169608, stack(0x000000532ff10000,0x0000005330010000)]
+  0x000000532329f8e0 JavaThread "Thread-45" [_thread_blocked, id=169624, stack(0x0000005330010000,0x0000005330110000)]
+  0x000000532329e0d0 JavaThread "Thread-46" [_thread_blocked, id=170704, stack(0x0000005330110000,0x0000005330210000)]
+  0x000000532329e5a0 JavaThread "Thread-47" [_thread_blocked, id=169696, stack(0x0000005330210000,0x0000005330310000)]
+  0x0000005323b01ad0 JavaThread "Thread-48" [_thread_blocked, id=165924, stack(0x0000005330310000,0x0000005330410000)]
+  0x0000005323aff450 JavaThread "Thread-49" [_thread_blocked, id=170168, stack(0x0000005330410000,0x0000005330510000)]
+  0x0000005323b01600 JavaThread "Update map Động hải tặc" [_thread_blocked, id=169720, stack(0x0000005330510000,0x0000005330610000)]
+  0x0000005323b002c0 JavaThread "Update map Hang Bạch Tuộc" [_thread_blocked, id=170328, stack(0x0000005330610000,0x0000005330710000)]
+  0x0000005323b00790 JavaThread "Update map Động kho báu" [_thread_blocked, id=169736, stack(0x0000005330710000,0x0000005330810000)]
+  0x0000005323b02470 JavaThread "Update map Cảng hải tặc" [_thread_blocked, id=169000, stack(0x0000005330810000,0x0000005330910000)]
+  0x0000005323b00c60 JavaThread "Update map Hành tinh Potaufeu" [_thread_blocked, id=169256, stack(0x0000005330910000,0x0000005330a10000)]
+  0x0000005323b01130 JavaThread "Update map Hang động Potaufeu" [_thread_blocked, id=169316, stack(0x0000005330a10000,0x0000005330b10000)]
+  0x0000005323b01fa0 JavaThread "Update map Con đường rắn độc" [_thread_blocked, id=168856, stack(0x0000005330b10000,0x0000005330c10000)]
+  0x0000005323b02940 JavaThread "Update map Con đường rắn độc" [_thread_blocked, id=169756, stack(0x0000005330c10000,0x0000005330d10000)]
+  0x0000005323afef80 JavaThread "Update map Con đường rắn độc" [_thread_blocked, id=170552, stack(0x0000005330d10000,0x0000005330e10000)]
+  0x0000005323b02e10 JavaThread "Update map Hoang mạc" [_thread_blocked, id=170276, stack(0x0000005330e10000,0x0000005330f10000)]
+  0x0000005323b032e0 JavaThread "Update map Võ Đài Siêu Cấp" [_thread_blocked, id=169144, stack(0x0000005330f10000,0x0000005331010000)]
+  0x0000005323aff920 JavaThread "Update map Tây Karin" [_thread_blocked, id=169768, stack(0x0000005331010000,0x0000005331110000)]
+  0x0000005323b037b0 JavaThread "Update map Thành Phố Santa" [_thread_blocked, id=170340, stack(0x0000005331110000,0x0000005331210000)]
+  0x0000005323affdf0 JavaThread "Update map Đường mòn Santa" [_thread_blocked, id=169104, stack(0x0000005331210000,0x0000005331310000)]
+  0x0000005323b04af0 JavaThread "Update map Khu rừng Santa" [_thread_blocked, id=169512, stack(0x0000005331310000,0x0000005331410000)]
+  0x0000005323b05960 JavaThread "Update map Phòng luyện tập" [_thread_blocked, id=153784, stack(0x0000005331410000,0x0000005331510000)]
+  0x0000005323b06300 JavaThread "Update map Lối vào Lâu Đài" [_thread_blocked, id=169684, stack(0x0000005331510000,0x0000005331610000)]
+  0x0000005323b04fc0 JavaThread "Update map Lâu đài Lychee" [_thread_blocked, id=169016, stack(0x0000005331610000,0x0000005331710000)]
+  0x0000005323b05490 JavaThread "Update map Lãnh địa Bang Hội" [_thread_blocked, id=166748, stack(0x0000005331710000,0x0000005331810000)]
+  0x0000005323b067d0 JavaThread "Update map Hành tinh Bill" [_thread_blocked, id=170036, stack(0x0000005331810000,0x0000005331910000)]
+  0x0000005323b03c80 JavaThread "Update map Hành tinh ngục tù" [_thread_blocked, id=123340, stack(0x0000005331910000,0x0000005331a10000)]
+  0x0000005323b04620 JavaThread "Update map Tây thánh địa" [_thread_blocked, id=169972, stack(0x0000005331a10000,0x0000005331b10000)]
+  0x0000005323b04150 JavaThread "Update map Đông thánh địa" [_thread_blocked, id=167476, stack(0x0000005331b10000,0x0000005331c10000)]
+  0x0000005323b05e30 JavaThread "Update map Bắc thánh địa" [_thread_blocked, id=170940, stack(0x0000005331c10000,0x0000005331d10000)]
+  0x0000005323833fd0 JavaThread "Update map Nam thánh Địa" [_thread_blocked, id=168364, stack(0x0000005331d10000,0x0000005331e10000)]
+  0x00000053238374c0 JavaThread "Update map Khu hang động" [_thread_blocked, id=168968, stack(0x0000005331e10000,0x0000005331f10000)]
+  0x0000005323836b20 JavaThread "Update map Bìa rừng nguyên thủy" [_thread_blocked, id=170368, stack(0x0000005331f10000,0x0000005332010000)]
+  0x0000005323834970 JavaThread "Update map Rừng nguyên thủy" [_thread_blocked, id=133392, stack(0x0000005332010000,0x0000005332110000)]
+  0x0000005323836ff0 JavaThread "Update map Làng Plant nguyên thủy" [_thread_blocked, id=7572, stack(0x0000005332110000,0x0000005332210000)]
+  0x0000005323836650 JavaThread "Update map Khu luyện tập Trái Đất" [_thread_blocked, id=7576, stack(0x0000005332210000,0x0000005332310000)]
+  0x0000005323834e40 JavaThread "Update map Khu luyện tập Trái Đất" [_thread_blocked, id=169700, stack(0x0000005332310000,0x0000005332410000)]
+  0x0000005323836180 JavaThread "Update map Khu luyện tập Namek" [_thread_blocked, id=1984, stack(0x0000005332410000,0x0000005332510000)]
+  0x0000005323837990 JavaThread "Update map Khu luyện tập Namek" [_thread_blocked, id=169760, stack(0x0000005332510000,0x0000005332610000)]
+  0x00000053238344a0 JavaThread "Update map Khu luyện tập Xayda" [_thread_blocked, id=169968, stack(0x0000005332610000,0x0000005332710000)]
+  0x0000005323838cd0 JavaThread "Update map Khu luyện tập Xayda" [_thread_blocked, id=168924, stack(0x0000005332710000,0x0000005332810000)]
+  0x0000005323837e60 JavaThread "Update map Đảo SkyPiea" [_thread_blocked, id=169836, stack(0x0000005332810000,0x0000005332910000)]
+  0x0000005323838330 JavaThread "Update map Nam Đảo SkyPiea" [_thread_blocked, id=169988, stack(0x0000005332910000,0x0000005332a10000)]
+  0x0000005323838800 JavaThread "Update map Đảo BearPiea" [_thread_blocked, id=124172, stack(0x0000005332a10000,0x0000005332b10000)]
+  0x0000005323835310 JavaThread "Update map Đông Nam SkyPiea" [_thread_blocked, id=170852, stack(0x0000005332b10000,0x0000005332c10000)]
+  0x00000053238391a0 JavaThread "Update map Đấu trường SkyPiea" [_thread_blocked, id=168948, stack(0x0000005332c10000,0x0000005332d10000)]
+  0x00000053238357e0 JavaThread "Update map Đồi băng hủy diệt 1" [_thread_blocked, id=168580, stack(0x0000005332d10000,0x0000005332e10000)]
+  0x0000005323839670 JavaThread "Update map Đồi băng hủy diệt 2" [_thread_blocked, id=170820, stack(0x0000005332e10000,0x0000005332f10000)]
+  0x0000005323835cb0 JavaThread "Update map Vực thẳm hủy diệt" [_thread_blocked, id=168704, stack(0x0000005332f10000,0x0000005333010000)]
+  0x0000005323839b40 JavaThread "Update map Khu rừng hủy diệt' 1" [_thread_blocked, id=170032, stack(0x0000005333010000,0x0000005333110000)]
+  0x000000532383a9b0 JavaThread "Update map Khu rừng hủy diệt 2" [_thread_blocked, id=169656, stack(0x0000005333110000,0x0000005333210000)]
+  0x000000532383a010 JavaThread "Update map Hang động hủy diệt" [_thread_blocked, id=170984, stack(0x0000005333210000,0x0000005333310000)]
+  0x000000532383a4e0 JavaThread "Active line" [_thread_in_native, id=170356, stack(0x0000005333310000,0x0000005333410000)]
+  0x000000532383ae80 JavaThread "Thread-50" [_thread_in_native, id=167144, stack(0x0000005333410000,0x0000005333510000)]
+  0x000000532383b350 JavaThread "Thread DHVT" [_thread_blocked, id=170708, stack(0x0000005333510000,0x0000005333610000)]
+  0x000000532383b820 JavaThread "Thread CAD" [_thread_blocked, id=168252, stack(0x0000005333610000,0x0000005333710000)]
+  0x0000005323b863c0 JavaThread "Thread NRNM" [_thread_blocked, id=169248, stack(0x0000005333710000,0x0000005333810000)]
+  0x0000005323b83d40 JavaThread "Thread TOP" [_thread_blocked, id=7948, stack(0x0000005333810000,0x0000005333910000)]
+  0x0000005323b84210 JavaThread "Update dai hoi vo thuat" [_thread_blocked, id=43124, stack(0x0000005333910000,0x0000005333a10000)]
+  0x0000005323b87230 JavaThread "Thread-51" [_thread_blocked, id=170848, stack(0x0000005333a10000,0x0000005333b10000)]
+  0x0000005323b846e0 JavaThread "Update boss" [_thread_blocked, id=168148, stack(0x0000005334400000,0x0000005334500000)]
+  0x0000005323b85550 JavaThread "DestroyJavaVM" [_thread_blocked, id=169260, stack(0x00000053059e0000,0x0000005305ae0000)]
+  0x0000005323b84bb0 JavaThread "Thread-53" [_thread_blocked, id=169128, stack(0x0000005334500000,0x0000005334600000)]
+  0x0000005323b86d60 JavaThread "Thread-55" [_thread_in_native, id=166884, stack(0x0000005334600000,0x0000005334700000)]
+  0x0000005323b83870 JavaThread "Thread-54" [_thread_blocked, id=170564, stack(0x0000005334700000,0x0000005334800000)]
+
+Other Threads:
+  0x0000005307af5860 VMThread "VM Thread" [stack: 0x0000005322400000,0x0000005322500000] [id=169752]
+  0x0000005322f2d460 WatcherThread [stack: 0x00000053233e0000,0x00000053234e0000] [id=167492]
+  0x0000005307a9d1b0 GCTaskThread "GC Thread#0" [stack: 0x000000531f2d0000,0x000000531f3d0000] [id=169904]
+  0x0000005323225590 GCTaskThread "GC Thread#1" [stack: 0x0000005323ee0000,0x0000005323fe0000] [id=167588]
+  0x0000005307aa44d0 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000531f3d0000,0x000000531f4d0000] [id=168936]
+  0x0000005307aa5ef0 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000531f4d0000,0x000000531f5d0000] [id=170076]
+  0x0000005307ad7370 ConcurrentGCThread "G1 Refine#0" [stack: 0x00000053217f0000,0x00000053218f0000] [id=170320]
+  0x00000053231e8fb0 ConcurrentGCThread "G1 Refine#1" [stack: 0x0000005323fe0000,0x00000053240e0000] [id=168296]
+  0x0000005307ad7d90 ConcurrentGCThread "G1 Service" [stack: 0x00000053218f0000,0x00000053219f0000] [id=167824]
+
+Threads with active compile tasks:
+C2 CompilerThread0    18585 1956       4       java.util.regex.Pattern::compile (500 bytes)
+
+VM state: not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap address: 0x00000000e0000000, size: 512 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000800000000-0x0000000800bd0000-0x0000000800bd0000), size 12386304, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Compressed class space mapped at: 0x0000000800c00000-0x0000000840c00000, reserved size: 1073741824
+Narrow klass base: 0x0000000800000000, Narrow klass shift: 0, Narrow klass range: 0x100000000
+
+GC Precious Log:
+ CPUs: 2 total, 2 available
+ Memory: 2047M
+ Large Page Support: Disabled
+ NUMA Support: Disabled
+ Compressed Oops: Enabled (32-bit)
+ Heap Region Size: 1M
+ Heap Min Capacity: 8M
+ Heap Initial Capacity: 32M
+ Heap Max Capacity: 512M
+ Pre-touch: Disabled
+ Parallel Workers: 2
+ Concurrent Workers: 1
+ Concurrent Refinement Workers: 2
+ Periodic GC: Disabled
+
+Heap:
+ garbage-first heap   total 34816K, used 20204K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 3 young (3072K), 1 survivors (1024K)
+ Metaspace       used 8414K, committed 8640K, reserved 1064960K
+  class space    used 716K, committed 832K, reserved 1048576K
+
+Heap Regions: E=young(eden), S=young(survivor), O=old, HS=humongous(starts), HC=humongous(continues), CS=collection set, F=free, OA=open archive, CA=closed archive, TAMS=top-at-mark-start (previous, next)
+|   0|0x00000000e0000000, 0x00000000e0100000, 0x00000000e0100000|100%| O|  |TAMS 0x00000000e0100000, 0x00000000e0000000| Untracked 
+|   1|0x00000000e0100000, 0x00000000e0200000, 0x00000000e0200000|100%| O|  |TAMS 0x00000000e0200000, 0x00000000e0100000| Untracked 
+|   2|0x00000000e0200000, 0x00000000e0300000, 0x00000000e0300000|100%| O|  |TAMS 0x00000000e0300000, 0x00000000e0200000| Untracked 
+|   3|0x00000000e0300000, 0x00000000e0400000, 0x00000000e0400000|100%| O|  |TAMS 0x00000000e0400000, 0x00000000e0300000| Untracked 
+|   4|0x00000000e0400000, 0x00000000e0500000, 0x00000000e0500000|100%| O|  |TAMS 0x00000000e0500000, 0x00000000e0400000| Untracked 
+|   5|0x00000000e0500000, 0x00000000e0600000, 0x00000000e0600000|100%| O|  |TAMS 0x00000000e0600000, 0x00000000e0500000| Untracked 
+|   6|0x00000000e0600000, 0x00000000e0700000, 0x00000000e0700000|100%| O|  |TAMS 0x00000000e0700000, 0x00000000e0600000| Untracked 
+|   7|0x00000000e0700000, 0x00000000e0800000, 0x00000000e0800000|100%| O|  |TAMS 0x00000000e0800000, 0x00000000e0700000| Untracked 
+|   8|0x00000000e0800000, 0x00000000e0900000, 0x00000000e0900000|100%| O|  |TAMS 0x00000000e0900000, 0x00000000e0800000| Untracked 
+|   9|0x00000000e0900000, 0x00000000e0a00000, 0x00000000e0a00000|100%| O|  |TAMS 0x00000000e0a00000, 0x00000000e0900000| Untracked 
+|  10|0x00000000e0a00000, 0x00000000e0b00000, 0x00000000e0b00000|100%| O|  |TAMS 0x00000000e0b00000, 0x00000000e0a00000| Untracked 
+|  11|0x00000000e0b00000, 0x00000000e0c00000, 0x00000000e0c00000|100%| O|  |TAMS 0x00000000e0c00000, 0x00000000e0b00000| Untracked 
+|  12|0x00000000e0c00000, 0x00000000e0d00000, 0x00000000e0d00000|100%| O|  |TAMS 0x00000000e0d00000, 0x00000000e0c00000| Untracked 
+|  13|0x00000000e0d00000, 0x00000000e0e00000, 0x00000000e0e00000|100%| O|  |TAMS 0x00000000e0e00000, 0x00000000e0d00000| Untracked 
+|  14|0x00000000e0e00000, 0x00000000e0f00000, 0x00000000e0f00000|100%| O|  |TAMS 0x00000000e0f00000, 0x00000000e0e00000| Untracked 
+|  15|0x00000000e0f00000, 0x00000000e1000000, 0x00000000e1000000|100%| O|  |TAMS 0x00000000e0f00000, 0x00000000e0f00000| Untracked 
+|  16|0x00000000e1000000, 0x00000000e1100000, 0x00000000e1100000|100%| O|  |TAMS 0x00000000e1000000, 0x00000000e1000000| Untracked 
+|  17|0x00000000e1100000, 0x00000000e1200000, 0x00000000e1200000|100%| O|  |TAMS 0x00000000e1100000, 0x00000000e1100000| Untracked 
+|  18|0x00000000e1200000, 0x00000000e1280000, 0x00000000e1300000| 50%| O|  |TAMS 0x00000000e1200000, 0x00000000e1200000| Untracked 
+|  19|0x00000000e1300000, 0x00000000e1300000, 0x00000000e1400000|  0%| F|  |TAMS 0x00000000e1300000, 0x00000000e1300000| Untracked 
+|  20|0x00000000e1400000, 0x00000000e1400000, 0x00000000e1500000|  0%| F|  |TAMS 0x00000000e1400000, 0x00000000e1400000| Untracked 
+|  21|0x00000000e1500000, 0x00000000e1500000, 0x00000000e1600000|  0%| F|  |TAMS 0x00000000e1500000, 0x00000000e1500000| Untracked 
+|  22|0x00000000e1600000, 0x00000000e1600000, 0x00000000e1700000|  0%| F|  |TAMS 0x00000000e1600000, 0x00000000e1600000| Untracked 
+|  23|0x00000000e1700000, 0x00000000e1700000, 0x00000000e1800000|  0%| F|  |TAMS 0x00000000e1700000, 0x00000000e1700000| Untracked 
+|  24|0x00000000e1800000, 0x00000000e1800000, 0x00000000e1900000|  0%| F|  |TAMS 0x00000000e1800000, 0x00000000e1800000| Untracked 
+|  25|0x00000000e1900000, 0x00000000e1900000, 0x00000000e1a00000|  0%| F|  |TAMS 0x00000000e1900000, 0x00000000e1900000| Untracked 
+|  26|0x00000000e1a00000, 0x00000000e1a00000, 0x00000000e1b00000|  0%| F|  |TAMS 0x00000000e1a00000, 0x00000000e1a00000| Untracked 
+|  27|0x00000000e1b00000, 0x00000000e1b00000, 0x00000000e1c00000|  0%| F|  |TAMS 0x00000000e1b00000, 0x00000000e1b00000| Untracked 
+|  28|0x00000000e1c00000, 0x00000000e1c00000, 0x00000000e1d00000|  0%| F|  |TAMS 0x00000000e1c00000, 0x00000000e1c00000| Untracked 
+|  29|0x00000000e1d00000, 0x00000000e1d3b120, 0x00000000e1e00000| 23%| S|CS|TAMS 0x00000000e1d00000, 0x00000000e1d00000| Complete 
+|  30|0x00000000e1e00000, 0x00000000e1e00000, 0x00000000e1f00000|  0%| F|  |TAMS 0x00000000e1e00000, 0x00000000e1e00000| Untracked 
+|  31|0x00000000e1f00000, 0x00000000e1f00000, 0x00000000e2000000|  0%| F|  |TAMS 0x00000000e1f00000, 0x00000000e1f00000| Untracked 
+|  32|0x00000000e2000000, 0x00000000e206f810, 0x00000000e2100000| 43%| E|  |TAMS 0x00000000e2000000, 0x00000000e2000000| Complete 
+|  33|0x00000000e2100000, 0x00000000e2200000, 0x00000000e2200000|100%| E|CS|TAMS 0x00000000e2100000, 0x00000000e2100000| Complete 
+
+Card table byte_map: [0x0000005307730000,0x0000005307830000] _byte_map_base: 0x0000005307030000
+
+Marking Bits (Prev, Next): (CMBitMap*) 0x0000005307a9e810, (CMBitMap*) 0x0000005307a9e7d0
+ Prev Bits: [0x000000531ead0000, 0x000000531f2d0000)
+ Next Bits: [0x000000531e2d0000, 0x000000531ead0000)
+
+Polling page: 0x00000053058d0000
+
+Metaspace:
+
+Usage:
+  Non-class:      7.52 MB used.
+      Class:    716.35 KB used.
+       Both:      8.22 MB used.
+
+Virtual space:
+  Non-class space:       16.00 MB reserved,       7.62 MB ( 48%) committed,  2 nodes.
+      Class space:        1.00 GB reserved,     832.00 KB ( <1%) committed,  1 nodes.
+             Both:        1.02 GB reserved,       8.44 MB ( <1%) committed. 
+
+Chunk freelists:
+   Non-Class:  3.28 MB
+       Class:  3.05 MB
+        Both:  6.33 MB
+
+MaxMetaspaceSize: unlimited
+CompressedClassSpaceSize: 1.00 GB
+Initial GC threshold: 21.00 MB
+Current GC threshold: 21.00 MB
+CDS: on
+MetaspaceReclaimPolicy: balanced
+ - commit_granule_bytes: 65536.
+ - commit_granule_words: 8192.
+ - virtual_space_node_default_size: 1048576.
+ - enlarge_chunks_in_place: 1.
+ - new_chunks_are_fully_committed: 0.
+ - uncommit_free_chunks: 1.
+ - use_allocation_guard: 0.
+ - handle_deallocations: 1.
+
+
+Internal statistics:
+
+num_allocs_failed_limit: 0.
+num_arena_births: 38.
+num_arena_deaths: 0.
+num_vsnodes_births: 3.
+num_vsnodes_deaths: 0.
+num_space_committed: 135.
+num_space_uncommitted: 0.
+num_chunks_returned_to_freelist: 0.
+num_chunks_taken_from_freelist: 282.
+num_chunk_merges: 0.
+num_chunk_splits: 183.
+num_chunks_enlarged: 137.
+num_purges: 0.
+num_inconsistent_stats: 0.
+
+CodeHeap 'non-profiled nmethods': size=120064Kb used=1005Kb max_used=1005Kb free=119058Kb
+ bounds [0x0000005316d90000, 0x0000005317000000, 0x000000531e2d0000]
+CodeHeap 'profiled nmethods': size=120000Kb used=4638Kb max_used=4638Kb free=115361Kb
+ bounds [0x000000530f2d0000, 0x000000530f760000, 0x0000005316800000]
+CodeHeap 'non-nmethods': size=5696Kb used=1210Kb max_used=1239Kb free=4485Kb
+ bounds [0x0000005316800000, 0x0000005316a70000, 0x0000005316d90000]
+ total_blobs=2478 nmethods=1957 adapters=434
+ compilation: enabled
+              stopped_count=0, restarted_count=0
+ full_count=0
+
+Compilation events (20 events):
+Event: 18.167 Thread 0x0000005307b11c30 nmethod 1948 0x0000005316e86b10 code [0x0000005316e86e00, 0x0000005316e89750]
+Event: 18.181 Thread 0x0000005307b17350 1949       3       java.lang.Short::<init> (10 bytes)
+Event: 18.182 Thread 0x0000005307b17350 nmethod 1949 0x000000530f750d90 code [0x000000530f750f40, 0x000000530f751118]
+Event: 18.188 Thread 0x0000005307b17350 1950       3       java.lang.Integer::toString (55 bytes)
+Event: 18.188 Thread 0x0000005307b17350 nmethod 1950 0x000000530f751210 code [0x000000530f7513e0, 0x000000530f751778]
+Event: 18.190 Thread 0x0000005307b11c30 1951       4       org.json.simple.JSONArray::<init> (5 bytes)
+Event: 18.192 Thread 0x0000005307b11c30 nmethod 1951 0x0000005316e8ae90 code [0x0000005316e8b000, 0x0000005316e8b138]
+Event: 18.192 Thread 0x0000005307b17350 1952       3       java.lang.Integer::toString (8 bytes)
+Event: 18.192 Thread 0x0000005307b17350 nmethod 1952 0x000000530f751910 code [0x000000530f751aa0, 0x000000530f751be8]
+Event: 18.204 Thread 0x0000005307b17350 1953       3       com.mysql.jdbc.Field::isNativeDateTimeType (51 bytes)
+Event: 18.204 Thread 0x0000005307b17350 nmethod 1953 0x000000530f751c90 code [0x000000530f751e20, 0x000000530f752078]
+Event: 18.285 Thread 0x0000005307b17350 1954       3       java.lang.StringUTF16::getChars (139 bytes)
+Event: 18.285 Thread 0x0000005307b17350 nmethod 1954 0x000000530f752110 code [0x000000530f7522c0, 0x000000530f752678]
+Event: 18.374 Thread 0x0000005307b17350 1955       1       com.girlkun.network.session.Session::sentKey (5 bytes)
+Event: 18.374 Thread 0x0000005307b17350 nmethod 1955 0x0000005316e8b190 code [0x0000005316e8b320, 0x0000005316e8b3f8]
+Event: 18.376 Thread 0x0000005307b11c30 1956       4       java.util.regex.Pattern::compile (500 bytes)
+Event: 18.377 Thread 0x0000005307b17350 1957       3       com.girlkun.models.boss.Boss::chatM (132 bytes)
+Event: 18.378 Thread 0x0000005307b17350 nmethod 1957 0x000000530f752810 code [0x000000530f752ae0, 0x000000530f753858]
+Event: 18.378 Thread 0x0000005307b17350 1958   !   3       com.girlkun.models.boss.Boss::attack (276 bytes)
+Event: 18.381 Thread 0x0000005307b17350 nmethod 1958 0x000000530f753d90 code [0x000000530f754200, 0x000000530f756bb8]
+
+GC Heap History (20 events):
+Event: 2.314 GC heap before
+{Heap before GC invocations=0 (full 0):
+ garbage-first heap   total 32768K, used 5120K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 6 young (6144K), 0 survivors (0K)
+ Metaspace       used 2946K, committed 3072K, reserved 1056768K
+  class space    used 259K, committed 320K, reserved 1048576K
+}
+Event: 2.326 GC heap after
+{Heap after GC invocations=1 (full 0):
+ garbage-first heap   total 32768K, used 2375K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 1 young (1024K), 1 survivors (1024K)
+ Metaspace       used 2946K, committed 3072K, reserved 1056768K
+  class space    used 259K, committed 320K, reserved 1048576K
+}
+Event: 3.422 GC heap before
+{Heap before GC invocations=1 (full 0):
+ garbage-first heap   total 32768K, used 4423K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 4 young (4096K), 1 survivors (1024K)
+ Metaspace       used 5057K, committed 5184K, reserved 1056768K
+  class space    used 459K, committed 512K, reserved 1048576K
+}
+Event: 3.455 GC heap after
+{Heap after GC invocations=2 (full 0):
+ garbage-first heap   total 32768K, used 3361K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 1 young (1024K), 1 survivors (1024K)
+ Metaspace       used 5057K, committed 5184K, reserved 1056768K
+  class space    used 459K, committed 512K, reserved 1048576K
+}
+Event: 4.417 GC heap before
+{Heap before GC invocations=2 (full 0):
+ garbage-first heap   total 32768K, used 10529K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 8 young (8192K), 1 survivors (1024K)
+ Metaspace       used 5514K, committed 5696K, reserved 1056768K
+  class space    used 484K, committed 576K, reserved 1048576K
+}
+Event: 4.423 GC heap after
+{Heap after GC invocations=3 (full 0):
+ garbage-first heap   total 32768K, used 4036K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 1 young (1024K), 1 survivors (1024K)
+ Metaspace       used 5514K, committed 5696K, reserved 1056768K
+  class space    used 484K, committed 576K, reserved 1048576K
+}
+Event: 4.522 GC heap before
+{Heap before GC invocations=3 (full 0):
+ garbage-first heap   total 32768K, used 13252K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 10 young (10240K), 1 survivors (1024K)
+ Metaspace       used 5545K, committed 5760K, reserved 1056768K
+  class space    used 484K, committed 576K, reserved 1048576K
+}
+Event: 4.527 GC heap after
+{Heap after GC invocations=4 (full 0):
+ garbage-first heap   total 32768K, used 4212K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 1 young (1024K), 1 survivors (1024K)
+ Metaspace       used 5545K, committed 5760K, reserved 1056768K
+  class space    used 484K, committed 576K, reserved 1048576K
+}
+Event: 5.995 GC heap before
+{Heap before GC invocations=4 (full 0):
+ garbage-first heap   total 32768K, used 21620K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 18 young (18432K), 1 survivors (1024K)
+ Metaspace       used 5689K, committed 5824K, reserved 1056768K
+  class space    used 493K, committed 576K, reserved 1048576K
+}
+Event: 6.020 GC heap after
+{Heap after GC invocations=5 (full 0):
+ garbage-first heap   total 32768K, used 7672K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 3 young (3072K), 3 survivors (3072K)
+ Metaspace       used 5689K, committed 5824K, reserved 1056768K
+  class space    used 493K, committed 576K, reserved 1048576K
+}
+Event: 9.209 GC heap before
+{Heap before GC invocations=5 (full 0):
+ garbage-first heap   total 32768K, used 20984K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 16 young (16384K), 3 survivors (3072K)
+ Metaspace       used 6265K, committed 6400K, reserved 1056768K
+  class space    used 517K, committed 576K, reserved 1048576K
+}
+Event: 9.220 GC heap after
+{Heap after GC invocations=6 (full 0):
+ garbage-first heap   total 32768K, used 10333K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 2 young (2048K), 2 survivors (2048K)
+ Metaspace       used 6265K, committed 6400K, reserved 1056768K
+  class space    used 517K, committed 576K, reserved 1048576K
+}
+Event: 10.417 GC heap before
+{Heap before GC invocations=6 (full 0):
+ garbage-first heap   total 32768K, used 19549K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 11 young (11264K), 2 survivors (2048K)
+ Metaspace       used 7027K, committed 7232K, reserved 1056768K
+  class space    used 586K, committed 704K, reserved 1048576K
+}
+Event: 10.424 GC heap after
+{Heap after GC invocations=7 (full 0):
+ garbage-first heap   total 32768K, used 11546K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 1 young (1024K), 1 survivors (1024K)
+ Metaspace       used 7027K, committed 7232K, reserved 1056768K
+  class space    used 586K, committed 704K, reserved 1048576K
+}
+Event: 11.605 GC heap before
+{Heap before GC invocations=7 (full 0):
+ garbage-first heap   total 32768K, used 20762K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 10 young (10240K), 1 survivors (1024K)
+ Metaspace       used 7089K, committed 7296K, reserved 1056768K
+  class space    used 588K, committed 704K, reserved 1048576K
+}
+Event: 11.615 GC heap after
+{Heap after GC invocations=8 (full 0):
+ garbage-first heap   total 32768K, used 17408K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 2 young (2048K), 2 survivors (2048K)
+ Metaspace       used 7089K, committed 7296K, reserved 1056768K
+  class space    used 588K, committed 704K, reserved 1048576K
+}
+Event: 13.593 GC heap before
+{Heap before GC invocations=8 (full 0):
+ garbage-first heap   total 32768K, used 21504K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 6 young (6144K), 2 survivors (2048K)
+ Metaspace       used 8026K, committed 8192K, reserved 1064960K
+  class space    used 691K, committed 768K, reserved 1048576K
+}
+Event: 13.603 GC heap after
+{Heap after GC invocations=9 (full 0):
+ garbage-first heap   total 32768K, used 18841K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 1 young (1024K), 1 survivors (1024K)
+ Metaspace       used 8026K, committed 8192K, reserved 1064960K
+  class space    used 691K, committed 768K, reserved 1048576K
+}
+Event: 17.873 GC heap before
+{Heap before GC invocations=10 (full 0):
+ garbage-first heap   total 34816K, used 21913K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 5 young (5120K), 1 survivors (1024K)
+ Metaspace       used 8283K, committed 8384K, reserved 1064960K
+  class space    used 706K, committed 768K, reserved 1048576K
+}
+Event: 17.877 GC heap after
+{Heap after GC invocations=11 (full 0):
+ garbage-first heap   total 34816K, used 19180K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 1 young (1024K), 1 survivors (1024K)
+ Metaspace       used 8283K, committed 8384K, reserved 1064960K
+  class space    used 706K, committed 768K, reserved 1048576K
+}
+
+Deoptimization events (20 events):
+Event: 17.831 Thread 0x0000005323b86d60 Uncommon trap: trap_request=0xffffff45 fr.pc=0x0000005316e7cb60 relative=0x0000000000000a80
+Event: 17.831 Thread 0x0000005323b86d60 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000005316e7cb60 method=sun.util.calendar.CalendarDate.setMillis(I)Lsun/util/calendar/CalendarDate; @ 5 c2
+Event: 17.831 Thread 0x0000005323b86d60 DEOPT PACKING pc=0x0000005316e7cb60 sp=0x00000053346feb40
+Event: 17.831 Thread 0x0000005323b86d60 DEOPT UNPACKING pc=0x00000053168523a3 sp=0x00000053346fe7f8 mode 2
+Event: 17.913 Thread 0x0000005323b86d60 Uncommon trap: trap_request=0xffffff45 fr.pc=0x0000005316e3ee00 relative=0x0000000000002560
+Event: 17.913 Thread 0x0000005323b86d60 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000005316e3ee00 method=java.lang.String.split(Ljava/lang/String;I)[Ljava/lang/String; @ 42 c2
+Event: 17.913 Thread 0x0000005323b86d60 DEOPT PACKING pc=0x0000005316e3ee00 sp=0x00000053346fee00
+Event: 17.913 Thread 0x0000005323b86d60 DEOPT UNPACKING pc=0x00000053168523a3 sp=0x00000053346fedc8 mode 2
+Event: 17.951 Thread 0x0000005323b86d60 Uncommon trap: trap_request=0xffffffc6 fr.pc=0x0000005316e36ff8 relative=0x0000000000000c58
+Event: 17.951 Thread 0x0000005323b86d60 Uncommon trap: reason=bimorphic_or_optimized_type_check action=maybe_recompile pc=0x0000005316e36ff8 method=java.io.DataInputStream.readUnsignedShort()I @ 4 c2
+Event: 17.951 Thread 0x0000005323b86d60 DEOPT PACKING pc=0x0000005316e36ff8 sp=0x00000053346fef50
+Event: 17.951 Thread 0x0000005323b86d60 DEOPT UNPACKING pc=0x00000053168523a3 sp=0x00000053346fee78 mode 2
+Event: 18.204 Thread 0x0000005323b84210 Uncommon trap: trap_request=0xffffff45 fr.pc=0x0000005316e2916c relative=0x000000000000006c
+Event: 18.204 Thread 0x0000005323b84210 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000005316e2916c method=com.mysql.jdbc.Buffer.ensureCapacity(I)V @ 10 c2
+Event: 18.204 Thread 0x0000005323b84210 DEOPT PACKING pc=0x0000005316e2916c sp=0x0000005333a0e7b0
+Event: 18.204 Thread 0x0000005323b84210 DEOPT UNPACKING pc=0x00000053168523a3 sp=0x0000005333a0e738 mode 2
+Event: 18.282 Thread 0x00000053246baa20 Uncommon trap: trap_request=0xffffffde fr.pc=0x0000005316e6b46c relative=0x00000000000006cc
+Event: 18.283 Thread 0x00000053246baa20 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000005316e6b46c method=com.girlkun.models.map.Zone.udPlayer()V @ 26 c2
+Event: 18.283 Thread 0x00000053246baa20 DEOPT PACKING pc=0x0000005316e6b46c sp=0x00000053242df280
+Event: 18.283 Thread 0x00000053246baa20 DEOPT UNPACKING pc=0x00000053168523a3 sp=0x00000053242df200 mode 2
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (20 events):
+Event: 13.808 Thread 0x0000005323b846e0 Implicit null exception at 0x000000530f6eccac to 0x000000530f6ed335
+Event: 13.808 Thread 0x0000005323b846e0 Exception <a 'java/lang/NullPointerException'{0x00000000e1f7e3b8}> (0x00000000e1f7e3b8) 
+thrown [s\open\src\hotspot\share\runtime\sharedRuntime.cpp, line 628]
+Event: 13.808 Thread 0x0000005323b846e0 Implicit null exception at 0x000000530f6ecea4 to 0x000000530f6ed348
+Event: 13.808 Thread 0x0000005323b846e0 Exception <a 'java/lang/NullPointerException'{0x00000000e1f7e6b0}> (0x00000000e1f7e6b0) 
+thrown [s\open\src\hotspot\share\runtime\sharedRuntime.cpp, line 628]
+Event: 13.823 Thread 0x0000005323b846e0 Implicit null exception at 0x000000530f6eccac to 0x000000530f6ed335
+Event: 13.823 Thread 0x0000005323b846e0 Exception <a 'java/lang/NullPointerException'{0x00000000e1f8a0b0}> (0x00000000e1f8a0b0) 
+thrown [s\open\src\hotspot\share\runtime\sharedRuntime.cpp, line 628]
+Event: 13.870 Thread 0x0000005323b846e0 Implicit null exception at 0x000000530f6eccac to 0x000000530f6ed335
+Event: 13.870 Thread 0x0000005323b846e0 Exception <a 'java/lang/NullPointerException'{0x00000000e1f8c050}> (0x00000000e1f8c050) 
+thrown [s\open\src\hotspot\share\runtime\sharedRuntime.cpp, line 628]
+Event: 13.897 Thread 0x0000005323b846e0 Exception <a 'java/lang/IllegalArgumentException'{0x00000000e1fc51c0}: timeout value is negative> (0x00000000e1fc51c0) 
+thrown [s\open\src\hotspot\share\prims\jvm.cpp, line 3040]
+Event: 17.695 Thread 0x0000005323b86d60 Exception <a 'java/lang/ClassCastException'{0x00000000e1e3a848}: class java.lang.Boolean cannot be cast to class java.lang.Integer (java.lang.Boolean and java.lang.Integer are in module java.base of loader 'bootstrap')> (0x00000000e1e3a848) 
+thrown [s\open\src\hotspot\share\interpreter\interpreterRuntime.cpp, line 444]
+Event: 17.796 Thread 0x0000005323b86d60 Exception <a 'java/lang/ClassCastException'{0x00000000e1e66498}: class java.lang.Boolean cannot be cast to class java.lang.Integer (java.lang.Boolean and java.lang.Integer are in module java.base of loader 'bootstrap')> (0x00000000e1e66498) 
+thrown [s\open\src\hotspot\share\interpreter\interpreterRuntime.cpp, line 444]
+Event: 17.829 Thread 0x0000005323b86d60 Implicit null exception at 0x000000530f6eccac to 0x000000530f6ed335
+Event: 17.829 Thread 0x0000005323b86d60 Exception <a 'java/lang/NullPointerException'{0x00000000e1eebff8}> (0x00000000e1eebff8) 
+thrown [s\open\src\hotspot\share\runtime\sharedRuntime.cpp, line 628]
+Event: 17.829 Thread 0x0000005323b86d60 Implicit null exception at 0x000000530f6eccac to 0x000000530f6ed335
+Event: 17.829 Thread 0x0000005323b86d60 Exception <a 'java/lang/NullPointerException'{0x00000000e1eee600}> (0x00000000e1eee600) 
+thrown [s\open\src\hotspot\share\runtime\sharedRuntime.cpp, line 628]
+Event: 17.878 Thread 0x0000005323b86d60 Exception <a 'java/io/FileNotFoundException'{0x00000000e2104080}> (0x00000000e2104080) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 516]
+Event: 17.912 Thread 0x0000005323b86d60 Exception <a 'java/io/FileNotFoundException'{0x00000000e211cbc0}> (0x00000000e211cbc0) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 516]
+Event: 17.922 Thread 0x0000005323b86d60 Exception <a 'java/lang/NoSuchMethodError'{0x00000000e2129f10}: 'void java.lang.invoke.DirectMethodHandle$Holder.invokeStatic(java.lang.Object, java.lang.Object, java.lang.Object)'> (0x00000000e2129f10) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 759]
+Event: 18.209 Thread 0x0000005323b86d60 Exception <a 'java/io/FileNotFoundException'{0x00000000e21e2ca0}> (0x00000000e21e2ca0) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 516]
+Event: 18.209 Thread 0x0000005323b86d60 Exception <a 'java/io/FileNotFoundException'{0x00000000e21e3438}> (0x00000000e21e3438) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 516]
+
+VM Operations (20 events):
+Event: 11.605 Executing VM operation: G1CollectForAllocation
+Event: 11.616 Executing VM operation: G1CollectForAllocation done
+Event: 11.973 Executing VM operation: HandshakeAllThreads
+Event: 11.973 Executing VM operation: HandshakeAllThreads done
+Event: 12.973 Executing VM operation: Cleanup
+Event: 12.973 Executing VM operation: Cleanup done
+Event: 13.593 Executing VM operation: G1CollectForAllocation
+Event: 13.607 Executing VM operation: G1CollectForAllocation done
+Event: 13.658 Executing VM operation: G1Concurrent
+Event: 13.672 Executing VM operation: G1Concurrent done
+Event: 13.687 Executing VM operation: G1Concurrent
+Event: 13.691 Executing VM operation: G1Concurrent done
+Event: 14.693 Executing VM operation: Cleanup
+Event: 14.693 Executing VM operation: Cleanup done
+Event: 17.696 Executing VM operation: Cleanup
+Event: 17.753 Executing VM operation: Cleanup done
+Event: 17.873 Executing VM operation: G1CollectForAllocation
+Event: 17.877 Executing VM operation: G1CollectForAllocation done
+Event: 17.913 Executing VM operation: HandshakeAllThreads
+Event: 17.913 Executing VM operation: HandshakeAllThreads done
+
+Events (20 events):
+Event: 13.306 loading class java/text/CalendarBuilder done
+Event: 13.318 loading class java/util/ConcurrentModificationException
+Event: 13.323 loading class java/util/ConcurrentModificationException done
+Event: 13.403 Thread 0x0000005307a70ea0 Thread exited: 0x0000005307a70ea0
+Event: 13.404 Thread 0x0000005323b85550 Thread added: 0x0000005323b85550
+Event: 13.411 Thread 0x0000005323b84bb0 Thread added: 0x0000005323b84bb0
+Event: 16.839 Thread 0x0000005323b86d60 Thread added: 0x0000005323b86d60
+Event: 16.851 Thread 0x0000005323b83870 Thread added: 0x0000005323b83870
+Event: 17.888 loading class sun/util/resources/LocaleData$CommonResourceBundleProvider
+Event: 17.889 loading class sun/util/resources/LocaleData$LocaleDataResourceBundleProvider
+Event: 17.889 loading class java/util/spi/ResourceBundleProvider
+Event: 17.899 loading class java/util/spi/ResourceBundleProvider done
+Event: 17.899 loading class sun/util/resources/LocaleData$LocaleDataResourceBundleProvider done
+Event: 17.899 loading class sun/util/resources/LocaleData$CommonResourceBundleProvider done
+Event: 17.900 loading class sun/util/resources/Bundles$2
+Event: 17.901 loading class sun/util/resources/Bundles$2 done
+Event: 17.906 loading class java/text/DigitList$1
+Event: 17.907 loading class java/text/DigitList$1 done
+Event: 18.170 loading class java/lang/Short$ShortCache
+Event: 18.181 loading class java/lang/Short$ShortCache done
+
+
+Dynamic libraries:
+0x00007ff660860000 - 0x00007ff660870000 	C:\Program Files\Java\jdk-17\bin\java.exe
+0x00007ff962a10000 - 0x00007ff962bbd000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ff960090000 - 0x00007ff9601cf000 	C:\Windows\system32\KERNEL32.DLL
+0x00007ff95fbe0000 - 0x00007ff95fcf5000 	C:\Windows\system32\KERNELBASE.dll
+0x00007ff927570000 - 0x00007ff927588000 	C:\Program Files\Java\jdk-17\bin\jli.dll
+0x00007ff958dd0000 - 0x00007ff958deb000 	C:\Program Files\Java\jdk-17\bin\VCRUNTIME140.dll
+0x00007ff958db0000 - 0x00007ff958db4000 	C:\Program Files\Java\jdk-17\bin\api-ms-win-crt-stdio-l1-1-0.dll
+0x00007ff958d70000 - 0x00007ff958d74000 	C:\Program Files\Java\jdk-17\bin\api-ms-win-crt-runtime-l1-1-0.dll
+0x00007ff958d50000 - 0x00007ff958d53000 	C:\Program Files\Java\jdk-17\bin\api-ms-win-crt-environment-l1-1-0.dll
+0x00007ff958d90000 - 0x00007ff958d95000 	C:\Program Files\Java\jdk-17\bin\api-ms-win-crt-math-l1-1-0.dll
+0x00007ff93dd10000 - 0x00007ff93dd13000 	C:\Program Files\Java\jdk-17\bin\api-ms-win-crt-locale-l1-1-0.dll
+0x00007ff94b810000 - 0x00007ff94b813000 	C:\Program Files\Java\jdk-17\bin\api-ms-win-crt-heap-l1-1-0.dll
+0x00007ff960c20000 - 0x00007ff960ccd000 	C:\Windows\system32\ADVAPI32.dll
+0x00007ff95d850000 - 0x00007ff95dacb000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.19394_none_62486577ecb635cf\COMCTL32.dll
+0x00007ff960510000 - 0x00007ff960687000 	C:\Windows\system32\USER32.dll
+0x00007ff956a90000 - 0x00007ff956a9a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ff950c80000 - 0x00007ff950c83000 	C:\Program Files\Java\jdk-17\bin\api-ms-win-crt-filesystem-l1-1-0.dll
+0x00007ff958da0000 - 0x00007ff958da4000 	C:\Program Files\Java\jdk-17\bin\api-ms-win-crt-string-l1-1-0.dll
+0x00007ff958d60000 - 0x00007ff958d64000 	C:\Program Files\Java\jdk-17\bin\api-ms-win-crt-convert-l1-1-0.dll
+0x00007ff9608e0000 - 0x00007ff96098a000 	C:\Windows\system32\msvcrt.dll
+0x00007ff960230000 - 0x00007ff96028b000 	C:\Windows\SYSTEM32\sechost.dll
+0x00007ff9609f0000 - 0x00007ff960b26000 	C:\Windows\system32\RPCRT4.dll
+0x00007ff960cd0000 - 0x00007ff960e1e000 	C:\Windows\system32\GDI32.dll
+0x00007ff942c40000 - 0x00007ff942d40000 	C:\Program Files\Java\jdk-17\bin\ucrtbase.DLL
+0x00007ff95fd00000 - 0x00007ff95fd2e000 	C:\Windows\system32\SspiCli.dll
+0x00007ff9612c0000 - 0x00007ff9612f6000 	C:\Windows\system32\IMM32.DLL
+0x00007ff960ee0000 - 0x00007ff961031000 	C:\Windows\system32\MSCTF.dll
+0x00007ff958dc0000 - 0x00007ff958dcc000 	C:\Program Files\Java\jdk-17\bin\vcruntime140_1.dll
+0x00007ff93dd20000 - 0x00007ff93ddae000 	C:\Program Files\Java\jdk-17\bin\msvcp140.dll
+0x00007ff94b840000 - 0x00007ff94b843000 	C:\Program Files\Java\jdk-17\bin\api-ms-win-crt-time-l1-1-0.dll
+0x00007ff958d80000 - 0x00007ff958d83000 	C:\Program Files\Java\jdk-17\bin\api-ms-win-crt-utility-l1-1-0.dll
+0x00007ff941a40000 - 0x00007ff942617000 	C:\Program Files\Java\jdk-17\bin\server\jvm.dll
+0x00007ff958fb0000 - 0x00007ff958fb9000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ff959050000 - 0x00007ff959072000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ff960b30000 - 0x00007ff960b37000 	C:\Windows\system32\PSAPI.DLL
+0x00007ff9601d0000 - 0x00007ff96022a000 	C:\Windows\system32\WS2_32.dll
+0x00007ff959000000 - 0x00007ff95902a000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x00007ff960500000 - 0x00007ff960509000 	C:\Windows\system32\NSI.dll
+0x00007ff95ff90000 - 0x00007ff95ffdf000 	C:\Windows\SYSTEM32\cfgmgr32.dll
+0x00007ff95e960000 - 0x00007ff95e988000 	C:\Windows\SYSTEM32\DEVOBJ.dll
+0x00007ff94b750000 - 0x00007ff94b75a000 	C:\Program Files\Java\jdk-17\bin\jimage.dll
+0x00007ff9590f0000 - 0x00007ff959279000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ff94a300000 - 0x00007ff94a325000 	C:\Program Files\Java\jdk-17\bin\java.dll
+0x00007ff941960000 - 0x00007ff941a37000 	C:\Program Files\Java\jdk-17\bin\jsvml.dll
+0x00007ff961300000 - 0x00007ff96282b000 	C:\Windows\system32\SHELL32.dll
+0x00007ff961040000 - 0x00007ff961252000 	C:\Windows\SYSTEM32\combase.dll
+0x00007ff961260000 - 0x00007ff9612b4000 	C:\Windows\system32\SHLWAPI.dll
+0x00007ff95e0b0000 - 0x00007ff95e162000 	C:\Windows\SYSTEM32\SHCORE.dll
+0x00007ff95fab0000 - 0x00007ff95fac5000 	C:\Windows\SYSTEM32\profapi.dll
+0x00007ff9499a0000 - 0x00007ff9499b9000 	C:\Program Files\Java\jdk-17\bin\net.dll
+0x00007ff959300000 - 0x00007ff9593c9000 	C:\Windows\SYSTEM32\WINHTTP.dll
+0x00007ff95f2f0000 - 0x00007ff95f349000 	C:\Windows\system32\mswsock.dll
+0x00007ff948b40000 - 0x00007ff948b56000 	C:\Program Files\Java\jdk-17\bin\nio.dll
+0x00007ff948570000 - 0x00007ff948588000 	C:\Program Files\Java\jdk-17\bin\zip.dll
+0x00007ff93ddb0000 - 0x00007ff93ddc0000 	C:\Program Files\Java\jdk-17\bin\verify.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-17\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.19394_none_62486577ecb635cf;C:\Program Files\Java\jdk-17\bin\server
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 
+java_command: com.girlkun.server.ServerManager
+java_class_path (initial): C:\Users\Administrator\Desktop\Heroes Z Main\lib\GirlkunNetwork.jar;C:\Users\Administrator\Desktop\Heroes Z Main\lib\apache-commons-lang.jar;C:\Users\Administrator\Desktop\Heroes Z Main\lib\girlkundb-1.0.0.jar;C:\Users\Administrator\Desktop\Heroes Z Main\lib\json_simple-1.1.jar;C:\Users\Administrator\Desktop\Heroes Z Main\lib\lombok.jar;C:\Users\Administrator\Desktop\Heroes Z Main\lib\okhttp-3.0.0.jar;C:\Users\Administrator\Desktop\Heroes Z Main\lib\okio-1.6.0.jar;C:\Users\Administrator\Desktop\Heroes Z Main\build\classes
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 2                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 2                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 33554432                                  {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 536870912                                 {product} {ergonomic}
+   size_t MaxNewSize                               = 321912832                                 {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5826188                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122916026                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122916026                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 536870912                              {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Roaming\npm
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows Server 2012 R2 , 64 bit Build 9600 (6.3.9600.20237)
+OS uptime: 1 days 16:23 hours
+KVM virtualization detected
+
+CPU: total 2 (initial active 2) (2 cores per cpu, 1 threads per core) family 6 model 58 stepping 9 microcode 0x1, cx8, cmov, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, tsc, avx, aes, erms, clmul, vzeroupper, clflush, hv
+
+Memory: 4k page, system-wide physical 2047M (28M free)
+TotalPageFile size 5119M (AvailPageFile size 4M)
+current process WorkingSet (physical memory assigned to process): 99M, peak: 99M
+current process commit charge ("private bytes"): 139M, peak: 140M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (17.0.6+9-LTS-190) for windows-amd64 JRE (17.0.6+9-LTS-190), built on Dec  6 2022 15:53:54 by "mach5one" with MS VC++ 17.1 (VS2022)
+
+END.
