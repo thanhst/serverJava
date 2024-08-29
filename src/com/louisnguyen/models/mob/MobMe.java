@@ -25,7 +25,7 @@ public final class MobMe extends Mob {
         this.point.hp = this.point.maxHp;
         this.zone = player.zone;
         if (this.player.setClothes.Kami == 5) {
-            this.point.dame = this.point.dame*5;
+            this.point.dame = this.point.dame*10;
         }
         else{
             this.timeSurvive = SkillUtil.getTimeSurviveMobMe(level);
