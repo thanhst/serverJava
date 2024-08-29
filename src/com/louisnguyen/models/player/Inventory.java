@@ -2,9 +2,9 @@ package com.louisnguyen.models.player;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.louisnguyen.models.item.Item;
 import com.louisnguyen.models.item.Item.ItemOption;
-import com.louisnguyen.services.GiftService;
 
 
 public class Inventory {
@@ -12,7 +12,7 @@ public class Inventory {
     public static final long LIMIT_GOLD = 50000000000L;
    //public static final int LIMIT_GOLD = 2000000000;
 
-    public static final int MAX_ITEMS_BAG = 50;
+    public static final int MAX_ITEMS_BAG = 100;
     public static final int MAX_ITEMS_BOX = 50;
 
 

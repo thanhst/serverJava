@@ -2,7 +2,6 @@ package com.louisnguyen.models.player;
 
 import com.louisnguyen.models.item.Item;
 
-
 public class SetClothes {
 
     private Player player;
@@ -13,24 +12,24 @@ public class SetClothes {
 
     public byte songoku;
     public byte thienXinHang;
-    public byte kirin;
+    public byte Angry_goku;
 
-    public byte ocTieu;
-    public byte pikkoroDaimao;
+    public byte Nail;
+    public byte Kami;
     public byte picolo;
 
     public byte kakarot;
-    public byte cadic;
-    public byte nappa;
+    public byte Cumber;
+    public byte Vegeta;
 
     public byte worldcup;
     public byte setDHD;
     public byte setspl;
-   public byte setthucan;
- public byte setts;
+    public byte setthucan;
+    public byte setts;
     public boolean godClothes;
     public int ctHaiTac = -1;
-       public int upthucan = -1;
+    public int upthucan = -1;
 
     public void setup() {
         setDefault();
@@ -65,52 +64,49 @@ public class SetClothes {
 
             }
         }
-        
-         this.player.setClothes.setthucan = 0;
-           for (int i = 0; i < 5; i++) {
-           Item item = this.player.inventory.itemsBody.get(i);
+
+        this.player.setClothes.setthucan = 0;
+        for (int i = 0; i < 5; i++) {
+            Item item = this.player.inventory.itemsBody.get(i);
             if (item.isNotNullItem()) {
-              if (item.template.id >= 555 && item.template.id <= 567) {
-                 
-                        player.setClothes.setthucan++;
+                if (item.template.id >= 555 && item.template.id <= 567) {
+                    player.setClothes.setthucan++;
                 }
-            }  
-           }
-            this.player.setClothes.setts = 0;
-           for (int i = 0; i < 5; i++) {
-           Item item = this.player.inventory.itemsBody.get(i);
+            }
+        }
+        this.player.setClothes.setts = 0;
+        for (int i = 0; i < 5; i++) {
+            Item item = this.player.inventory.itemsBody.get(i);
             if (item.isNotNullItem()) {
-              if (item.template.id > 662 || item.template.id < 650) {
-                 
-                        player.setClothes.setts++;
+                if (item.template.id > 662 || item.template.id < 650) {
+
+                    player.setClothes.setts++;
                 }
-            }  
-           }
-               this.player.setClothes.setspl = 0;
-           for (int i = 0; i < 6; i++) {
-           Item item = this.player.inventory.itemsBody.get(i);
+            }
+        }
+        this.player.setClothes.setspl = 0;
+        for (int i = 0; i < 6; i++) {
+            Item item = this.player.inventory.itemsBody.get(i);
             if (item.isNotNullItem()) {
-                  boolean isActSet = false;
-              if ( item.template.id == 455|| item.template.id == 458|| item.template.id == 461) {
-                  isActSet = true;
-                        player.setClothes.setspl++;
-                           break;
+                boolean isActSet = false;
+                if (item.template.id == 455 || item.template.id == 458 || item.template.id == 461) {
+                    isActSet = true;
+                    player.setClothes.setspl++;
+                    break;
                 }
-            }  
-           }
-        //    Item item = this.player.inventory.itemsBody.get(i);
-       //     if (item.isNotNullItem()) {
-      //          if (item.template.id > 567 || item.template.id < 555) {
-     //               this.setthucan = false;
-         //           break;
-      //          }
-      //      }
-   //     }
-  //
+            }
+        }
+        // Item item = this.player.inventory.itemsBody.get(i);
+        // if (item.isNotNullItem()) {
+        // if (item.template.id > 567 || item.template.id < 555) {
+        // this.setthucan = false;
+        // break;
+        // }
+        // }
+        // }
+        //
     }
-        
-    
-    
+
     private void setupSKT() {
         for (int i = 0; i < 5; i++) {
             Item item = this.player.inventory.itemsBody.get(i);
@@ -131,17 +127,17 @@ public class SetClothes {
                         case 128:
                         case 140:
                             isActSet = true;
-                            kirin++;
+                            Angry_goku++;
                             break;
                         case 131:
                         case 143:
                             isActSet = true;
-                            ocTieu++;
+                            Nail++;
                             break;
                         case 132:
                         case 144:
                             isActSet = true;
-                            pikkoroDaimao++;
+                            Kami++;
                             break;
                         case 130:
                         case 142:
@@ -151,7 +147,7 @@ public class SetClothes {
                         case 135:
                         case 138:
                             isActSet = true;
-                            nappa++;
+                            Vegeta++;
                             break;
                         case 133:
                         case 136:
@@ -161,19 +157,18 @@ public class SetClothes {
                         case 134:
                         case 137:
                             isActSet = true;
-                            cadic++;
+                            Cumber++;
                             break;
                         case 21:
                             if (io.param == 80) {
                                 setDHD++;
                             }
-                            
+
                             break;
-                           case 110:                           
-                              isActSet = true;
-                                setspl++;
-                            
-                            
+                        case 110:
+                            isActSet = true;
+                            setspl++;
+
                             break;
                     }
 
@@ -186,43 +181,41 @@ public class SetClothes {
             }
         }
     }
-  //private void setupthucan() {
-    //    for (int i = 0; i < 5; i++) {
-      //      boolean isActSet = false;
-     //       Item item = this.player.inventory.itemsBody.get(i);
-       //     if (item.isNotNullItem()) {
-        //          if (item.template.id > 567 || item.template.id < 555)
-              
-                      
-        //               isActSet = true;
-        //                    setthucan++;
-         //                   break;
-                      
-            //                }
-  //            
-      //  }
-    //               
-           //     }
-            
-    
+    // private void setupthucan() {
+    // for (int i = 0; i < 5; i++) {
+    // boolean isActSet = false;
+    // Item item = this.player.inventory.itemsBody.get(i);
+    // if (item.isNotNullItem()) {
+    // if (item.template.id > 567 || item.template.id < 555)
+
+    // isActSet = true;
+    // setthucan++;
+    // break;
+
+    // }
+    //
+    // }
+    //
+    // }
+
     private void setDefault() {
         this.songoku = 0;
         this.thienXinHang = 0;
-        this.kirin = 0;
-        this.ocTieu = 0;
-        this.pikkoroDaimao = 0;
+        this.Angry_goku = 0;
+        this.Nail = 0;
+        this.Kami = 0;
         this.picolo = 0;
         this.kakarot = 0;
-        this.cadic = 0;
-        this.nappa = 0;
+        this.Cumber = 0;
+        this.Vegeta = 0;
         this.setDHD = 0;
         this.worldcup = 0;
-         this.setthucan = 0;
-         this.setspl = 0;
-         this.setts = 0;
+        this.setthucan = 0;
+        this.setspl = 0;
+        this.setts = 0;
         this.godClothes = false;
         this.ctHaiTac = -1;
-         this.upthucan = -1;
+        this.upthucan = -1;
     }
 
     public void dispose() {

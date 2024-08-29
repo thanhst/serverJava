@@ -4510,6 +4510,7 @@ public class NpcFactory {
                             default:
                                 break;
                         }
+                        break;
                     case 2001:
                         int moDo1 = 20010;
                         switch (select) {
@@ -4530,6 +4531,7 @@ public class NpcFactory {
                             default:
                                 break;
                         }
+                        break;
                     case 2002:
                         int moDo2 = 20020;
                         switch (select) {
@@ -4550,24 +4552,377 @@ public class NpcFactory {
                             default:
                                 break;
                         }
-                    case 20000:
-                    case 20001:
-                    case 20002:
+                        break;
+                    case 20000:// set songoku
                         switch (select) {
-                            case 1:
-                                Item item = InventoryServiceNew.gI().findItemBag(player, 2000);
-                                if (item != null) {
-                                    InventoryServiceNew.gI().subQuantityItemsBag(player, item, 1);
-                                    Item ao = ItemService.gI().createNewItem((short) 0);
-                                    Item quan = ItemService.gI().createNewItem((short) 6);
-                                    Item gang = ItemService.gI().createNewItem((short) 21);
-                                    Item giay = ItemService.gI().createNewItem((short) 28);
-                                    Item rada = ItemService.gI().createNewItem((short) 57);
+                            case 0:
+                                if (InventoryServiceNew.gI().getCountEmptyBag(player) >= 5) {
+                                    Item item = InventoryServiceNew.gI().findItemBag(player, 2000);
+                                    if (item != null) {
+                                        InventoryServiceNew.gI().subQuantityItemsBag(player, item, 1);
+                                        Item ao = ItemService.gI().createNewItem((short) 0);
+                                        ao.itemOptions.add(new Item.ItemOption(129));
+                                        ao.itemOptions.add(new Item.ItemOption(141));
+                                        Item quan = ItemService.gI().createNewItem((short) 6);
+                                        quan.itemOptions.add(new Item.ItemOption(129));
+                                        quan.itemOptions.add(new Item.ItemOption(141));
+                                        Item gang = ItemService.gI().createNewItem((short) 21);
+                                        gang.itemOptions.add(new Item.ItemOption(129));
+                                        gang.itemOptions.add(new Item.ItemOption(141));
+                                        Item giay = ItemService.gI().createNewItem((short) 27);
+                                        giay.itemOptions.add(new Item.ItemOption(129));
+                                        giay.itemOptions.add(new Item.ItemOption(141));
+                                        Item rada = ItemService.gI().createNewItem((short) 57);
+                                        rada.itemOptions.add(new Item.ItemOption(129));
+                                        rada.itemOptions.add(new Item.ItemOption(141));
+                                        InventoryServiceNew.gI().addItemBag(player, ao);
+                                        InventoryServiceNew.gI().addItemBag(player, quan);
+                                        InventoryServiceNew.gI().addItemBag(player, gang);
+                                        InventoryServiceNew.gI().addItemBag(player, giay);
+                                        InventoryServiceNew.gI().addItemBag(player, rada);
+                                        InventoryServiceNew.gI().sendItemBags(player);
+                                        Service.gI().sendThongBao(player, "Bạn vừa nhận được set kích hoạt");
+
+                                    }
+                                } else {
+                                    Service.gI().sendThongBao(player, "Không đủ hành trang để sử dụng!");
                                 }
+                                break;
+                            case 1:
                                 break;
                             default:
                                 break;
                         }
+                        break;
+                    case 20001:// set angry goku 128
+                        switch (select) {
+                            case 0:
+                                if (InventoryServiceNew.gI().getCountEmptyBag(player) >= 5) {
+                                    Item item = InventoryServiceNew.gI().findItemBag(player, 2000);
+                                    if (item != null) {
+                                        InventoryServiceNew.gI().subQuantityItemsBag(player, item, 1);
+                                        Item ao = ItemService.gI().createNewItem((short) 0);
+                                        ao.itemOptions.add(new Item.ItemOption(128));
+                                        ao.itemOptions.add(new Item.ItemOption(140));
+                                        Item quan = ItemService.gI().createNewItem((short) 6);
+                                        quan.itemOptions.add(new Item.ItemOption(128));
+                                        quan.itemOptions.add(new Item.ItemOption(140));
+                                        Item gang = ItemService.gI().createNewItem((short) 21);
+                                        gang.itemOptions.add(new Item.ItemOption(128));
+                                        gang.itemOptions.add(new Item.ItemOption(140));
+                                        Item giay = ItemService.gI().createNewItem((short) 27);
+                                        giay.itemOptions.add(new Item.ItemOption(128));
+                                        giay.itemOptions.add(new Item.ItemOption(140));
+                                        Item rada = ItemService.gI().createNewItem((short) 57);
+                                        rada.itemOptions.add(new Item.ItemOption(128));
+                                        rada.itemOptions.add(new Item.ItemOption(140));
+
+                                        InventoryServiceNew.gI().addItemBag(player, ao);
+                                        InventoryServiceNew.gI().addItemBag(player, quan);
+                                        InventoryServiceNew.gI().addItemBag(player, gang);
+                                        InventoryServiceNew.gI().addItemBag(player, giay);
+                                        InventoryServiceNew.gI().addItemBag(player, rada);
+                                        InventoryServiceNew.gI().sendItemBags(player);
+
+                                        Service.gI().sendThongBao(player, "Bạn vừa nhận được set kích hoạt");
+                                    }
+                                } else {
+                                    Service.gI().sendThongBao(player, "Không đủ hành trang để sử dụng!");
+                                }
+                                break;
+                            case 1:
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 20002: // set then xin hang 127
+                        switch (select) {
+                            case 0:
+                                if (InventoryServiceNew.gI().getCountEmptyBag(player) >= 5) {
+                                    Item item = InventoryServiceNew.gI().findItemBag(player, 2000);
+                                    if (item != null) {
+                                        InventoryServiceNew.gI().subQuantityItemsBag(player, item, 1);
+                                        Item ao = ItemService.gI().createNewItem((short) 0);
+                                        ao.itemOptions.add(new Item.ItemOption(127));
+                                        ao.itemOptions.add(new Item.ItemOption(139));
+                                        Item quan = ItemService.gI().createNewItem((short) 6);
+                                        quan.itemOptions.add(new Item.ItemOption(127));
+                                        quan.itemOptions.add(new Item.ItemOption(139));
+                                        Item gang = ItemService.gI().createNewItem((short) 21);
+                                        gang.itemOptions.add(new Item.ItemOption(127));
+                                        gang.itemOptions.add(new Item.ItemOption(139));
+                                        Item giay = ItemService.gI().createNewItem((short) 27);
+                                        giay.itemOptions.add(new Item.ItemOption(127));
+                                        giay.itemOptions.add(new Item.ItemOption(139));
+                                        Item rada = ItemService.gI().createNewItem((short) 57);
+                                        rada.itemOptions.add(new Item.ItemOption(127));
+                                        rada.itemOptions.add(new Item.ItemOption(139));
+                                        InventoryServiceNew.gI().addItemBag(player, ao);
+                                        InventoryServiceNew.gI().addItemBag(player, quan);
+                                        InventoryServiceNew.gI().addItemBag(player, gang);
+                                        InventoryServiceNew.gI().addItemBag(player, giay);
+                                        InventoryServiceNew.gI().addItemBag(player, rada);
+                                        InventoryServiceNew.gI().sendItemBags(player);
+
+                                        Service.gI().sendThongBao(player, "Bạn vừa nhận được set kích hoạt");
+                                    }
+                                } else {
+                                    Service.gI().sendThongBao(player, "Không đủ hành trang để sử dụng!");
+                                }
+                                break;
+                            case 1:
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 20010:// set kami 132
+                        switch (select) {
+                            case 0:
+                                if (InventoryServiceNew.gI().getCountEmptyBag(player) >= 5) {
+                                    Item item = InventoryServiceNew.gI().findItemBag(player, 2001);
+                                    if (item != null) {
+                                        InventoryServiceNew.gI().subQuantityItemsBag(player, item, 1);
+                                        Item ao = ItemService.gI().createNewItem((short) 1);
+                                        ao.itemOptions.add(new Item.ItemOption(132));
+                                        ao.itemOptions.add(new Item.ItemOption(144));
+                                        Item quan = ItemService.gI().createNewItem((short) 7);
+                                        quan.itemOptions.add(new Item.ItemOption(132));
+                                        quan.itemOptions.add(new Item.ItemOption(144));
+                                        Item gang = ItemService.gI().createNewItem((short) 22);
+                                        gang.itemOptions.add(new Item.ItemOption(132));
+                                        gang.itemOptions.add(new Item.ItemOption(144));
+                                        Item giay = ItemService.gI().createNewItem((short) 28);
+                                        giay.itemOptions.add(new Item.ItemOption(132));
+                                        giay.itemOptions.add(new Item.ItemOption(144));
+                                        Item rada = ItemService.gI().createNewItem((short) 57);
+                                        rada.itemOptions.add(new Item.ItemOption(132));
+                                        rada.itemOptions.add(new Item.ItemOption(144));
+                                        InventoryServiceNew.gI().addItemBag(player, ao);
+                                        InventoryServiceNew.gI().addItemBag(player, quan);
+                                        InventoryServiceNew.gI().addItemBag(player, gang);
+                                        InventoryServiceNew.gI().addItemBag(player, giay);
+                                        InventoryServiceNew.gI().addItemBag(player, rada);
+                                        InventoryServiceNew.gI().sendItemBags(player);
+
+                                        Service.gI().sendThongBao(player, "Bạn vừa nhận được set kích hoạt");
+                                    }
+                                } else {
+                                    Service.gI().sendThongBao(player, "Không đủ hành trang để sử dụng!");
+                                }
+                                break;
+                            case 1:
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 20011:// nail 131
+                        switch (select) {
+                            case 0:
+                                if (InventoryServiceNew.gI().getCountEmptyBag(player) >= 5) {
+                                    Item item = InventoryServiceNew.gI().findItemBag(player, 2001);
+                                    if (item != null) {
+                                        InventoryServiceNew.gI().subQuantityItemsBag(player, item, 1);
+                                        Item ao = ItemService.gI().createNewItem((short) 1);
+                                        ao.itemOptions.add(new Item.ItemOption(131));
+                                        ao.itemOptions.add(new Item.ItemOption(143));
+                                        Item quan = ItemService.gI().createNewItem((short) 7);
+                                        quan.itemOptions.add(new Item.ItemOption(131));
+                                        quan.itemOptions.add(new Item.ItemOption(143));
+                                        Item gang = ItemService.gI().createNewItem((short) 22);
+                                        gang.itemOptions.add(new Item.ItemOption(131));
+                                        gang.itemOptions.add(new Item.ItemOption(143));
+                                        Item giay = ItemService.gI().createNewItem((short) 28);
+                                        giay.itemOptions.add(new Item.ItemOption(131));
+                                        giay.itemOptions.add(new Item.ItemOption(143));
+                                        Item rada = ItemService.gI().createNewItem((short) 57);
+                                        rada.itemOptions.add(new Item.ItemOption(131));
+                                        rada.itemOptions.add(new Item.ItemOption(143));
+                                        InventoryServiceNew.gI().addItemBag(player, ao);
+                                        InventoryServiceNew.gI().addItemBag(player, quan);
+                                        InventoryServiceNew.gI().addItemBag(player, gang);
+                                        InventoryServiceNew.gI().addItemBag(player, giay);
+                                        InventoryServiceNew.gI().addItemBag(player, rada);
+                                        InventoryServiceNew.gI().sendItemBags(player);
+
+                                        Service.gI().sendThongBao(player, "Bạn vừa nhận được set kích hoạt");
+                                    }
+                                } else {
+                                    Service.gI().sendThongBao(player, "Không đủ hành trang để sử dụng!");
+                                }
+                                break;
+                            case 1:
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 20012: // 130 set picolo
+                        switch (select) {
+                            case 0:
+                                if (InventoryServiceNew.gI().getCountEmptyBag(player) >= 5) {
+                                    Item item = InventoryServiceNew.gI().findItemBag(player, 2001);
+                                    if (item != null) {
+                                        InventoryServiceNew.gI().subQuantityItemsBag(player, item, 1);
+                                        Item ao = ItemService.gI().createNewItem((short) 1);
+                                        ao.itemOptions.add(new Item.ItemOption(130));
+                                        ao.itemOptions.add(new Item.ItemOption(142));
+                                        Item quan = ItemService.gI().createNewItem((short) 7);
+                                        quan.itemOptions.add(new Item.ItemOption(130));
+                                        quan.itemOptions.add(new Item.ItemOption(142));
+                                        Item gang = ItemService.gI().createNewItem((short) 22);
+                                        gang.itemOptions.add(new Item.ItemOption(130));
+                                        gang.itemOptions.add(new Item.ItemOption(142));
+                                        Item giay = ItemService.gI().createNewItem((short) 28);
+                                        giay.itemOptions.add(new Item.ItemOption(130));
+                                        giay.itemOptions.add(new Item.ItemOption(142));
+                                        Item rada = ItemService.gI().createNewItem((short) 57);
+                                        rada.itemOptions.add(new Item.ItemOption(130));
+                                        rada.itemOptions.add(new Item.ItemOption(142));
+                                        InventoryServiceNew.gI().addItemBag(player, ao);
+                                        InventoryServiceNew.gI().addItemBag(player, quan);
+                                        InventoryServiceNew.gI().addItemBag(player, gang);
+                                        InventoryServiceNew.gI().addItemBag(player, giay);
+                                        InventoryServiceNew.gI().addItemBag(player, rada);
+                                        InventoryServiceNew.gI().sendItemBags(player);
+
+                                        Service.gI().sendThongBao(player, "Bạn vừa nhận được set kích hoạt");
+                                    }
+                                } else {
+                                    Service.gI().sendThongBao(player, "Không đủ hành trang để sử dụng!");
+                                }
+                                break;
+                            case 1:
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 20020: // set vegeta 135
+                        switch (select) {
+                            case 0:
+                                if (InventoryServiceNew.gI().getCountEmptyBag(player) >= 5) {
+                                    Item item = InventoryServiceNew.gI().findItemBag(player, 2002);
+                                    if (item != null) {
+                                        InventoryServiceNew.gI().subQuantityItemsBag(player, item, 1);
+                                        Item ao = ItemService.gI().createNewItem((short) 2);
+                                        ao.itemOptions.add(new Item.ItemOption(135));
+                                        ao.itemOptions.add(new Item.ItemOption(138));
+                                        Item quan = ItemService.gI().createNewItem((short) 8);
+                                        quan.itemOptions.add(new Item.ItemOption(135));
+                                        quan.itemOptions.add(new Item.ItemOption(138));
+                                        Item gang = ItemService.gI().createNewItem((short) 23);
+                                        gang.itemOptions.add(new Item.ItemOption(135));
+                                        gang.itemOptions.add(new Item.ItemOption(138));
+                                        Item giay = ItemService.gI().createNewItem((short) 29);
+                                        giay.itemOptions.add(new Item.ItemOption(135));
+                                        giay.itemOptions.add(new Item.ItemOption(138));
+                                        Item rada = ItemService.gI().createNewItem((short) 57);
+                                        rada.itemOptions.add(new Item.ItemOption(135));
+                                        rada.itemOptions.add(new Item.ItemOption(138));
+                                        InventoryServiceNew.gI().addItemBag(player, ao);
+                                        InventoryServiceNew.gI().addItemBag(player, quan);
+                                        InventoryServiceNew.gI().addItemBag(player, gang);
+                                        InventoryServiceNew.gI().addItemBag(player, giay);
+                                        InventoryServiceNew.gI().addItemBag(player, rada);
+                                        InventoryServiceNew.gI().sendItemBags(player);
+
+                                        Service.gI().sendThongBao(player, "Bạn vừa nhận được set kích hoạt");
+                                    }
+                                } else {
+                                    Service.gI().sendThongBao(player, "Không đủ hành trang để sử dụng!");
+                                }
+                                break;
+                            case 1:
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 20021: // set cumber 134
+                        switch (select) {
+                            case 0:
+                                if (InventoryServiceNew.gI().getCountEmptyBag(player) >= 5) {
+                                    Item item = InventoryServiceNew.gI().findItemBag(player, 2002);
+                                    if (item != null) {
+                                        InventoryServiceNew.gI().subQuantityItemsBag(player, item, 1);
+                                        Item ao = ItemService.gI().createNewItem((short) 2);
+                                        ao.itemOptions.add(new Item.ItemOption(134));
+                                        ao.itemOptions.add(new Item.ItemOption(137));
+                                        Item quan = ItemService.gI().createNewItem((short) 8);
+                                        quan.itemOptions.add(new Item.ItemOption(134));
+                                        quan.itemOptions.add(new Item.ItemOption(137));
+                                        Item gang = ItemService.gI().createNewItem((short) 23);
+                                        gang.itemOptions.add(new Item.ItemOption(134));
+                                        gang.itemOptions.add(new Item.ItemOption(137));
+                                        Item giay = ItemService.gI().createNewItem((short) 29);
+                                        giay.itemOptions.add(new Item.ItemOption(134));
+                                        giay.itemOptions.add(new Item.ItemOption(137));
+                                        Item rada = ItemService.gI().createNewItem((short) 57);
+                                        rada.itemOptions.add(new Item.ItemOption(134));
+                                        rada.itemOptions.add(new Item.ItemOption(137));
+                                        InventoryServiceNew.gI().addItemBag(player, ao);
+                                        InventoryServiceNew.gI().addItemBag(player, quan);
+                                        InventoryServiceNew.gI().addItemBag(player, gang);
+                                        InventoryServiceNew.gI().addItemBag(player, giay);
+                                        InventoryServiceNew.gI().addItemBag(player, rada);
+                                        InventoryServiceNew.gI().sendItemBags(player);
+
+                                        Service.gI().sendThongBao(player, "Bạn vừa nhận được set kích hoạt");
+                                    }
+                                } else {
+                                    Service.gI().sendThongBao(player, "Không đủ hành trang để sử dụng!");
+                                }
+                                break;
+                            case 1:
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 20022:// set kakakrot 133
+                        switch (select) {
+                            case 0:
+                                if (InventoryServiceNew.gI().getCountEmptyBag(player) >= 5) {
+                                    Item item = InventoryServiceNew.gI().findItemBag(player, 2002);
+                                    if (item != null) {
+                                        InventoryServiceNew.gI().subQuantityItemsBag(player, item, 1);
+                                        Item ao = ItemService.gI().createNewItem((short) 2);
+                                        ao.itemOptions.add(new Item.ItemOption(133));
+                                        ao.itemOptions.add(new Item.ItemOption(136));
+                                        Item quan = ItemService.gI().createNewItem((short) 8);
+                                        quan.itemOptions.add(new Item.ItemOption(133));
+                                        quan.itemOptions.add(new Item.ItemOption(136));
+                                        Item gang = ItemService.gI().createNewItem((short) 23);
+                                        gang.itemOptions.add(new Item.ItemOption(133));
+                                        gang.itemOptions.add(new Item.ItemOption(136));
+                                        Item giay = ItemService.gI().createNewItem((short) 29);
+                                        giay.itemOptions.add(new Item.ItemOption(133));
+                                        giay.itemOptions.add(new Item.ItemOption(136));
+                                        Item rada = ItemService.gI().createNewItem((short) 57);
+                                        rada.itemOptions.add(new Item.ItemOption(133));
+                                        rada.itemOptions.add(new Item.ItemOption(136));
+                                        InventoryServiceNew.gI().addItemBag(player, ao);
+                                        InventoryServiceNew.gI().addItemBag(player, quan);
+                                        InventoryServiceNew.gI().addItemBag(player, gang);
+                                        InventoryServiceNew.gI().addItemBag(player, giay);
+                                        InventoryServiceNew.gI().addItemBag(player, rada);
+                                        InventoryServiceNew.gI().sendItemBags(player);
+
+                                        Service.gI().sendThongBao(player, "Bạn vừa nhận được set kích hoạt");
+                                    }
+                                } else {
+                                    Service.gI().sendThongBao(player, "Không đủ hành trang để sử dụng!");
+                                }
+                                break;
+                            case 1:
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
                 }
             }
         };

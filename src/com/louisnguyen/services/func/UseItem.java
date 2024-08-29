@@ -356,6 +356,15 @@ public class UseItem {
                             Service.gI().sendThongBao(pl, "Bạn nhận được " + PhanQua3.Name());
                             InventoryServiceNew.gI().addItemBag(pl, PhanQua4);
                             Service.gI().sendThongBao(pl, "Bạn nhận được " + PhanQua4.Name());
+                            
+                            Item nr1s = ItemService.gI().createNewItem(((short) 14));
+                            Item nr2s = ItemService.gI().createNewItem(((short) 15));
+                            Item nr3s = ItemService.gI().createNewItem(((short) 16));
+                            InventoryServiceNew.gI().addItemBag(pl, nr1s);
+                            InventoryServiceNew.gI().addItemBag(pl, nr2s);
+                            InventoryServiceNew.gI().addItemBag(pl, nr3s);
+
+
                             if (pl.gender == 0) {
                                 Item PhanQua5 = ItemService.gI().createNewItem(((short) 0));
                                 PhanQua5.itemOptions.add(new Item.ItemOption(47, 3));

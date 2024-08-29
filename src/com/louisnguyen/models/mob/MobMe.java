@@ -1,18 +1,18 @@
 package com.louisnguyen.models.mob;
 
+import com.girlkun.network.io.Message;
 import com.louisnguyen.models.map.Zone;
 import com.louisnguyen.models.player.Player;
-import com.louisnguyen.utils.SkillUtil;
 import com.louisnguyen.services.Service;
+import com.louisnguyen.utils.SkillUtil;
 import com.louisnguyen.utils.Util;
-import com.girlkun.network.io.Message;
 
 
 public final class MobMe extends Mob {
 
     private Player player;
     private final long lastTimeSpawn;
-    private final int timeSurvive;
+    private int timeSurvive;
 
     public MobMe(Player player) {
         super();
@@ -22,19 +22,21 @@ public final class MobMe extends Mob {
         this.tempId = SkillUtil.getTempMobMe(level);
         this.point.maxHp = SkillUtil.getHPMobMe(player.nPoint.hpMax, level);
         this.point.dame = SkillUtil.getHPMobMe(player.nPoint.getDameAttack(false), level);
-        if (this.player.setClothes.pikkoroDaimao == 5) {
-            this.point.dame *= 2;
-        }
         this.point.hp = this.point.maxHp;
         this.zone = player.zone;
+        if (this.player.setClothes.Kami == 5) {
+            this.point.dame = this.point.dame*5;
+        }
+        else{
+            this.timeSurvive = SkillUtil.getTimeSurviveMobMe(level);
+        }
         this.lastTimeSpawn = System.currentTimeMillis();
-        this.timeSurvive = SkillUtil.getTimeSurviveMobMe(level);
         spawn();
     }
 
     @Override
     public void update() {
-        if (Util.canDoWithTime(lastTimeSpawn, timeSurvive) && this.player.setClothes.pikkoroDaimao != 5) {
+        if (Util.canDoWithTime(lastTimeSpawn, timeSurvive) && this.player.setClothes.Kami != 5) {
             this.mobMeDie();
             this.dispose();
         }

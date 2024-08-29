@@ -729,7 +729,7 @@ public class SkillService {
             case Skill.THAI_DUONG_HA_SAN:
                 int timeStun = SkillUtil.getTimeStun(player.playerSkill.skillSelect.point);
                 if (player.setClothes.thienXinHang == 5) {
-                    timeStun *= 2;
+                    timeStun *= 8;
                 }
                 mobs = new ArrayList<>();
                 players = new ArrayList<>();

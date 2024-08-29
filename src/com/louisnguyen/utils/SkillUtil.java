@@ -1,10 +1,11 @@
 package com.louisnguyen.utils;
 
 import java.util.List;
+
+import com.louisnguyen.models.Template.SkillTemplate;
 import com.louisnguyen.models.player.Player;
 import com.louisnguyen.models.skill.NClass;
 import com.louisnguyen.models.skill.Skill;
-import com.louisnguyen.models.Template.SkillTemplate;
 import com.louisnguyen.server.Manager;
 
 
@@ -133,6 +134,11 @@ public class SkillUtil {
     public static int getHPMobMe(int hpMaxPlayer, int level) { //lấy hp max của đệ trứng theo hp max player
         int[] perHPs = {30, 40, 50, 60, 70, 80, 90};
         return hpMaxPlayer * perHPs[level - 1] / 100;
+    }
+
+    public static int getAttackMobMe(int DameMaxPlayer,int level){
+        int[] perDames = {30, 40, 50, 60, 70, 80, 90};
+        return DameMaxPlayer * perDames[level - 1] / 100;
     }
 
     public static Skill getSkillbyId(Player player, int id) {
