@@ -7,8 +7,8 @@ import com.louisnguyen.utils.Logger;
 
 public class AutoMaintenance extends Thread {
     public static boolean AutoMaintenance = true;
-    public static final int hour = 15;
-    public static final int mins = 00;
+    public static final int hour = 8;
+    public static final int mins = 10;
     public static boolean isRunning;
     private static AutoMaintenance instance;
 
