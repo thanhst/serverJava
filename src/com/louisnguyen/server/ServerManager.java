@@ -264,7 +264,7 @@ public class ServerManager {
                 if (OS.contains("win"))
                     batFile = "E:\\Test\\8-9-2023\\SourceBlue\\SourceBlue\\run.bat";
                 else
-                    batFile = "nro\\serverJava\\serverJava\\run.sh";
+                    batFile = "./run.sh";
                 AutoMaintenance.runFile(batFile);
             } catch (Exception e) {
 
