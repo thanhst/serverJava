@@ -7,8 +7,8 @@ import com.louisnguyen.utils.Logger;
 
 public class AutoMaintenance extends Thread {
     public static boolean AutoMaintenance = true;
-    public static final int hour = 9;
-    public static final int mins = 10;
+    public static final int hour = 10;
+    public static final int mins = 0;
     public static boolean isRunning;
     private static AutoMaintenance instance;
 
@@ -64,6 +64,18 @@ public class AutoMaintenance extends Thread {
         try {
             Process process = processBuilder.start();
             process.waitFor();
+            if (!OS.contains("win")) {
+                String checkSessionCommand = "screen -list | grep mysession";
+                Process checkSessionProcess = new ProcessBuilder("bash", "-c", checkSessionCommand).start();
+                checkSessionProcess.waitFor();
+
+                if (checkSessionProcess.exitValue() == 0) {
+                    // Session đã tồn tại, xóa session cũ
+                    String killSessionCommand = "screen -S mysession -X quit";
+                    Process killSessionProcess = new ProcessBuilder("bash", "-c", killSessionCommand).start();
+                    killSessionProcess.waitFor();
+                }
+            }
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println(e);
