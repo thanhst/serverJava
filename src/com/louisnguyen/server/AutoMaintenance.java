@@ -8,7 +8,7 @@ import com.louisnguyen.utils.Logger;
 public class AutoMaintenance extends Thread {
     public static boolean AutoMaintenance = true;
     public static final int hour = 10;
-    public static final int mins = 0;
+    public static final int mins = 15;
     public static boolean isRunning;
     private static AutoMaintenance instance;
 
@@ -51,6 +51,7 @@ public class AutoMaintenance extends Thread {
             checkSessionProcess.waitFor();
 
             // Nếu session đã tồn tại, thay đổi tên session
+            Logger.log("Đang kiểm tra linux");
             String screenSessionName = "mysession";
             if (checkSessionProcess.exitValue() == 0) {
                 // Session đã tồn tại, thay đổi tên session để tạo một session mới
@@ -60,6 +61,7 @@ public class AutoMaintenance extends Thread {
 
             String screenCommand = "screen -dmS " + screenSessionName + " bash -c \"" + batFile + "\"";
             processBuilder = new ProcessBuilder("bash", "-c", screenCommand);
+            Logger.log(screenCommand);
         }
         try {
             Process process = processBuilder.start();

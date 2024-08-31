@@ -1054,6 +1054,23 @@ public class BossesData {
             new String[]{"|-1|Ta buồn ngủ quá!"}, //text chat 3
             TypeAppear.APPEAR_WITH_ANOTHER
     );
+    public static final BossData THAN_HUY_DIET_Egg = new BossData(
+            "Thần Hủy Diệt", //name
+            ConstPlayer.TRAI_DAT, //gender
+            new short[]{508, 509, 510, -1, -1, -1}, //outfit {head, body, leg, bag, aura, eff}
+            160000, //dame
+            new int[]{1000000000}, //hp
+            new int[]{193, 194, 195}, //map join
+            (int[][]) Util.addArray(FULL_KAMEJOKO, FULL_TAI_TAO_NANG_LUONG, FULL_ANTOMIC, FULL_GALICK, FULL_MASENKO), //skill
+            new String[]{}, //text chat 1
+            new String[]{"|-1|Các ngươi thật là yếu ớt",
+                "|-1|Ta sẽ phá hủy hành tinh này",
+                "|-1|Chán quá! Để ta đưa đệ tử đến chơi với các ngươi!",
+                "|-1|Ta vẫn chưa dùng hết sức đâu! Tay ta vẫn cầm trứng hủy diệt đây này.",
+                "|-2|Hắn ta không cần phòng thủ luôn!",}, //text chat 2
+            new String[]{"|-1|Ta buồn ngủ quá!"}, //text chat 3
+            REST_1_M
+    );
 
     ////===========================BOSS JACKY CHUN VÀ QUY LÃO KAME==============//
     public static final BossData JACKY_CHUN2 = new BossData(
