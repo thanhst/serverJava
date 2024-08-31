@@ -1,22 +1,12 @@
 package com.louisnguyen.models.boss.list_boss.BlackGoku;
 
-import com.louisnguyen.consts.ConstPlayer;
 import com.louisnguyen.models.boss.Boss;
 import com.louisnguyen.models.boss.BossesData;
-import com.louisnguyen.models.boss.BossID;
 import com.louisnguyen.models.map.ItemMap;
 import com.louisnguyen.models.player.Player;
-import com.louisnguyen.server.ServerNotify;
-import com.louisnguyen.services.EffectSkillService;
-import com.louisnguyen.services.PlayerService;
 import com.louisnguyen.services.Service;
 import com.louisnguyen.services.TaskService;
-import com.louisnguyen.utils.Logger;
 import com.louisnguyen.utils.Util;
-import java.util.Calendar;
-
-import java.util.Random;
-import java.util.TimeZone;
 
 
 public class BlackGoku2 extends Boss {
@@ -40,14 +30,15 @@ public class BlackGoku2 extends Boss {
     private long lastTimeGK;
     @Override
     public void active() {
-        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("Asia/Ho_Chi_Minh"));
-        if (this.typePk == ConstPlayer.NON_PK) {
-            this.changeToTypePK();
-        }
-        this.attack();
-        if(calendar.get(Calendar.HOUR_OF_DAY) > 15){
-            leaveMap();
-        }
+        super.active();
+        // Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("Asia/Ho_Chi_Minh"));
+        // if (this.typePk == ConstPlayer.NON_PK) {
+        //     this.changeToTypePK();
+        // }
+        // this.attack();
+        // if(calendar.get(Calendar.HOUR_OF_DAY) > 15){
+        //     leaveMap();
+        // }
         
     }
   

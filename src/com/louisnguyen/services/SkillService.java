@@ -798,10 +798,10 @@ public class SkillService {
                     if (!MapService.gI().isMapOffline(player.zone.map.mapId)) {
                         List<Player> playersMap = player.zone.getHumanoids();
                         for (Player pl : playersMap) {
-                            if (pl.effectSkill.useTroi) {
+                            if (pl.effectSkill != null && pl.effectSkill.useTroi) {
                                 EffectSkillService.gI().removeUseTroi(pl);
                             }
-                            if (!pl.isBoss && pl.gender != ConstPlayer.NAMEC
+                            if (!pl.isBoss
                                     && player.cFlag == pl.cFlag) {
                                 EffectSkillService.gI().setStartHuytSao(pl, tileHP);
                                 EffectSkillService.gI().sendEffectPlayer(pl, pl, EffectSkillService.TURN_ON_EFFECT,
@@ -849,6 +849,9 @@ public class SkillService {
                     player.playerSkill.prepareTuSat = !player.playerSkill.prepareTuSat;
                     int rangeBom = SkillUtil.getRangeBom(player.playerSkill.skillSelect.point);
                     int dame = player.nPoint.hpMax;
+                    if(player.setClothes.ctSieuXaydaHuyenThoai){
+                        dame = dame *4;
+                    }
                     for (Mob mob : player.zone.mobs) {
                         mob.injured(player, dame, true);
                         // if (Util.getDistance(player, mob) <= rangeBom) { //khoảng cách có tác dụng

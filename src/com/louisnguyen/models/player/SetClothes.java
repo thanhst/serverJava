@@ -30,6 +30,20 @@ public class SetClothes {
     public boolean godClothes;
     public int ctHaiTac = -1;
     public int upthucan = -1;
+    public boolean ctQuyLao;
+    public boolean ctJackychun;
+    public boolean ctSieuNamecLH;
+    public boolean ctNamecLH;
+    public boolean ctXaydaGalick;
+    public boolean ctSieuXaydaGalick;
+    public boolean ctTdKame;
+    public boolean ctSieuTdKame;
+    public boolean ctNail;
+    public boolean ctSieuNail;
+    public boolean ctSieuXaydaHuyenThoai;
+    public boolean ctXaydaHuyenThoai;
+    public boolean ctGodTd;
+    public boolean ctSuperGodTd;
 
     public void setup() {
         setDefault();
@@ -60,6 +74,57 @@ public class SetClothes {
                 case 626:
                 case 627:
                     this.ctHaiTac = ct.template.id;
+                    break;
+                case 710:
+                    this.ctQuyLao = true;
+                    break;
+                case 711:
+                    this.ctJackychun = true;
+                    break;
+                case 1019:
+                    this.ctSieuNamecLH = true;
+                    break;
+                case 1018:
+                    this.ctNamecLH = true;
+                    break;
+                case 2049:
+                    this.ctNail = true;
+                    break;
+
+                case 2048:
+                    this.ctSieuNail = true;
+                    break;
+
+                case 2050:
+                    this.ctXaydaGalick = true;
+                    break;
+
+                case 2051:
+                    this.ctSieuXaydaGalick = true;
+                    break;
+
+                case 2052:
+                    this.ctSieuXaydaHuyenThoai = true;
+                    break;
+
+                case 2053:
+                    this.ctXaydaHuyenThoai = true;
+                    break;
+
+                case 2054:
+                    this.ctTdKame = true;
+                    break;
+
+                case 2055:
+                    this.ctSieuTdKame = true;
+                    break;
+
+                case 2056:
+                    this.ctGodTd = true;
+                    break;
+
+                case 2057:
+                    this.ctSuperGodTd = true;
                     break;
 
             }
@@ -216,6 +281,20 @@ public class SetClothes {
         this.godClothes = false;
         this.ctHaiTac = -1;
         this.upthucan = -1;
+        this.ctJackychun = false;
+        this.ctQuyLao = false;
+        this.ctNamecLH = false;
+        this.ctSieuNamecLH = false;
+        this.ctNail = false;
+        this.ctSieuNail = false;
+        this.ctSieuXaydaGalick = false;
+        this.ctSieuXaydaHuyenThoai = false;
+        this.ctXaydaGalick = false;
+        this.ctXaydaHuyenThoai = false;
+        this.ctTdKame = false;
+        this.ctSieuTdKame = false;
+        this.ctGodTd = false;
+        this.ctSuperGodTd = false;
     }
 
     public void dispose() {

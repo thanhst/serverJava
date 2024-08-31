@@ -266,7 +266,7 @@ public class MapService {
         }
         addListMapCapsule(pl, list, getMapCanJoin(pl, 21 + pl.gender, 0));
         addListMapCapsule(pl, list, getMapCanJoin(pl, 47, 0));
-        addListMapCapsule(pl, list, getMapCanJoin(pl, 45, 0));
+        addListMapCapsule(pl, list, getMapCanJoin(pl, 154, 0));
         addListMapCapsule(pl, list, getMapCanJoin(pl, 0, 0));
         addListMapCapsule(pl, list, getMapCanJoin(pl, 7, 0));
         addListMapCapsule(pl, list, getMapCanJoin(pl, 14, 0));

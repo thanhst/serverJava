@@ -76,6 +76,324 @@ public class BossesData {
             REST_1_M //second rest
     );
 
+    public static final BossData BrolyTD = new BossData(
+            "Broly Trái Đất", //name
+            ConstPlayer.TRAI_DAT, //gender
+            new short[]{636, 637, 638, -1, -1, -1}, //outfit {head, body, leg, bag, aura, eff}
+            75000, //dame
+            new int[]{350000000}, //hp
+            new int[]{3, 29, 42, 111, 5}, //map join
+            (int[][]) Util.addArray(FULL_KAMEJOKO, FULL_TAI_TAO_NANG_LUONG, FULL_ANTOMIC, FULL_MASENKO), //skill
+            new String[]{"|-1|Hừ , kẻ to gan nào dám thách đấu tao ?",
+                "|-1|Tại sao phải làm vua , khi tao có thể làm thần",
+                "|-2|Á đờ , tên quái gở nào kia",
+                "|-1|Kẻ sống trong nắng hạ , làm sao hiểu được cái lạnh giá của ngày đông!"
+            }, //text chat 1
+            new String[]{"|-1|Cầu nguyện đi!!",
+                "|-1|Ha ha ha! Lôi điểu!",
+                "|-1|Chỉ ta ...",
+                "|-1|Hãy sám hối trước sức mạnh bá đạo của tao đi!",
+                "|-1|Hahaha mày đây rồi",
+                "|-1|Tao nghe nói mày khá mạnh đấy , nhào vô kiếm ăn đi mày !"
+            }, //text chat 2
+            new String[]{"|-2|Sao , mày sợ à?"}, //text chat 3
+            REST_1_M//second rest
+    );
+
+    public static final BossData SuperBrolyTD = new BossData(
+            "Siêu Broly Trái Đất", //name
+            ConstPlayer.TRAI_DAT, //gender
+            new short[]{903, 904, 905, -1, -1, -1}, //outfit {head, body, leg, bag, aura, eff} cái này đang lỗi cần sửa
+            300000, //dame
+            new int[]{1000000000}, //hp
+            new int[]{3, 29, 42, 111, 5}, //map join
+            (int[][]) Util.addArray(FULL_KAMEJOKO, FULL_TAI_TAO_NANG_LUONG, FULL_ANTOMIC, FULL_MASENKO), //skill
+            new String[]{"|-1|Biến hình doẹt doẹt doẹt doẹt , kích kích kích :V","|-1|Hừ , kẻ to gan nào dám thách đấu tao ?",
+                "|-1|Tại sao phải làm vua , khi tao có thể làm thần",
+                "|-2|Ha hà hà hà hà hà",
+                "|-1|Kẻ sống trong nắng hạ , làm sao hiểu được cái lạnh giá của ngày đông!"
+            }, //text chat 1
+            new String[]{"|-1|Cầu nguyện đi!!",
+                "|-1|Ha ha ha! Lôi điểu!",
+                "|-1|Chỉ ta ...",
+                "|-1|Hãy sám hối trước sức mạnh bá đạo của tao đi!",
+                "|-1|Hahaha mày đây rồi",
+                "|-1|Tao nghe nói mày khá mạnh đấy , nhào vô kiếm ăn đi mày !"
+            }, //text chat 2
+            new String[]{"|-2|Sao , mày sợ à?"}, //text chat 3
+            REST_1_M, //second rest
+            TypeAppear.ANOTHER_LEVEL
+    );
+
+    public static final BossData BrolyXD = new BossData(
+            "Broly Xayda", //name
+            ConstPlayer.XAYDA, //gender
+            new short[]{291, 292, 293, -1, -1, -1}, //outfit {head, body, leg, bag, aura, eff}
+            75000, //dame
+            new int[]{350000000}, //hp
+            new int[]{20, 37, 38, 44, 19}, //map join
+            (int[][]) Util.addArray(FULL_KAMEJOKO, FULL_TAI_TAO_NANG_LUONG, FULL_ANTOMIC, FULL_MASENKO), //skill
+            new String[]{"|-1|Hừ , kẻ to gan nào dám thách đấu tao ?",
+                "|-1|Tại sao phải làm vua , khi tao có thể làm thần",
+                "|-2|Á đờ , tên quái gở nào kia",
+                "|-1|Kẻ sống trong nắng hạ , làm sao hiểu được cái lạnh giá của ngày đông!"
+            }, //text chat 1
+            new String[]{"|-1|Cầu nguyện đi!!",
+                "|-1|Ha ha ha! Lôi điểu!",
+                "|-1|Chỉ ta ...",
+                "|-1|Hãy sám hối trước sức mạnh bá đạo của tao đi!",
+                "|-1|Hahaha mày đây rồi",
+                "|-1|Tao nghe nói mày khá mạnh đấy , nhào vô kiếm ăn đi mày !"
+            }, //text chat 2
+            new String[]{"|-2|Sao , mày sợ à?"}, //text chat 3
+            REST_1_M//second rest
+    );
+
+    public static final BossData SuperBrolyXayda = new BossData(
+            "Siêu Broly Xayda", //name
+            ConstPlayer.XAYDA, //gender
+            new short[]{1110, 1111, 1112, -1, -1, -1}, //outfit {head, body, leg, bag, aura, eff}
+            300000, //dame
+            new int[]{1000000000}, //hp
+            new int[]{20, 37, 38, 44, 19}, //map join
+            (int[][]) Util.addArray(FULL_KAMEJOKO, FULL_TAI_TAO_NANG_LUONG, FULL_ANTOMIC, FULL_MASENKO), //skill
+            new String[]{"|-1|Biến hình doẹt doẹt doẹt doẹt , kích kích kích :V","|-1|Hừ , kẻ to gan nào dám thách đấu tao ?",
+                "|-1|Tại sao phải làm vua , khi tao có thể làm thần",
+                "|-2|Ha hà hà hà hà hà",
+                "|-1|Kẻ sống trong nắng hạ , làm sao hiểu được cái lạnh giá của ngày đông!"
+            }, //text chat 1
+            new String[]{"|-1|Cầu nguyện đi!!",
+                "|-1|Ha ha ha! Lôi điểu!",
+                "|-1|Chỉ ta ...",
+                "|-1|Hãy sám hối trước sức mạnh bá đạo của tao đi!",
+                "|-1|Hahaha mày đây rồi",
+                "|-1|Tao nghe nói mày khá mạnh đấy , nhào vô kiếm ăn đi mày !"
+            }, //text chat 2
+            new String[]{"|-2|Sao , mày sợ à?"}, //text chat 3
+            REST_1_M, //second rest
+            TypeAppear.ANOTHER_LEVEL
+    );
+
+    public static final BossData BrolyNamec = new BossData(
+            "Broly Namec", //name
+            ConstPlayer.NAMEC, //gender
+            new short[]{386, 387, 388, -1, -1, -1}, //outfit {head, body, leg, bag, aura, eff}
+            75000, //dame
+            new int[]{350000000}, //hp
+            new int[]{13, 10, 34, 32, 31}, //map join
+            (int[][]) Util.addArray(FULL_KAMEJOKO, FULL_TAI_TAO_NANG_LUONG, FULL_ANTOMIC, FULL_MASENKO), //skill
+            new String[]{"|-1|Hừ , kẻ to gan nào dám thách đấu tao ?",
+                "|-1|Tại sao phải làm vua , khi tao có thể làm thần",
+                "|-2|Á đờ , tên quái gở nào kia",
+                "|-1|Kẻ sống trong nắng hạ , làm sao hiểu được cái lạnh giá của ngày đông!"
+            }, //text chat 1
+            new String[]{"|-1|Cầu nguyện đi!!",
+                "|-1|Ha ha ha! Lôi điểu!",
+                "|-1|Chỉ ta ...",
+                "|-1|Hãy sám hối trước sức mạnh bá đạo của tao đi!",
+                "|-1|Hahaha mày đây rồi",
+                "|-1|Tao nghe nói mày khá mạnh đấy , nhào vô kiếm ăn đi mày !"
+            }, //text chat 2
+            new String[]{"|-2|Sao , mày sợ à?"}, //text chat 3
+            REST_1_M//second rest
+    );
+
+    public static final BossData SuperBrolyNamec = new BossData(
+            "Siêu Broly Namec", //name
+            ConstPlayer.NAMEC, //gender
+            new short[]{1092, 1093, 1094, -1, -1, -1}, //outfit {head, body, leg, bag, aura, eff}
+            300000, //dame
+            new int[]{1000000000}, //hp
+            new int[]{13, 10, 34, 32, 31}, //map join
+            (int[][]) Util.addArray(FULL_KAMEJOKO, FULL_TAI_TAO_NANG_LUONG, FULL_ANTOMIC, FULL_MASENKO), //skill
+            new String[]{"|-1|Biến hình doẹt doẹt doẹt doẹt , kích kích kích :V","|-1|Hừ , kẻ to gan nào dám thách đấu tao ?",
+                "|-1|Tại sao phải làm vua , khi tao có thể làm thần",
+                "|-2|Ha hà hà hà hà hà",
+                "|-1|Kẻ sống trong nắng hạ , làm sao hiểu được cái lạnh giá của ngày đông!"
+            }, //text chat 1
+            new String[]{"|-1|Cầu nguyện đi!!",
+                "|-1|Ha ha ha! Lôi điểu!",
+                "|-1|Chỉ ta ...",
+                "|-1|Hãy sám hối trước sức mạnh bá đạo của tao đi!",
+                "|-1|Hahaha mày đây rồi",
+                "|-1|Tao nghe nói mày khá mạnh đấy , nhào vô kiếm ăn đi mày !"
+            }, //text chat 2
+            new String[]{"|-2|Sao , mày sợ à?"}, //text chat 3
+            REST_1_M, //second rest
+            TypeAppear.ANOTHER_LEVEL
+    );
+
+    public static final BossData Nail = new BossData(
+            "Nail", //name
+            ConstPlayer.NAMEC, //gender
+            new short[]{913, 914, 915, -1, -1, -1}, //outfit {head, body, leg, bag, aura, eff}
+            200000, //dame
+            new int[]{1000000000}, //hp
+            new int[]{13, 10, 34, 32, 31}, //map join
+            (int[][]) Util.addArray(FULL_KAMEJOKO, FULL_TAI_TAO_NANG_LUONG, FULL_ANTOMIC, FULL_MASENKO), //skill
+            new String[]{"|-1|Hừ , kẻ to gan nào dám thách đấu tao ?",
+                "|-1|Tại sao phải làm vua , khi tao có thể làm thần",
+                "|-2|Á đờ , tên quái gở nào kia",
+                "|-1|Kẻ sống trong nắng hạ, làm sao hiểu được cái lạnh giá của ngày đông!"
+            }, //text chat 1
+            new String[]{"|-1|Cầu nguyện đi!!",
+                "|-1|Ha ha ha! Lôi điểu!",
+                "|-1|Chỉ ta ...",
+                "|-1|Hãy sám hối trước sức mạnh bá đạo của tao đi!",
+                "|-2|Hahaha mày đây rồi",
+                "|-1|Tao nghe nói mày khá mạnh đấy , nhào vô kiếm ăn đi mày !"
+            }, //text chat 2
+            new String[]{"|-2|Sao , mày sợ à?"}, //text chat 3
+            REST_1_M//second rest
+    );
+
+    public static final BossData SuperNail = new BossData(
+            "Super Nail", //name
+            ConstPlayer.NAMEC, //gender
+            new short[]{1160, 1161, 1162, -1, -1, -1}, //outfit {head, body, leg, bag, aura, eff}
+            1000000, //dame
+            new int[]{2000000000}, //hp
+            new int[]{13, 10, 34, 32, 31}, //map join
+            (int[][]) Util.addArray(FULL_KAMEJOKO, FULL_TAI_TAO_NANG_LUONG, FULL_ANTOMIC, FULL_MASENKO,FULL_LIENHOAN,FULL_TDHS), //skill
+            new String[]{"|-1|Bè lũ Fide à ? Làm sao , mày thích gì ?",
+                "|-1|Nắm đấm của tao không bao giờ dừng lại được",
+                "|-2|Ha hà hà hà hà hà, thần cái chóa gì?",
+                "|-1|Kẻ sống trong nắng hạ , làm sao hiểu được cái lạnh giá của ngày đông!"
+            }, //text chat 1
+            new String[]{"|-1|Cầu nguyện đi!!",
+                "|-1|Ha ha ha! Tất cả đối với sức mạnh của ta chỉ là trò đùa mà thôi!",
+                "|-1|Ta sẽ cho người hiểu thế nào là sức mạnh!",
+                "|-1|Quỳ xuống!",
+                "|-2|Con quái vật này là thứ gì vậy ?",
+                "|-1|Thần ư , ta còn hơn thế nữa!"
+            }, //text chat 2
+            new String[]{"|-2|Người là thần ư ?"}, //text chat 3
+            REST_1_M, //second rest
+            TypeAppear.ANOTHER_LEVEL
+    );
+
+    public static final BossData Fide_den = new BossData(
+            "Golden Fide", //name
+            ConstPlayer.XAYDA, //gender
+            new short[]{502, 503, 504, -1, -1, -1}, //outfit {head, body, leg, bag, aura, eff}
+            75000, //dame
+            new int[]{500000000}, //hp
+            new int[]{80}, //map join
+            (int[][]) Util.addArray(FULL_KAMEJOKO, FULL_TAI_TAO_NANG_LUONG, FULL_ANTOMIC, FULL_MASENKO), //skill
+            new String[]{"|-1|Hừ , kẻ to gan nào dám thách đấu tao ?",
+                "|-1|Há ha ha ha , tao từng pem vỡ đầu thằng goku vô cực và thằng lỏi vegeta dạng hủy diệt đấy",
+                "|-2|Á đờ , con lỏi Fide hóa đen rồi kìa",
+                "|-1|Kẻ sống trong nắng hạ, làm sao hiểu được cái lạnh giá của ngày đông!"
+            }, //text chat 1
+            new String[]{"|-1|Cầu nguyện đi!!",
+                "|-1|Ha ha ha! Lôi điểu!",
+                "|-1|Nhất dương chỉ!",
+                "|-1|Chết hết đi ,chết hết đi!",
+                "|-2|Hahaha , còn khuya nhé thằng yếu đuối",
+                "|-1|Tao nghe nói mày khá mạnh đấy , nhào vô kiếm ăn đi mày !"
+            }, //text chat 2
+            new String[]{"|-2|Sao , mày sợ à?"}, //text chat 3
+            TypeAppear.ANOTHER_LEVEL
+            // REST_1_M//second rest
+    );
+
+    public static final BossData godTd = new BossData(
+            "Thần Trái Đất nguyên thủy", //name
+            ConstPlayer.TRAI_DAT, //gender
+            new short[]{630, 631, 632, -1, -1, -1}, //outfit {head, body, leg, bag, aura, eff}
+            200000, //dame
+            new int[]{1000000000}, //hp
+            new int[]{3, 29, 42, 111, 5}, //map join
+            (int[][]) Util.addArray(FULL_KAMEJOKO, FULL_TAI_TAO_NANG_LUONG, FULL_ANTOMIC, FULL_MASENKO), //skill
+            new String[]{"|-1|Hừ , kẻ to gan nào dám thách đấu tao ?",
+                "|-1|Tại sao phải làm vua , khi tao có thể làm thần",
+                "|-2|Á đờ , tên quái gở nào kia",
+                "|-1|Kẻ sống trong nắng hạ, làm sao hiểu được cái lạnh giá của ngày đông!"
+            }, //text chat 1
+            new String[]{"|-1|Cầu nguyện đi!!",
+                "|-1|Ha ha ha! Lôi điểu!",
+                "|-1|Chỉ ta ...",
+                "|-1|Hãy sám hối trước sức mạnh bá đạo của tao đi!",
+                "|-2|Hahaha mày đây rồi",
+                "|-1|Tao nghe nói mày khá mạnh đấy , nhào vô kiếm ăn đi mày !"
+            }, //text chat 2
+            new String[]{"|-2|Sao , mày sợ à?"}, //text chat 3
+            REST_1_M//second rest
+    );
+
+    public static final BossData SuperGodTD = new BossData(
+            "Siêu thần Trái Đất", //name
+            ConstPlayer.TRAI_DAT, //gender
+            new short[]{1157, 1158, 1159, -1, -1, -1}, //outfit {head, body, leg, bag, aura, eff}
+            1000000, //dame
+            new int[]{2000000000}, //hp
+            new int[]{3, 29, 42, 111, 5}, //map join
+            (int[][]) Util.addArray(FULL_KAMEJOKO, FULL_TAI_TAO_NANG_LUONG, FULL_ANTOMIC, FULL_MASENKO,FULL_LIENHOAN,FULL_TDHS,FULL_GALICK), //skill
+            new String[]{"|-1|Ta là cụ tổ xayda, gọi ta là cụ đi các cháu!!!",
+                "|-1|Siêu xayda huyền thoại là chỉ ta đây , quỳ xuống đi!",
+                "|-2|Mạnh quá, nhào vô kiếm ăn đi tên kia!!!",
+                "|-1|Niềm kiêu hãnh của xayda là sức mạnh không giới hạn"
+            }, //text chat 1
+            new String[]{"|-1|Cầu nguyện đi!!",
+                "|-1|Ha ha ha! Tất cả đối với sức mạnh của ta chỉ là trò đùa mà thôi!",
+                "|-1|Ta sẽ cho người hiểu thế nào là sức mạnh!",
+                "|-1|Quỳ xuống!",
+                "|-2|Con quái vật này là thứ gì vậy ?",
+                "|-1|Thần ư , ta còn hơn thế nữa!"
+            }, //text chat 2
+            new String[]{"|-2|Người là thần ư ?"}, //text chat 3
+            REST_1_M, //second rest
+            TypeAppear.ANOTHER_LEVEL
+    );
+
+    public static final BossData Xayda_origin_king = new BossData(
+            "Xayda nguyên thủy", //name
+            ConstPlayer.XAYDA, //gender
+            new short[]{910, 911, 912, -1, -1, -1}, //outfit {head, body, leg, bag, aura, eff}
+            200000, //dame
+            new int[]{1000000000}, //hp
+            new int[]{20, 37, 38, 44, 19}, //map join
+            (int[][]) Util.addArray(FULL_KAMEJOKO, FULL_TAI_TAO_NANG_LUONG, FULL_ANTOMIC, FULL_MASENKO), //skill
+            new String[]{"|-1|Hừ , kẻ to gan nào dám thách đấu tao ?",
+                "|-1|Tại sao phải làm vua , khi tao có thể làm thần",
+                "|-2|Á đờ , tên quái gở nào kia",
+                "|-1|Kẻ sống trong nắng hạ, làm sao hiểu được cái lạnh giá của ngày đông!"
+            }, //text chat 1
+            new String[]{"|-1|Cầu nguyện đi!!",
+                "|-1|Ha ha ha! Lôi điểu!",
+                "|-1|Chỉ ta ...",
+                "|-1|Hãy sám hối trước sức mạnh bá đạo của tao đi!",
+                "|-2|Hahaha mày đây rồi",
+                "|-1|Tao nghe nói mày khá mạnh đấy , nhào vô kiếm ăn đi mày !"
+            }, //text chat 2
+            new String[]{"|-2|Sao , mày sợ à?"}, //text chat 3
+            REST_1_M//second rest
+    );
+    public static final BossData SieuXaydaHuyenThoai = new BossData(
+            "Super Xayda God", //name
+            ConstPlayer.XAYDA, //gender
+            new short[]{1163, 1164, 1165, -1, -1, -1}, //outfit {head, body, leg, bag, aura, eff}
+            1000000, //dame
+            new int[]{2000000000}, //hp
+            new int[]{20, 37, 38, 44, 19}, //map join
+            (int[][]) Util.addArray(FULL_KAMEJOKO, FULL_TAI_TAO_NANG_LUONG, FULL_ANTOMIC, FULL_MASENKO,FULL_LIENHOAN,FULL_TDHS,FULL_GALICK), //skill
+            new String[]{"|-1|Ta là cụ tổ xayda, gọi ta là cụ đi các cháu!!!",
+                "|-1|Siêu xayda huyền thoại là chỉ ta đây , quỳ xuống đi!",
+                "|-2|Mạnh quá, nhào vô kiếm ăn đi tên kia!!!",
+                "|-1|Niềm kiêu hãnh của xayda là sức mạnh không giới hạn"
+            }, //text chat 1
+            new String[]{"|-1|Cầu nguyện đi!!",
+                "|-1|Ha ha ha! Tất cả đối với sức mạnh của ta chỉ là trò đùa mà thôi!",
+                "|-1|Ta sẽ cho người hiểu thế nào là sức mạnh!",
+                "|-1|Quỳ xuống!",
+                "|-2|Con quái vật này là thứ gì vậy ?",
+                "|-1|Thần ư , ta còn hơn thế nữa!"
+            }, //text chat 2
+            new String[]{"|-2|Người là thần ư ?"}, //text chat 3
+            REST_1_M, //second rest
+            TypeAppear.ANOTHER_LEVEL
+    );
+
     public static final BossData SUPER_BROLY = new BossData(
             "Super Broly", //name
             ConstPlayer.TRAI_DAT, //gender
@@ -417,7 +735,8 @@ public class BossesData {
                 "|-1|Nếu không còn ai tham dự trò chơi của Cell,.. thì toàn bộ cư dân trái đất sẽ bị tiêu diệt!"
             }, //text chat 2
             new String[]{"|-1|Hô hô hô, đây sẽ là kết thúc của lũ ngu ngốc các ngươi!! Ta sẽ chết nhưng sẽ kéo theo cái hành tinh này luôn"}, //text chat 3
-            REST_1_M //second rest
+            REST_1_M, //second rest
+            new int[]{BossID.XEN_CON_1}
     );
 
     public static final BossData SIEU_BO_HUNG_2 = new BossData(

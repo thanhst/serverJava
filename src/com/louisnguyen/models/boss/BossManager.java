@@ -9,6 +9,12 @@ import com.girlkun.network.io.Message;
 import com.louisnguyen.models.boss.ConDuongRanDoc.Saibamen;
 import com.louisnguyen.models.boss.list_boss.BlackGoku.BlackGoku;
 import com.louisnguyen.models.boss.list_boss.Broly.Broly;
+import com.louisnguyen.models.boss.list_boss.BrolyNamec.BrolyNamec;
+import com.louisnguyen.models.boss.list_boss.BrolyNamec.SuperNamecNail;
+import com.louisnguyen.models.boss.list_boss.BrolyTraiDat.BrolyTraidat;
+import com.louisnguyen.models.boss.list_boss.BrolyTraiDat.SuperGodTd;
+import com.louisnguyen.models.boss.list_boss.BrolyXayda.SieuXaydaHuyenThoai;
+import com.louisnguyen.models.boss.list_boss.BrolyXayda.XaydaCalick;
 import com.louisnguyen.models.boss.list_boss.Cooler.Cooler;
 import com.louisnguyen.models.boss.list_boss.DoanhTraiDocNhan.NinjaAoTim;
 import com.louisnguyen.models.boss.list_boss.DoanhTraiDocNhan.RobotVeSi;
@@ -132,9 +138,16 @@ public class BossManager implements Runnable {
             this.createBoss(BossID.THAN_THIEN_SU);
             this.createBoss(BossID.THAN_HUY_DIET);
             this.createBoss(BossID.THAN_THIEN_SU);
-            this.createBoss(BossID.QUY_LAO);
-            this.createBoss(BossID.JACKY_CHUN2);
+            // this.createBoss(BossID.QUY_LAO);
+            // this.createBoss(BossID.JACKY_CHUN2);
             this.createBoss(BossID.BACONSOI);
+            this.createBoss(1019);
+            this.createBoss(2049);
+            // this.createBoss(2050);
+            this.createBoss(2051);
+            this.createBoss(2052);
+            this.createBoss(2055);
+            this.createBoss(2057);
             this.createBoss(-104);
 
         } catch (Exception ex) {
@@ -205,6 +218,20 @@ public class BossManager implements Runnable {
                     return new ThanThienSu();
                 case BossID.BACONSOI:
                     return new BaConSoi();
+                case 1019:
+                    return new BrolyNamec();
+                case 2049:
+                    return new SuperNamecNail();
+                case 2051:
+                    return new XaydaCalick();
+                case 2052:
+                    return new SieuXaydaHuyenThoai();
+                case 2055:
+                    return new BrolyTraidat();
+                case 2057:
+                    return new SuperGodTd();
+                // case BossID.COOLER_GOLD:
+                //     return new CoolerGold();
                 default:
                     return null;
             }

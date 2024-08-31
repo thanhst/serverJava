@@ -1,0 +1,4 @@
+screen -S mysession// tao cmd moi
+screen -ls // xem cmd nao dang chay
+screen -r mysession // vao cmd mysession
+ctrl + a sau do go d // thoat ra cmd chinh

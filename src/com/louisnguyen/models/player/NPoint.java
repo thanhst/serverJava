@@ -315,7 +315,7 @@ public class NPoint {
         }
         this.player.setClothes.worldcup = 0;
         if (this.player.setClothes.Angry_goku == 5) {
-            this.tlCrit.add(20);
+            this.critAdd+=20;
         }
         for (Item item : this.player.inventory.itemsBody) {
             if (item.isNotNullItem()) {
@@ -931,7 +931,19 @@ public class NPoint {
                 }
                 percentDameSkill = skillSelect.damage;
                 if (this.player.setClothes.songoku == 5) {
-                    percentXDame = (byte) 150;
+                    percentXDame = (int) 150;
+                }
+                if(this.player.setClothes.ctSuperGodTd){
+                    percentDameSkill = skillSelect.damage*4;
+                }
+                if(this.player.setClothes.ctGodTd){
+                    percentDameSkill = skillSelect.damage*5;
+                }
+                if(this.player.setClothes.ctTdKame){
+                    percentDameSkill = skillSelect.damage*2;
+                }
+                if(this.player.setClothes.ctSieuTdKame){
+                    percentDameSkill = skillSelect.damage*4;
                 }
                 break;
             case Skill.GALICK:
@@ -941,6 +953,18 @@ public class NPoint {
                 percentDameSkill = skillSelect.damage;
                 if (this.player.setClothes.kakarot == 5) {
                     percentXDame = 200;
+                }
+                if(this.player.setClothes.ctSieuXaydaHuyenThoai){
+                    percentDameSkill = skillSelect.damage*4;
+                }
+                if(this.player.setClothes.ctXaydaGalick){
+                    percentDameSkill = skillSelect.damage*2;
+                }
+                if(this.player.setClothes.ctXaydaHuyenThoai){
+                    percentDameSkill = skillSelect.damage*5;
+                }
+                if(this.player.setClothes.ctSieuXaydaGalick){
+                    percentDameSkill = skillSelect.damage*4;
                 }
                 break;
             case Skill.ANTOMIC:
@@ -971,6 +995,9 @@ public class NPoint {
                     }
                 }
                 percentDameSkill = skillSelect.damage;
+                if(this.player.setClothes.ctSuperGodTd){
+                    percentDameSkill = percentDameSkill*4;
+                }
                 break;
             case Skill.LIEN_HOAN:
                 if (intrinsic.id == 13) {
@@ -980,6 +1007,19 @@ public class NPoint {
                 if (this.player.setClothes.Nail == 5) {
                     percentXDame = 200;
                 }
+                if(this.player.setClothes.ctSieuNamecLH){
+                    percentDameSkill = skillSelect.damage*4;
+                }
+                if(this.player.setClothes.ctNamecLH)
+                {
+                    percentDameSkill = skillSelect.damage*2;
+                }
+                if(this.player.setClothes.ctNail){
+                    percentDameSkill = skillSelect.damage*5;
+                }
+                if(this.player.setClothes.ctSieuNail){
+                    percentDameSkill = skillSelect.damage*4;
+                }
                 break;
             case Skill.DICH_CHUYEN_TUC_THOI:
                 dameAttack *= 2;
@@ -988,15 +1028,24 @@ public class NPoint {
                 return (int) dameAttack;
             case Skill.MAKANKOSAPPO:
                 percentDameSkill = skillSelect.damage;
+                if(this.player.setClothes.ctSieuNail){
+                    percentDameSkill = skillSelect.damage*4;
+                }
                 int dameSkill = (int) ((long) this.mpMax * percentDameSkill / 100);
                 return dameSkill;
             case Skill.QUA_CAU_KENH_KHI:
                 int dame = this.dame * 40;
                 dame = dame + (Util.nextInt(-5, 5) * dame / 100);
+                if(this.player.setClothes.ctSuperGodTd){
+                    dame= dame * 4;
+                }
                 return dame;
         }
         if (intrinsic.id == 18 && this.player.effectSkill.isMonkey) {
             percentDameIntrinsic = intrinsic.param1;
+            if(this.player.setClothes.ctSieuXaydaHuyenThoai){
+                percentDameIntrinsic+=100;
+            }
         }
         if (percentDameSkill != 0) {
             dameAttack = dameAttack * percentDameSkill / 100;

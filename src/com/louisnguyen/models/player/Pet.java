@@ -468,7 +468,7 @@ public class Pet extends Player {
                         }
                         SkillService.gI().useSkill(this, playerAttack, mobAttack, null);
                         Service.gI().chat(this, "Songoku xuất thế!!!");
-                        getSkill(1).lastTimeUseThisSkill = System.currentTimeMillis();
+                        getSkill(4).lastTimeUseThisSkill = System.currentTimeMillis();
                         return true;
                     }
                     return false;
@@ -509,7 +509,7 @@ public class Pet extends Player {
                         Service.gI().chat(this, "Biến khỉ , kênh khi!!!");
                         PlayerService.gI().playerMove(this, master.location.x + Util.nextInt(-20, 20),
                                 master.location.y);
-                        getSkill(2).lastTimeUseThisSkill = System.currentTimeMillis();
+                        getSkill(5).lastTimeUseThisSkill = System.currentTimeMillis();
 
                         return true;
                     }
@@ -541,7 +541,7 @@ public class Pet extends Player {
                             }
                             Service.gI().chat(this, "Kích kích kích kích kích .... Boom!!!");
                             SkillService.gI().useSkill(this, playerAttack, mobAttack, null);
-                            getSkill(1).lastTimeUseThisSkill = System.currentTimeMillis();
+                            getSkill(5).lastTimeUseThisSkill = System.currentTimeMillis();
                             return true;
                         }
                     }
@@ -607,7 +607,91 @@ public class Pet extends Player {
     }//
 
     private boolean useSkill6() {
-
+        try {
+            this.playerSkill.skillSelect = getSkill(6);
+            if (this.playerSkill.skillSelect.skillId != -1) {
+                switch (this.playerSkill.skillSelect.template.id) {
+                    case Skill.LIEN_HOAN:
+                        if (SkillService.gI().canUseSkillWithCooldown(this)
+                                && SkillService.gI().canUseSkillWithMana(this)) {
+                            mobAttack = this.findMobAttack();
+                            if (mobAttack == null) {
+                                return false;
+                            }
+                            int dis = Util.getDistance(this, mobAttack);
+                            if (dis > ARANGE_ATT_SKILL1) {
+                                PlayerService.gI().playerMove(this, mobAttack.location.x, mobAttack.location.y);
+                            } else {
+                                if (SkillService.gI().canUseSkillWithCooldown(this)
+                                        && SkillService.gI().canUseSkillWithMana(this)) {
+                                    PlayerService.gI().playerMove(this, mobAttack.location.x + Util.nextInt(-20, 20),
+                                            mobAttack.location.y);
+                                }
+                            }
+                            SkillService.gI().useSkill(this, playerAttack, mobAttack, null);
+                            Service.gI().chat(this, "Siêu cấp liên hoàn chưởng!!!");
+                            getSkill(6).lastTimeUseThisSkill = System.currentTimeMillis();
+                            return true;
+                        }
+                        return false;
+                    case Skill.DICH_CHUYEN_TUC_THOI:
+                        if (!this.effectSkill.isBlindDCTT && SkillService.gI().canUseSkillWithCooldown(this)
+                                && SkillService.gI().canUseSkillWithMana(this)) {
+                            mobAttack = this.findMobAttack();
+                            if (mobAttack == null) {
+                                return false;
+                            }
+                            // int dis = Util.getDistance(this, mobAttack);
+                            // if (dis > ARANGE_ATT_SKILL1) {
+                            // PlayerService.gI().playerMove(this, mobAttack.location.x,
+                            // mobAttack.location.y);
+                            // } else {
+                            // if (SkillService.gI().canUseSkillWithCooldown(this)
+                            // && SkillService.gI().canUseSkillWithMana(this)) {
+                            // PlayerService.gI().playerMove(this, mobAttack.location.x + Util.nextInt(-20,
+                            // 20),
+                            // mobAttack.location.y);
+                            // }
+                            // }
+                            SkillService.gI().useSkill(this, playerAttack, mobAttack, null);
+                            Service.gI().chat(this, "Dịch chuyển tức thời!!!");
+                            PlayerService.gI().playerMove(this, master.location.x + Util.nextInt(-20, 20),master.location.y);
+                            getSkill(6).lastTimeUseThisSkill = System.currentTimeMillis();
+                            return true;
+                        }
+                        return false;
+                    case Skill.TROI:
+                        if (!this.effectSkill.isBlindDCTT && SkillService.gI().canUseSkillWithCooldown(this)
+                                && SkillService.gI().canUseSkillWithMana(this)) {
+                            mobAttack = this.findMobAttack();
+                            if (mobAttack == null) {
+                                return false;
+                            }
+                            // int dis = Util.getDistance(this, mobAttack);
+                            // if (dis > ARANGE_ATT_SKILL1) {
+                            // PlayerService.gI().playerMove(this, mobAttack.location.x,
+                            // mobAttack.location.y);
+                            // } else {
+                            // if (SkillService.gI().canUseSkillWithCooldown(this)
+                            // && SkillService.gI().canUseSkillWithMana(this)) {
+                            // PlayerService.gI().playerMove(this, mobAttack.location.x + Util.nextInt(-20,
+                            // 20),
+                            // mobAttack.location.y);
+                            // }
+                            // }
+                            SkillService.gI().useSkill(this, playerAttack, mobAttack, null);
+                            Service.gI().chat(this, "Trói!!! Con trói rồi , sư phụ pem nó đi!!");
+                            getSkill(6).lastTimeUseThisSkill = System.currentTimeMillis();
+                            return true;
+                        }
+                        return false;
+                    default:
+                        break;
+                }
+            }
+        } catch (Exception e) {
+            return false;
+        }
         return false;
     }
 
@@ -620,6 +704,100 @@ public class Pet extends Player {
         // return true;
         // }
         // return false;
+        try {
+            this.playerSkill.skillSelect = getSkill(7);
+            if (this.playerSkill.skillSelect.skillId != -1) {
+                switch (this.playerSkill.skillSelect.template.id) {
+                    case Skill.HUYT_SAO:
+                        if (SkillService.gI().canUseSkillWithCooldown(this)
+                                && SkillService.gI().canUseSkillWithMana(this)) {
+                            // mobAttack = this.findMobAttack();
+                            // if (mobAttack == null) {
+                            // return false;
+                            // }
+                            // int dis = Util.getDistance(this, mobAttack);
+                            // if (dis > ARANGE_ATT_SKILL1) {
+                            // PlayerService.gI().playerMove(this, mobAttack.location.x,
+                            // mobAttack.location.y);
+                            // } else {
+                            // if (SkillService.gI().canUseSkillWithCooldown(this)
+                            // && SkillService.gI().canUseSkillWithMana(this)) {
+                            // PlayerService.gI().playerMove(this, mobAttack.location.x + Util.nextInt(-20,
+                            // 20),
+                            // mobAttack.location.y);
+                            // }
+                            // }
+                            SkillService.gI().useSkill(this, null, null, null);
+                            Service.gI().chat(this, "Huýt sáo : huýt huýt huýt hú hú hú!!!");
+                            getSkill(7).lastTimeUseThisSkill = System.currentTimeMillis();
+                            return true;
+                        }
+                        return false;
+                    case Skill.THOI_MIEN:
+                        if (!this.effectSkill.isThoiMien && SkillService.gI().canUseSkillWithCooldown(this)
+                                && SkillService.gI().canUseSkillWithMana(this)) {
+                            mobAttack = this.findMobAttack();
+                            if (mobAttack == null) {
+                                return false;
+                            }
+                            // int dis = Util.getDistance(this, mobAttack);
+                            // if (dis > ARANGE_ATT_SKILL1) {
+                            // PlayerService.gI().playerMove(this, mobAttack.location.x,
+                            // mobAttack.location.y);
+                            // } else {
+                            // if (SkillService.gI().canUseSkillWithCooldown(this)
+                            // && SkillService.gI().canUseSkillWithMana(this)) {
+                            // PlayerService.gI().playerMove(this, mobAttack.location.x + Util.nextInt(-20,
+                            // 20),
+                            // mobAttack.location.y);
+                            // }
+                            // }
+                            SkillService.gI().useSkill(this, playerAttack, mobAttack, null);
+                            Service.gI().chat(this, "Thôi miên!!!");
+                            getSkill(7).lastTimeUseThisSkill = System.currentTimeMillis();
+                            return true;
+                        }
+                        return false;
+                    case Skill.SOCOLA:
+                        if (!this.effectSkill.isSocola && SkillService.gI().canUseSkillWithCooldown(this)
+                                && SkillService.gI().canUseSkillWithMana(this)) {
+                            mobAttack = this.findMobAttack();
+                            if (mobAttack == null) {
+                                return false;
+                            }
+                            // int dis = Util.getDistance(this, mobAttack);
+                            // if (dis > ARANGE_ATT_SKILL1) {
+                            // PlayerService.gI().playerMove(this, mobAttack.location.x,
+                            // mobAttack.location.y);
+                            // } else {
+                            // if (SkillService.gI().canUseSkillWithCooldown(this)
+                            // && SkillService.gI().canUseSkillWithMana(this)) {
+                            // PlayerService.gI().playerMove(this, mobAttack.location.x + Util.nextInt(-20,
+                            // 20),
+                            // mobAttack.location.y);
+                            // }
+                            // }
+                            SkillService.gI().useSkill(this, playerAttack, mobAttack, null);
+                            Service.gI().chat(this, "Úm ba la hô biến sôcôla!!");
+                            getSkill(7).lastTimeUseThisSkill = System.currentTimeMillis();
+                            return true;
+                        }
+                        return false;
+                    case Skill.KHIEN_NANG_LUONG:
+                        if (!this.effectSkill.isShielding &&
+                                SkillService.gI().canUseSkillWithCooldown(this)
+                                && SkillService.gI().canUseSkillWithMana(this)) {
+                            SkillService.gI().useSkill(this, null, null, null);
+                            return true;
+                        }
+                        return false;
+                    default:
+                        break;
+                }
+            }
+        } catch (Exception e) {
+            return false;
+        }
         return false;
     }
 

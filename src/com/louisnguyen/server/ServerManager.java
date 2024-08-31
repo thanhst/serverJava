@@ -51,7 +51,8 @@ public class ServerManager {
     public void init() {
         Manager.gI();
         try {
-            if (Manager.LOCAL) return;
+            if (Manager.LOCAL)
+                return;
             GirlkunDB.executeUpdate("update account set last_time_login = '2000-01-01', "
                     + "last_time_logout = '2001-01-01'");
         } catch (Exception e) {
@@ -78,11 +79,12 @@ public class ServerManager {
         activeServerSocket();
         MaQuaTangManager.gI().init();
         ChonAiDay.gI().lastTimeEnd = System.currentTimeMillis() + 300000;
-        NgocRongNamecService.gI().initNgocRongNamec((byte)0);
-        new Thread(DaiHoiVoThuat.gI() , "Thread DHVT").start();// Khởi tạo các thread
-        new Thread(ChonAiDay.gI() , "Thread CAD").start();
-        new Thread(NgocRongNamecService.gI() , "Thread NRNM").start();
-        new Thread(TopService.gI() , "Thread TOP").start();
+        NgocRongNamecService.gI().initNgocRongNamec((byte) 0);
+        new Thread(DaiHoiVoThuat.gI(), "Thread DHVT").start();// Khởi tạo các thread
+        new Thread(ChonAiDay.gI(), "Thread CAD").start();
+        new Thread(NgocRongNamecService.gI(), "Thread NRNM").start();
+        new Thread(TopService.gI(), "Thread TOP").start();
+        new Thread(AutoMaintenance.gI(), "Bảo trì tự động").start();
         long delay = 500; // Cập nhật thông tin game và player
         isRunning = true;
         new Thread(() -> {
@@ -219,7 +221,8 @@ public class ServerManager {
                             Player p = Client.gI().getPlayer(Integer.parseInt(pagram1[0]));
                             if (p != null) {
                                 for (int i = 0; i < pagram2.length; i += 2) {
-                                    ios.add(new Item.ItemOption(Integer.parseInt(pagram2[i]), Integer.parseInt(pagram2[i + 1])));
+                                    ios.add(new Item.ItemOption(Integer.parseInt(pagram2[i]),
+                                            Integer.parseInt(pagram2[i + 1])));
                                 }
                                 Item i = Util.sendDo(Integer.parseInt(pagram1[2]), Integer.parseInt(pagram1[3]), ios);
                                 i.quantity = Integer.parseInt(pagram1[1]);
@@ -252,8 +255,29 @@ public class ServerManager {
         }
         Client.gI().close();
         ShopKyGuiManager.gI().save();
-        
-        Logger.log(Logger.RED,"Bảo trì đóng server thành công.\n");
+
+        if (AutoMaintenance.isRunning) {
+            AutoMaintenance.isRunning = false;
+            try {
+                String OS = System.getProperty("os.name").toLowerCase();
+                String batFile = "";
+                if (OS.contains("win"))
+                    batFile = "E:\\Test\\8-9-2023\\SourceBlue\\SourceBlue\\run.bat";
+                else
+                    batFile = "nro\\serverJava\\serverJava\\run.sh";
+                AutoMaintenance.runFile(batFile);
+            } catch (Exception e) {
+
+            }
+        }
+        Logger.log(Logger.RED, "Bảo trì đóng server thành công.\n");
         System.exit(0);
+
+        // try {
+        // Runtime.getRuntime().exec("cmd /c exit");
+        // } catch (IOException e) {
+        // Logger.log("Lỗi khi đóng cmd: " + e.getMessage());
+        // e.printStackTrace();
+        // }
     }
 }

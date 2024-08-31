@@ -135,6 +135,10 @@ public class Util {
     public static int nextInt(int from, int to) {
         return from + rand.nextInt(to - from + 1);
     }
+    public static float nextFloat(int from, int to) {
+        return from + rand.nextInt(to - from + 1);
+    }
+
 
     public static int nextInt(int max) {
         return rand.nextInt(max);

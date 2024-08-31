@@ -2,18 +2,14 @@ package com.louisnguyen.models.boss.list_boss.XenBoHung;
 
 import com.louisnguyen.consts.ConstPlayer;
 import com.louisnguyen.models.boss.Boss;
-import com.louisnguyen.models.boss.BossesData;
 import com.louisnguyen.models.boss.BossID;
-import com.louisnguyen.models.map.ItemMap;
+import com.louisnguyen.models.boss.BossesData;
 import com.louisnguyen.models.player.Player;
 import com.louisnguyen.services.EffectSkillService;
 import com.louisnguyen.services.PlayerService;
 import com.louisnguyen.services.Service;
 import com.louisnguyen.services.TaskService;
 import com.louisnguyen.utils.Util;
-
-import java.util.Random;
-
 
 public class XenBoHung extends Boss {
 
@@ -26,9 +22,13 @@ public class XenBoHung extends Boss {
 
     @Override
     public void reward(Player plKill) {
-         TaskService.gI().checkDoneTaskKillBoss(plKill, this);
-        
+        if (this.name == "Xên bọ hung 1") {
+            System.out.println("Giết xên 1");
+        }
+        TaskService.gI().checkDoneTaskKillBoss(plKill, this);
+
     }
+
     @Override
     public void active() {
         if (this.typePk == ConstPlayer.NON_PK) {
@@ -38,17 +38,18 @@ public class XenBoHung extends Boss {
         this.attack();
         this.SendLaiThongBao(8);
     }
-   
+
     private void hapThu() {
         if (!Util.canDoWithTime(this.lastTimeHapThu, this.timeHapThu) || !Util.isTrue(1, 100)) {
             return;
         }
-    
+
         Player pl = this.zone.getRandomPlayerInMap();
         if (pl == null || pl.isDie()) {
             return;
         }
-//        ChangeMapService.gI().changeMapYardrat(this, this.zone, pl.location.x, pl.location.y);
+        // ChangeMapService.gI().changeMapYardrat(this, this.zone, pl.location.x,
+        // pl.location.y);
         this.nPoint.dameg += (pl.nPoint.dame * 5 / 100);
         this.nPoint.hpg += (pl.nPoint.hp * 2 / 100);
         this.nPoint.critg++;
@@ -61,7 +62,7 @@ public class XenBoHung extends Boss {
         this.lastTimeHapThu = System.currentTimeMillis();
         this.timeHapThu = Util.nextInt(30000, 50000);
     }
-    
+
     @Override
     public int injured(Player plAtt, int damage, boolean piercing, boolean isMobAttack) {
         if (!this.isDie()) {

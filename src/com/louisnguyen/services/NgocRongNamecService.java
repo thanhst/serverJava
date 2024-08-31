@@ -98,14 +98,14 @@ public class NgocRongNamecService implements Runnable{
                 default:
                     break;
             }
-            if(type == (byte)0) {
-                ItemMap itemMap = new ItemMap(zone, i + 353, 1, x, y, -1);
-                Service.gI().dropItemMap(zone, itemMap);
-                System.out.println(itemMap.itemTemplate.name+"[" + zone.map.mapId+ "-" + zone.zoneId+"]");
-            } else {
-                ItemMap itemMap = new ItemMap(zone, 362, 1, x, y, -1);
-                Service.gI().dropItemMap(zone, itemMap);
-            }
+            // if(type == (byte)0) {
+            //     ItemMap itemMap = new ItemMap(zone, i + 353, 1, x, y, -1);
+            //     // Service.gI().dropItemMap(zone, itemMap);
+            //     // System.out.println(itemMap.itemTemplate.name+"[" + zone.map.mapId+ "-" + zone.zoneId+"]");
+            // } else {
+            //     ItemMap itemMap = new ItemMap(zone, 362, 1, x, y, -1);
+            //     Service.gI().dropItemMap(zone, itemMap);
+            // }
             listMap.remove(index);
         }
     }
