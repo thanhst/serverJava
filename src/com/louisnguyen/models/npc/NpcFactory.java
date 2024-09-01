@@ -1201,6 +1201,7 @@ public class NpcFactory {
                             case 1:
                                 if (TaskService.gI().getIdTask(player) >= ConstTask.TASK_19_0) {
                                     ChangeMapService.gI().changeMapBySpaceShip(player, 68, -1, -90);
+                                    break;
                                 } else {
                                     Service.gI().sendThongBao(player,
                                             "Bạn cần làm nhiệm vụ\nđể mạnh mẽ hơn để có\nthể qua khu vực này");
