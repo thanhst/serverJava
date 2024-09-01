@@ -55,7 +55,7 @@ public class Fide extends Boss {
             Service.getInstance().dropItemMap(this.zone, manhvbtt);
         }
         if(this.name.equals("Golden Fide")){
-            if (Util.isTrue(50, 100)) {
+            if (Util.isTrue(70, 100)) {
                 ItemMap trungUbb = new ItemMap(this.zone, 2027, 1, this.location.x + 60,
                         this.zone.map.yPhysicInTop(this.location.x,
                                 this.location.y - 24),

@@ -216,10 +216,22 @@ public class UseItem {
                 case 72: {
                     InventoryServiceNew.gI().itemBagToBody(pl, indexBag);
                     // Service.getInstance().sendPetFollow(pl, 1,
-                    //         (short) (pl.inventory.itemsBody.get(9).template.iconID-1), (byte) 1, (short) 35,
-                    //         (short) 30, pl.session, new byte[] { 0,1,2,3,4,5,6,7 });
+                    // (short) (pl.inventory.itemsBody.get(9).template.iconID-1), (byte) 1, (short)
+                    // 35,
+                    // (short) 30, pl.session, new byte[] { 0,1,2,3,4,5,6,7 });
                     break;
                 }
+                case 76:
+                    if (pl.newpet != null) {
+                        ChangeMapService.gI().exitMap(pl.newpet);
+                        pl.newpet.dispose();
+                        pl.newpet = null;
+                        pl.isNewPet = false; // Add this line to reset the isNewPet flag
+                    }
+                    InventoryServiceNew.gI().itemBagToBody(pl, indexBag);
+                    PetService.Pet2(pl, item.template.head, item.template.body, item.template.leg);
+                    Service.gI().point(pl);
+                    break;
                 default:
                     switch (item.template.id) {
                         case 992:
@@ -356,14 +368,13 @@ public class UseItem {
                             Service.gI().sendThongBao(pl, "Bạn nhận được " + PhanQua3.Name());
                             InventoryServiceNew.gI().addItemBag(pl, PhanQua4);
                             Service.gI().sendThongBao(pl, "Bạn nhận được " + PhanQua4.Name());
-                            
+
                             Item nr1s = ItemService.gI().createNewItem(((short) 14));
                             Item nr2s = ItemService.gI().createNewItem(((short) 15));
                             Item nr3s = ItemService.gI().createNewItem(((short) 16));
                             InventoryServiceNew.gI().addItemBag(pl, nr1s);
                             InventoryServiceNew.gI().addItemBag(pl, nr2s);
                             InventoryServiceNew.gI().addItemBag(pl, nr3s);
-
 
                             if (pl.gender == 0) {
                                 Item PhanQua5 = ItemService.gI().createNewItem(((short) 0));
@@ -699,15 +710,18 @@ public class UseItem {
                         case 402: // sách nâng chiêu 1 đệ tử
                         case 403: // sách nâng chiêu 2 đệ tử
                         case 404: // sách nâng chiêu 3 đệ tử
-                        case 759: // sách nâng chiêu 4 đệ tử
+                        case 759:
+                        case 2058:
+                        case 2059:
+                        case 2060: // sách nâng chiêu 4 đệ tử
                             upSkillPet(pl, item);
                             break;
                         case 921: // bông tai c2
                             UseItem.gI().usePorata2(pl);
                             break;
-                        case 736:
-                            ItemService.gI().OpenItem736(pl, item);
-                            break;
+                        // case 736:
+                        // ItemService.gI().OpenItem736(pl, item);
+                        // break;
                         case 987:
                             Service.gI().sendThongBao(pl, "Bảo vệ trang bị không bị rớt cấp"); // đá bảo vệ
                             break;
@@ -760,12 +774,26 @@ public class UseItem {
                                 Service.gI().sendThongBao(pl, "Hành trang không đủ chỗ trống");
                             } else {
                                 InventoryServiceNew.gI().subQuantityItemsBag(pl, item, 1);
-                                Item linhThu = ItemService.gI().createNewItem((short) Util.nextInt(2019, 2026));
-                                linhThu.itemOptions.add(new Item.ItemOption(50, 10));
-                                linhThu.itemOptions.add(new Item.ItemOption(77, 5));
-                                linhThu.itemOptions.add(new Item.ItemOption(103, 5));
-                                linhThu.itemOptions.add(new Item.ItemOption(95, 3));
-                                linhThu.itemOptions.add(new Item.ItemOption(96, 3));
+                                Item linhThu = null;
+                                if (Util.isTrue(50, 100)) {
+                                    linhThu = ItemService.gI().createNewItem((short) Util.nextInt(2019, 2026));
+                                } else {
+                                    int[] setID = { 1139, 1145, 1146, 1176, 1177, 1178, 1179, 1187, 1188, 1189, 1190,
+                                            1191, 1192, 1193, 1194, 2033, 2034, 2035, 2038, 2039, 2040, 2041, 2042 };
+                                    int randomIndex = Util.nextInt(0, setID.length - 1);
+                                    short randomID = (short) setID[randomIndex];
+
+                                    // Tạo item với ID ngẫu nhiên từ mảng setID[]
+                                    linhThu = ItemService.gI().createNewItem((short) randomID);
+                                }
+                                linhThu.itemOptions.add(new Item.ItemOption(50, Util.nextInt(5, 25)));
+                                linhThu.itemOptions.add(new Item.ItemOption(77, Util.nextInt(5, 25)));
+                                linhThu.itemOptions.add(new Item.ItemOption(103, Util.nextInt(5, 25)));
+                                linhThu.itemOptions.add(new Item.ItemOption(95, Util.nextInt(5, 30)));
+                                linhThu.itemOptions.add(new Item.ItemOption(96, Util.nextInt(5, 30)));
+                                if (Util.isTrue(80, 100)) {
+                                    linhThu.itemOptions.add(new Item.ItemOption(93, Util.nextInt(1, 3)));
+                                }
                                 InventoryServiceNew.gI().addItemBag(pl, linhThu);
                                 InventoryServiceNew.gI().sendItemBags(pl);
                                 Service.gI().sendThongBao(pl,
@@ -773,6 +801,111 @@ public class UseItem {
                             }
                             break;
                         }
+                        case 1150:
+                            if (InventoryServiceNew.gI().getCountEmptyBag(pl) == 0) {
+                                Service.gI().sendThongBao(pl, "Hành trang không đủ chỗ trống");
+                            } else {
+                                InventoryServiceNew.gI().subQuantityItemsBag(pl, item, 1);
+                                int[] setID = { 892, 893, 909, 916, 917, 918, 919, 936, 942, 943, 944, 1039, 1040,
+                                        1047 };
+                                int randomIndex = Util.nextInt(0, setID.length - 1);
+                                short randomID = (short) setID[randomIndex];
+
+                                // Tạo item với ID ngẫu nhiên từ mảng setID[]
+                                Item linhThu = ItemService.gI().createNewItem((short) randomID);
+                                linhThu.itemOptions.add(new Item.ItemOption(50, Util.nextInt(5, 25)));
+                                linhThu.itemOptions.add(new Item.ItemOption(77, Util.nextInt(5, 25)));
+                                linhThu.itemOptions.add(new Item.ItemOption(103, Util.nextInt(5, 25)));
+                                linhThu.itemOptions.add(new Item.ItemOption(14, Util.nextInt(5, 15)));
+                                linhThu.itemOptions.add(new Item.ItemOption(5, Util.nextInt(5, 25)));
+                                if (Util.isTrue(80, 100)) {
+                                    linhThu.itemOptions.add(new Item.ItemOption(93, Util.nextInt(1, 3)));
+                                }
+                                // else{
+                                // // linhThu.itemOptions.add(new Item.ItemOption(93, Util.nextInt(2, 7)));
+                                // }
+                                InventoryServiceNew.gI().addItemBag(pl, linhThu);
+                                InventoryServiceNew.gI().sendItemBags(pl);
+                                Service.gI().sendThongBao(pl,
+                                        "Chúc mừng bạn nhận được " + linhThu.template.name);
+                            }
+                            break;
+                        case 736:// van bay
+                            if (InventoryServiceNew.gI().getCountEmptyBag(pl) == 0) {
+                                Service.gI().sendThongBao(pl, "Hành trang không đủ chỗ trống");
+                            } else {
+                                InventoryServiceNew.gI().subQuantityItemsBag(pl, item, 1);
+                                int[] setID = { 733,734,735,743,744,746,795,849,897,920,1092,1106,1107 };
+                                int randomIndex = Util.nextInt(0, setID.length - 1);
+                                short randomID = (short) setID[randomIndex];
+
+                                // Tạo item với ID ngẫu nhiên từ mảng setID[]
+                                Item linhThu = ItemService.gI().createNewItem((short) randomID);
+                                linhThu.itemOptions.add(new Item.ItemOption(50, Util.nextInt(5, 25)));
+                                linhThu.itemOptions.add(new Item.ItemOption(77, Util.nextInt(5, 25)));
+                                linhThu.itemOptions.add(new Item.ItemOption(103, Util.nextInt(5, 25)));
+                                linhThu.itemOptions.add(new Item.ItemOption(18, Util.nextInt(5, 50)));
+                                linhThu.itemOptions.add(new Item.ItemOption(5, Util.nextInt(5, 25)));
+                                linhThu.itemOptions.add(new Item.ItemOption(16, Util.nextInt(20, 100)));
+                                if (Util.isTrue(90, 100)) {
+                                    linhThu.itemOptions.add(new Item.ItemOption(93, Util.nextInt(1, 3)));
+                                }
+                                // else{
+                                // // linhThu.itemOptions.add(new Item.ItemOption(93, Util.nextInt(2, 7)));
+                                // }
+                                InventoryServiceNew.gI().addItemBag(pl, linhThu);
+                                InventoryServiceNew.gI().sendItemBags(pl);
+                                Service.gI().sendThongBao(pl,
+                                        "Chúc mừng bạn nhận được " + linhThu.template.name);
+                            }
+                            break;
+                        case 668:// deo lung
+                            if (InventoryServiceNew.gI().getCountEmptyBag(pl) == 0) {
+                                Service.gI().sendThongBao(pl, "Hành trang không đủ chỗ trống");
+                            } else {
+                                InventoryServiceNew.gI().subQuantityItemsBag(pl, item, 1);
+                                Item linhThu = ItemService.gI().createNewItem((short) 0);
+                                if (Util.isTrue(5.263f, 100)) {
+                                    linhThu = ItemService.gI().createNewItem((short) Util.nextInt(467, 471));
+                                } else if (Util.isTrue(30.53f, 100)) {
+                                    linhThu = ItemService.gI().createNewItem((short) Util.nextInt(766, 794));
+                                } else if (Util.isTrue(6.31f, 100)) {
+                                    linhThu = ItemService.gI().createNewItem((short) Util.nextInt(800, 805));
+                                } else if (Util.isTrue(4.21f, 100)) {
+                                    linhThu = ItemService.gI().createNewItem((short) Util.nextInt(814, 817));
+                                } else if (Util.isTrue(8.42f, 100)) {
+                                    linhThu = ItemService.gI().createNewItem((short) Util.nextInt(994, 1001));
+                                } else if (Util.isTrue(8.42f, 100)) {
+                                    linhThu = ItemService.gI().createNewItem((short) Util.nextInt(1021, 1028));
+                                } else if (Util.isTrue(8.42f, 100)) {
+                                    linhThu = ItemService.gI().createNewItem((short) Util.nextInt(1500, 1507));
+                                } else {
+                                    int[] setID = { 740,741,745,822,823,852,865,954,955,966,982,983,1007,1013,1030,1031,1047,1138,1148,1157,1158,1159,1195,1197,1200,1202};
+                                    int randomIndex = Util.nextInt(0, setID.length - 1);
+                                    short randomID = (short) setID[randomIndex];
+                                    linhThu = ItemService.gI().createNewItem((short) randomID);
+                                }
+                                // Tạo item với ID ngẫu nhiên từ mảng setID[]
+                                linhThu.itemOptions.add(new Item.ItemOption(50, Util.nextInt(5, 10)));
+                                linhThu.itemOptions.add(new Item.ItemOption(77, Util.nextInt(5, 25)));
+                                linhThu.itemOptions.add(new Item.ItemOption(103, Util.nextInt(5, 25)));
+                                linhThu.itemOptions.add(new Item.ItemOption(14, Util.nextInt(5, 20)));
+                                linhThu.itemOptions.add(new Item.ItemOption(17, Util.nextInt(5, 50)));
+                                linhThu.itemOptions.add(new Item.ItemOption(117, Util.nextInt(5, 20)));
+                                linhThu.itemOptions.add(new Item.ItemOption(78, Util.nextInt(5, 100)));
+                                if (Util.isTrue(90, 100)) {
+                                    linhThu.itemOptions.add(new Item.ItemOption(93, Util.nextInt(1, 3)));
+                                }
+                                // else{
+                                // // linhThu.itemOptions.add(new Item.ItemOption(93, Util.nextInt(2, 7)));
+                                // }
+                                InventoryServiceNew.gI().addItemBag(pl, linhThu);
+                                InventoryServiceNew.gI().sendItemBags(pl);
+                                Service.gI().sendThongBao(pl,
+                                        "Chúc mừng bạn nhận được " + linhThu.template.name);
+                            }
+                            break;
+
                         case 568:
                             NpcService.gI().createMenuConMeo(pl, 568, -1, "Nở ra đệ mabu vip rồi !! Nhớ tháo đồ nhé!",
                                     "Đệ trái đất", "Đệ namec", "Đệ xayda");
@@ -1582,6 +1715,30 @@ public class UseItem {
                         Service.gI().sendThongBao(pl, "Không thể thực hiện");
                     }
                     break;
+                case 2058: // skill 5
+                    if (SkillUtil.upSkillPet(pl.pet.playerSkill.skills, 4)) {
+                        Service.gI().chatJustForMe(pl, pl.pet, "Cảm ơn sư phụ");
+                        InventoryServiceNew.gI().subQuantityItemsBag(pl, item, 1);
+                    } else {
+                        Service.gI().sendThongBao(pl, "Không thể thực hiện");
+                    }
+                    break;
+                case 2059: // skill 4
+                    if (SkillUtil.upSkillPet(pl.pet.playerSkill.skills, 5)) {
+                        Service.gI().chatJustForMe(pl, pl.pet, "Cảm ơn sư phụ");
+                        InventoryServiceNew.gI().subQuantityItemsBag(pl, item, 1);
+                    } else {
+                        Service.gI().sendThongBao(pl, "Không thể thực hiện");
+                    }
+                    break;
+                case 2060: // skill 4
+                    if (SkillUtil.upSkillPet(pl.pet.playerSkill.skills, 6)) {
+                        Service.gI().chatJustForMe(pl, pl.pet, "Cảm ơn sư phụ");
+                        InventoryServiceNew.gI().subQuantityItemsBag(pl, item, 1);
+                    } else {
+                        Service.gI().sendThongBao(pl, "Không thể thực hiện");
+                    }
+                    break;
 
             }
 
@@ -1591,14 +1748,15 @@ public class UseItem {
     }
 
     private void ItemSKH(Player pl, Item item) {// hop qua skh
-        if(item.template.id == 2000){
-            NpcService.gI().createMenuConMeo(pl, item.template.id, -1, "Hãy chọn một món quà", "Set Songoku","Set Angry Goku","Set Thên Xin Hăng");
-        }
-        else if(item.template.id == 2001){
-            NpcService.gI().createMenuConMeo(pl, item.template.id, -1, "Hãy chọn một món quà", "Set Kami","Set Nail","Set Picolo");
-        }
-        else{
-            NpcService.gI().createMenuConMeo(pl, item.template.id, -1, "Hãy chọn một món quà", "Set Vegeta","Set Cumber","Set Kakarot");
+        if (item.template.id == 2000) {
+            NpcService.gI().createMenuConMeo(pl, item.template.id, -1, "Hãy chọn một món quà", "Set Songoku",
+                    "Set Angry Goku", "Set Thên Xin Hăng");
+        } else if (item.template.id == 2001) {
+            NpcService.gI().createMenuConMeo(pl, item.template.id, -1, "Hãy chọn một món quà", "Set Kami", "Set Nail",
+                    "Set Picolo");
+        } else {
+            NpcService.gI().createMenuConMeo(pl, item.template.id, -1, "Hãy chọn một món quà", "Set Vegeta",
+                    "Set Cumber", "Set Kakarot");
         }
     }
 

@@ -1395,6 +1395,9 @@ public class NpcFactory {
                                                     + "Ngươi muốn mua vật phẩm nào?",
                                             "Capsule\nhồng ngọc");
                                     break;
+                                case 2:
+                                    ShopServiceNew.gI().opendShop(player, "SANTA_HN", true);
+                                    break;
                             }
                             return;
                         }

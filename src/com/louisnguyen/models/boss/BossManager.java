@@ -21,8 +21,8 @@ import com.louisnguyen.models.boss.list_boss.DoanhTraiDocNhan.RobotVeSi;
 import com.louisnguyen.models.boss.list_boss.DoanhTraiDocNhan.TrungUyThep;
 import com.louisnguyen.models.boss.list_boss.DoanhTraiDocNhan.TrungUyTrang;
 import com.louisnguyen.models.boss.list_boss.DoanhTraiDocNhan.TrungUyXanhLo;
+import com.louisnguyen.models.boss.list_boss.Egg.ThanHuyDietEgg;
 import com.louisnguyen.models.boss.list_boss.HangDongSoi.BaConSoi;
-import com.louisnguyen.models.boss.list_boss.JacyChunVaQuyLao.JackyChun;
 import com.louisnguyen.models.boss.list_boss.JacyChunVaQuyLao.QuyLao;
 import com.louisnguyen.models.boss.list_boss.MrEvilXayda.MrEvilXayda;
 import com.louisnguyen.models.boss.list_boss.TDST.TDST;
@@ -37,6 +37,7 @@ import com.louisnguyen.models.boss.list_boss.android.DrKore;
 import com.louisnguyen.models.boss.list_boss.android.KingKong;
 import com.louisnguyen.models.boss.list_boss.android.Pic;
 import com.louisnguyen.models.boss.list_boss.android.Poc;
+import com.louisnguyen.models.boss.list_boss.android.SUPER_ANDROID_17;
 import com.louisnguyen.models.boss.list_boss.bandokhobau.TrungUyXanhLoBdkb;
 import com.louisnguyen.models.boss.list_boss.bosstauhuydiet.ThanHuyDiet;
 import com.louisnguyen.models.boss.list_boss.bosstauhuydiet.ThanThienSu;
@@ -97,7 +98,7 @@ public class BossManager implements Runnable {
             this.createBoss(BossID.BROLY_CLONE);
             this.createBoss(BossID.BROLY_CLONE);
             this.createBoss(BossID.BROLY);
-            // this.createBoss(BossID.AN_TROM);
+            this.createBoss(BossID.SUPER_ANDROID_17);
             // this.createBoss(BossID.AN_TROM);
             // this.createBoss(BossID.AN_TROM);
             // this.createBoss(BossID.AN_TROM);
@@ -131,7 +132,7 @@ public class BossManager implements Runnable {
             this.createBoss(BossID.TAU_PAY_PAY_M);
             this.createBoss(BossID.SU);
             this.createBoss(BossID.PI_LAP);
-            // this.createBoss(BossID.COOLER);
+            this.createBoss(BossID.COOLER);
             this.createBoss(BossID.THAN_HUY_DIET);
             this.createBoss(BossID.THAN_THIEN_SU);
             this.createBoss(BossID.THAN_HUY_DIET);
@@ -148,6 +149,7 @@ public class BossManager implements Runnable {
             this.createBoss(2052);
             this.createBoss(2055);
             this.createBoss(2057);
+            this.createBoss(9999);
             this.createBoss(-104);
 
         } catch (Exception ex) {
@@ -168,8 +170,8 @@ public class BossManager implements Runnable {
                     return new BlackGoku();
                 case BossID.COOLER:
                     return new Cooler();
-                case BossID.JACKY_CHUN2:
-                    return new JackyChun();
+                case BossID.SUPER_ANDROID_17:
+                    return new SUPER_ANDROID_17();
                 case BossID.QUY_LAO:
                     return new QuyLao();
                 case BossID.SUPER_BROLY:
@@ -230,6 +232,8 @@ public class BossManager implements Runnable {
                     return new BrolyTraidat();
                 case 2057:
                     return new SuperGodTd();
+                case 9999:
+                    return new ThanHuyDietEgg();
                 // case BossID.COOLER_GOLD:
                 //     return new CoolerGold();
                 default:

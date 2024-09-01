@@ -26,9 +26,9 @@ public class TDST extends Boss {
     @Override
     public void reward(Player plKill) {
         super.reward(plKill);
-        if (this.currentLevel == 1) {
-            return;
-        }
+        // if (this.currentLevel == 1) {
+        //     return;
+        // }
         if (Util.isTrue(100, 100)) {
             ItemMap ngocrong3s = new ItemMap(this.zone, 16, Util.nextInt(1,5), this.location.x - 20,
                     this.zone.map.yPhysicInTop(this.location.x,

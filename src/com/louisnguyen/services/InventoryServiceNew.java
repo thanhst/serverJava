@@ -320,7 +320,7 @@ public class InventoryServiceNew {
                 case 5: // Cải trang
                 case 32: // giap luyen tap
                 case 11: // vật phẩm đeo lưng
-                case 27: // Pet
+                case 76: // Pet
                 case 72: // linh thú
                 case 23: // Ván bay
                     break;
@@ -379,7 +379,7 @@ public class InventoryServiceNew {
                 case 11:
                     index = 7;
                     break;
-                case 27:
+                case 76:
                     index = 8;
                     break;
                 case 72:

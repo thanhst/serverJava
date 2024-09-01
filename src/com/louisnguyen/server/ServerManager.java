@@ -84,7 +84,7 @@ public class ServerManager {
         new Thread(ChonAiDay.gI(), "Thread CAD").start();
         new Thread(NgocRongNamecService.gI(), "Thread NRNM").start();
         new Thread(TopService.gI(), "Thread TOP").start();
-        new Thread(AutoMaintenance.gI(), "Bảo trì tự động").start();
+        // new Thread(AutoMaintenance.gI(), "Bảo trì tự động").start();
         long delay = 500; // Cập nhật thông tin game và player
         isRunning = true;
         new Thread(() -> {
@@ -256,20 +256,20 @@ public class ServerManager {
         Client.gI().close();
         ShopKyGuiManager.gI().save();
 
-        if (AutoMaintenance.isRunning) {
-            AutoMaintenance.isRunning = false;
-            try {
-                String OS = System.getProperty("os.name").toLowerCase();
-                String batFile = "";
-                if (OS.contains("win"))
-                    batFile = "E:\\Test\\8-9-2023\\SourceBlue\\SourceBlue\\run.bat";
-                else
-                    batFile = "./run.sh";
-                AutoMaintenance.runFile(batFile);
-            } catch (Exception e) {
+        // if (AutoMaintenance.isRunning) {
+        //     AutoMaintenance.isRunning = false;
+        //     try {
+        //         String OS = System.getProperty("os.name").toLowerCase();
+        //         String batFile = "";
+        //         if (OS.contains("win"))
+        //             batFile = "E:\\Test\\8-9-2023\\SourceBlue\\SourceBlue\\run.bat";
+        //         else
+        //             batFile = "./run.sh";
+        //         AutoMaintenance.runFile(batFile);
+        //     } catch (Exception e) {
 
-            }
-        }
+        //     }
+        // }
         Logger.log(Logger.RED, "Bảo trì đóng server thành công.\n");
         System.exit(0);
 
