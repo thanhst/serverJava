@@ -1407,19 +1407,19 @@ public class NpcFactory {
                             return;
                         }
                         if (player.iDMark.getIndexMenu() == ConstNpc.MENU_MUA_CAPSULE) {
-                            switch (select) {
-                                case 0:
-                                    createOtherMenu(player, ConstNpc.MENU_MUA_CAPSULE1,
-                                            "Giá Capsule hồng ngọc tại Cửa hàng Santa: 500Tr vàng\n"
-                                                    + "Ta hỗ trợ mua với số lượng lớn quy định như sau:\n"
-                                                    + "10 Capsule hồng ngọc = 10 thỏi vàng\n"
-                                                    + "105 Capsule hồng ngọc = 100 thỏi vàng\n"
-                                                    + "1100 Capsule hồng ngọc = 1000 thỏi vàng\n"
-                                                    + "Ngươi muốn mua số lượng bao nhiêu?",
-                                            "Mua 10\nCapsule\nhồng ngọc", "Mua 105\nCapsule\nhồng ngọc",
-                                            "Mua 1100\nCapsule\nhồng ngọc");
-                                    break;
-                            }
+                            // switch (select) {
+                            //     case 0:
+                            //         createOtherMenu(player, ConstNpc.MENU_MUA_CAPSULE1,
+                            //                 "Giá Capsule hồng ngọc tại Cửa hàng Santa: 500Tr vàng\n"
+                            //                         + "Ta hỗ trợ mua với số lượng lớn quy định như sau:\n"
+                            //                         + "10 Capsule hồng ngọc = 10 thỏi vàng\n"
+                            //                         + "105 Capsule hồng ngọc = 100 thỏi vàng\n"
+                            //                         + "1100 Capsule hồng ngọc = 1000 thỏi vàng\n"
+                            //                         + "Ngươi muốn mua số lượng bao nhiêu?",
+                            //                 "Mua 10\nCapsule\nhồng ngọc", "Mua 105\nCapsule\nhồng ngọc",
+                            //                 "Mua 1100\nCapsule\nhồng ngọc");
+                            //         break;
+                            // }
                             return;
                         }
                     }
