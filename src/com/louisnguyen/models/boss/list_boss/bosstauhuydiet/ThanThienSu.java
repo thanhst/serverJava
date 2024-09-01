@@ -174,7 +174,7 @@ public class ThanThienSu extends Boss {
 //        if(Util.canDoWithTime(st,1500)){
 //            super.active();
 //        }
-        this.SendLaiThongBao(12);
+        this.SendLaiThongBao(1);
     }
 
     @Override

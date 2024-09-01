@@ -163,7 +163,7 @@ public class ThanHuyDiet extends Boss {
 //        if (Util.canDoWithTime(st, 1500)) {
 //            this.changeStatus(BossStatus.LEAVE_MAP);
 //        }
-        this.SendLaiThongBao(13);
+        this.SendLaiThongBao(1);
     }
 
     @Override
