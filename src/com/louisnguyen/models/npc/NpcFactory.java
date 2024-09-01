@@ -585,12 +585,16 @@ public class NpcFactory {
 
             public void openBaseMenu(Player player) {
                 if (canOpenNpc(player)) {
-                    if (TaskService.gI().getIdTask(player) == ConstTask.TASK_10_1) {
-                        TaskService.gI().sendNextTaskMain(player);
-                        Service.gI().sendThongBao(player, "Nhiệm vụ hoàn thành,\n"
-                                + "báo cáo với " + TaskService.gI().transformName(player,
-                                        ConstTask.TEN_NPC_QUY_LAO)
-                                + " nào!");
+                    // if (TaskService.gI().getIdTask(player) == ConstTask.TASK_10_1) {
+                    //     TaskService.gI().sendNextTaskMain(player);
+                    //     Service.gI().sendThongBao(player, "Nhiệm vụ hoàn thành,\n"
+                    //             + "báo cáo với " + TaskService.gI().transformName(player,
+                    //                     ConstTask.TEN_NPC_QUY_LAO)
+                    //             + " nào!");
+                    //     return;
+                    // }
+                    if (!TaskService.gI().checkDoneTaskTalkNpc(player, this)) {
+                        super.openBaseMenu(player);
                         return;
                     }
                     if (TaskService.gI().getIdTask(player) == ConstTask.TASK_18_4) {
@@ -658,14 +662,14 @@ public class NpcFactory {
             @Override
             public void openBaseMenu(Player player) {
                 if (canOpenNpc(player)) {
-                    if (TaskService.gI().getIdTask(player) == ConstTask.TASK_10_1) {
-                        TaskService.gI().sendNextTaskMain(player);
-                        Service.gI().sendThongBao(player, "Nhiệm vụ hoàn thành,\n"
-                                + "báo cáo với " + TaskService.gI().transformName(player,
-                                        ConstTask.TEN_NPC_QUY_LAO)
-                                + " nào!");
-                        return;
-                    }
+                    // if (TaskService.gI().getIdTask(player) == ConstTask.TASK_10_1) {
+                    //     TaskService.gI().sendNextTaskMain(player);
+                    //     Service.gI().sendThongBao(player, "Nhiệm vụ hoàn thành,\n"
+                    //             + "báo cáo với " + TaskService.gI().transformName(player,
+                    //                     ConstTask.TEN_NPC_QUY_LAO)
+                    //             + " nào!");
+                    //     return;
+                    // }
                     if (!TaskService.gI().checkDoneTaskTalkNpc(player, this)) {
                         super.openBaseMenu(player);
                         return;
