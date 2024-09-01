@@ -110,7 +110,7 @@ public class Boss extends Player implements IBossNew, IBossOutfit {
     public long lastTimeGK;
     
     public void SendLaiThongBao(int phut) {
-        phut =1;
+        phut =5;
         if (Util.canDoWithTime(this.lastTimeGK, phut * 60000)) {
             ServerNotify.gI().notify("BOSS " + this.name + " vừa xuất hiện tại " + this.zone.map.mapName+ " khu vực : " + this.zone.zoneId);
             this.lastTimeGK = System.currentTimeMillis();
