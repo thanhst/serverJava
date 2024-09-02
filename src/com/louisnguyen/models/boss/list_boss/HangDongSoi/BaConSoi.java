@@ -88,21 +88,21 @@ public class BaConSoi extends Boss {
 
             ItemMap it10 = new ItemMap(this.zone, 563, 1, this.location.x, this.zone.map.yPhysicInTop(this.location.x,
                     this.location.y - 24), plKill.id);
-            it10.options.add(new Item.ItemOption(23, new Random().nextInt(11) + 40000)); // ki 80-90k
+            it10.options.add(new Item.ItemOption(23, new Random().nextInt(11) + 40)); // ki 80-90k
             it10.options.add(new Item.ItemOption(86, 1));// Ký gửi vàng
             it10.options.add(new Item.ItemOption(21, 60));// yêu cầu sm 80 tỉ
             // it10.options.add(new Item.ItemOption(30, 1));// ko the gd
 
             ItemMap it11 = new ItemMap(this.zone, 565, 1, this.location.x, this.zone.map.yPhysicInTop(this.location.x,
                     this.location.y - 24), plKill.id);
-            it11.options.add(new Item.ItemOption(23, new Random().nextInt(11) + 40000)); // ki 80-90k
+            it11.options.add(new Item.ItemOption(23, new Random().nextInt(11) + 40)); // ki 80-90k
             it11.options.add(new Item.ItemOption(86, 1));// Ký gửi vàng
             it11.options.add(new Item.ItemOption(21, 60));// yêu cầu sm 80 tỉ
             // it11.options.add(new Item.ItemOption(30, 1));// ko the gd
 
             ItemMap it12 = new ItemMap(this.zone, 567, 1, this.location.x, this.zone.map.yPhysicInTop(this.location.x,
                     this.location.y - 24), plKill.id);
-            it12.options.add(new Item.ItemOption(23, new Random().nextInt(11) + 40000)); // ki 80-90k
+            it12.options.add(new Item.ItemOption(23, new Random().nextInt(11) + 40)); // ki 80-90k
             it12.options.add(new Item.ItemOption(86, 1));// Ký gửi vàng
             it12.options.add(new Item.ItemOption(21, 60));// yêu cầu sm 80 tỉ
             // it12.options.add(new Item.ItemOption(30, 1));// ko the gd

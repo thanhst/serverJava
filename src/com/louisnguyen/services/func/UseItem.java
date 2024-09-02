@@ -835,7 +835,7 @@ public class UseItem {
                                 Service.gI().sendThongBao(pl, "Hành trang không đủ chỗ trống");
                             } else {
                                 InventoryServiceNew.gI().subQuantityItemsBag(pl, item, 1);
-                                int[] setID = { 733,734,735,743,744,746,795,849,897,920,1092,1106,1107 };
+                                int[] setID = { 733, 734, 735, 743, 744, 746, 795, 849, 897, 920, 1092, 1106, 1107 };
                                 int randomIndex = Util.nextInt(0, setID.length - 1);
                                 short randomID = (short) setID[randomIndex];
 
@@ -880,7 +880,9 @@ public class UseItem {
                                 } else if (Util.isTrue(8.42f, 100)) {
                                     linhThu = ItemService.gI().createNewItem((short) Util.nextInt(1500, 1507));
                                 } else {
-                                    int[] setID = { 740,741,745,822,823,852,865,954,955,966,982,983,1007,1013,1030,1031,1047,1138,1148,1157,1158,1159,1195,1197,1200,1202};
+                                    int[] setID = { 740, 741, 745, 822, 823, 852, 865, 954, 955, 966, 982, 983, 1007,
+                                            1013, 1030, 1031, 1047, 1138, 1148, 1157, 1158, 1159, 1195, 1197, 1200,
+                                            1202 };
                                     int randomIndex = Util.nextInt(0, setID.length - 1);
                                     short randomID = (short) setID[randomIndex];
                                     linhThu = ItemService.gI().createNewItem((short) randomID);
@@ -1455,22 +1457,39 @@ public class UseItem {
                 pl.itemTime.isUseMayDo = true;
                 break;
             case 1099:// cn
-                pl.itemTime.lastTimeCuongNo2 = System.currentTimeMillis();
-                pl.itemTime.isUseCuongNo2 = true;
-                Service.gI().point(pl);
+                if (!pl.itemTime.isUseCuongNo) {
+                    pl.itemTime.lastTimeCuongNo2 = System.currentTimeMillis();
+                    pl.itemTime.isUseCuongNo2 = true;
+                    Service.gI().point(pl);
+                } else {
+                    Service.gI().sendThongBao(pl, "Chỉ dùng được 1 loại cuồng nộ");
+                }
 
                 break;
             case 1100:// bo huyet
-                pl.itemTime.lastTimeBoHuyet2 = System.currentTimeMillis();
-                pl.itemTime.isUseBoHuyet2 = true;
+                if (!pl.itemTime.isUseBoHuyet) {
+                    pl.itemTime.lastTimeBoHuyet2 = System.currentTimeMillis();
+                    pl.itemTime.isUseBoHuyet2 = true;
+                } else {
+                    Service.gI().sendThongBao(pl, "Chỉ dùng được 1 loại bổ huyết");
+                }
                 break;
             case 1101:// bo khi
-                pl.itemTime.lastTimeBoKhi2 = System.currentTimeMillis();
-                pl.itemTime.isUseBoKhi2 = true;
+                if (!pl.itemTime.isUseBoKhi) {
+                    pl.itemTime.lastTimeBoKhi2 = System.currentTimeMillis();
+                    pl.itemTime.isUseBoKhi2 = true;
+                } else {
+                    Service.gI().sendThongBao(pl, "Chỉ dùng được 1 loại bổ khí");
+                }
                 break;
             case 1102:// xbh
-                pl.itemTime.lastTimeGiapXen2 = System.currentTimeMillis();
-                pl.itemTime.isUseGiapXen2 = true;
+                if (!pl.itemTime.isUseGiapXen) {
+                    pl.itemTime.lastTimeGiapXen2 = System.currentTimeMillis();
+                    pl.itemTime.isUseGiapXen2 = true;
+                }
+                else{
+                    Service.gI().sendThongBao(pl, "Chỉ dùng được 1 loại giáp xên");
+                }
                 break;
             case 1103:// an danh
                 pl.itemTime.lastTimeAnDanh2 = System.currentTimeMillis();
